@@ -7,6 +7,14 @@ module.exports = {
     author: `Kyle Shores`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-179020176-1",
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -28,18 +36,18 @@ module.exports = {
         display: `minimal-ui`,
         icons: [
           {
-            src: '/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
+            src: "/android-chrome-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
           },
           {
-            src: '/android-chrome-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
+            src: "/android-chrome-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
           },
-        ]
+        ],
       },
-    }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

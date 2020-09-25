@@ -9,8 +9,8 @@ import GoodReads from "../components/goodreads"
 import styles from "./about.module.css"
 
 const About = ({ data }) => {
-    console.log(data)
-    return (
+  console.log(data)
+  return (
     <Layout>
       <SEO title="About" />
       <h1>About</h1>
@@ -19,9 +19,10 @@ const About = ({ data }) => {
         <div>
           <h2>Background</h2>
           <p>
-            Hi! I'm just another biped attempting to do something useful with my life. I grew up in Pasadena, Texas.
-            I graduated from Texas A&M in 2018 with a bachelor in computer science and now I work at Capsher Technology
-            in College Station, Texas.
+            Hi! I'm just another biped attempting to do something useful with my
+            life. I grew up in Pasadena, Texas. I graduated from Texas A&M in
+            2018 with a bachelor in computer science and now I work at Capsher
+            Technology in College Station, Texas.
           </p>
           <h2>Hobbies</h2>
           <ul>
