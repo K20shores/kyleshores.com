@@ -4,10 +4,11 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import GoodReads from "../components/goodreads"
 
-import styles from "../styles/about.module.css"
+import styles from "./about.module.css"
 
-const SecondPage = ({ data }) => {
+const About = ({ data }) => {
     console.log(data)
     return (
     <Layout>
@@ -16,16 +17,22 @@ const SecondPage = ({ data }) => {
       <div className={styles.container}>
         <Img fluid={data.file.childImageSharp.fluid} />
         <div>
+          <h2>Background</h2>
           <p>
             Hi! I'm just another biped attempting to do something useful with my life. I grew up in Pasadena, Texas.
-            I graduated from Texas A&M in 2018 with a bachelor in computer science.
+            I graduated from Texas A&M in 2018 with a bachelor in computer science and now I work at Capsher Technology
+            in College Station, Texas.
           </p>
-          <p>
-            As you can see from my shirt in the picture, I work at Capsher Technology. It's a neat little software consulting firm in College Station, Texas.
-          </p>
-          <p>
-          </p>
+          <h2>Hobbies</h2>
+          <ul>
+            <li> Cast iron cooking and restore </li>
+            <li> Reading </li>
+            <li> Programming </li>
+            <li> Camping and hiking </li>
+            <li> Dance (mostly ballroom and west coast swing) </li>
+          </ul>
         </div>
+        <GoodReads />
       </div>
     </Layout>
   )
@@ -43,4 +50,4 @@ export const query = graphql`
   }
 `
 
-export default SecondPage
+export default About
