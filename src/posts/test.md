@@ -1,8 +1,8 @@
 ---
 title: "Testing super duper long title to see what will happen and how this will affet things but it looks like I need a lot more text I wonder what will happen if this keeps going"
 author: "Kyle Shores"
-categories: ["one", "two", "3", "four", "potato", "button", "yay", "efff", "morr", "brrr", "mordor", "muckduck"]
-tags: ["1", "2", "3", "Lorem", "ipsum", "dolor", "sit", "amet", "consectetuer", "a", "new", "tag", "FI", "cast iron"]
+categories: ["one", "two", "3"]
+tags: ["FI", "Cast Iron"]
 published: "2020-09-14 08:22 -06:00"
 ---
 
