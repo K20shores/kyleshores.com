@@ -1,3 +1,5 @@
+@import "./theme";
+
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -10,7 +12,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: hsla(0, 0%, 0%, 0.8);
-    background-color: #ffffff;
+    background-color: $background-color;
     font-weight: normal;
     word-wrap: break-word;
     font-kerning: normal;

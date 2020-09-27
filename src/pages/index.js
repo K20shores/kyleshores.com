@@ -17,7 +17,7 @@ const IndexPage = () => {
       </h1>
       <h2
         style={{
-          color: siteTheme.headerGrey,
+          color: siteTheme.siteGrey,
           maxWidth: `80%`,
         }}
       >

@@ -9,8 +9,8 @@ const Links = () => {
       <Link to="/about" aria-label="View about page" className={styles.link}>
         About
       </Link>
-      <Link to="/blog" aria-label="View blog" className={styles.link}>
-        Blog
+      <Link to="/thoughts" aria-label="View thoughts" className={styles.link}>
+        Thoughts
       </Link>
       <Link
         to="/contact"

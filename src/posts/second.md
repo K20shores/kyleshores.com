@@ -2,7 +2,7 @@
 title: "Second"
 author: "Kyle Shores"
 categories: ["two"]
-tags: [1, 2]
+tags: ["1", "2", "3", "Lorem", "ipsum", "dolor", "sit", "amet", "consectetuer", "some", "more", "for", "my", "buttons", "how", "many", "should", "i", "put", "in", "my", "potato"]
 published: "2020-09-27"
 ---
 

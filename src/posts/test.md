@@ -2,11 +2,12 @@
 title: "Testing super duper long title to see what will happen and how this will affet things but it looks like I need a lot more text I wonder what will happen if this keeps going"
 author: "Kyle Shores"
 categories: ["one", "two"]
-tags: [1, 2, 3]
-published: "2020-09-27"
+tags: ["1", "2", "3", "Lorem", "ipsum", "dolor", "sit", "amet", "consectetuer", "a", "new", "tag", "FI", "cast iron"]
+published: "2020-09-14"
 ---
 
 # Hi
+
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
 eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
 montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque

@@ -1,18 +1,28 @@
 @import "../theme";
 
+a.card {
+    color: black;
+}
+
 .container {
     max-width: 500px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    border: 1px solid $header-grey;
+    border: 1px solid $primary-color;
     margin-bottom: 1em;
     border-radius: 5px;
     padding: 1em;
-    box-shadow: 2px 2px #888888;
     grid-template-areas:
         "header header header"
         "metadata excerpt excerpt";
     gap: 5px;
+    transition: 0.2s;
+}
+
+.container:hover{
+    box-shadow: 0 0 3px $tetrad-3;
+    transform: scale(1.03);
+    filter: brightness(1.05);
 }
 
 .header {
@@ -20,10 +30,11 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: $tetrad-4;
 }
 
 .header > a {
-    color: $header-grey;
+    color: $site-grey;
 }
 
 .metadata {
@@ -37,13 +48,13 @@
 
 .published {
     position: absolute;
-    top: 0;
+    top: 25%;
     left: 0;
 }
 
 .timeToRead {
     position: absolute;
-    color: #adadad;
+    color: $site-grey;
     bottom: 0;
     left: 0;
 }
