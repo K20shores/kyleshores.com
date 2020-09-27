@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-// import { css } from '@emotion/core'
 
 import styles from "./header.module.css"
 
@@ -29,8 +28,9 @@ const Header = ({ siteTitle }) => (
     <nav className={styles.navStyle}>
       <Link to="/" className={styles.link}>
         <svg
-          width="32"
-          height="32"
+          className={styles.logo}
+          width="44"
+          height="44"
           version="1.1"
           viewBox="0 0 67.733 67.733"
           xmlns="http://www.w3.org/2000/svg"

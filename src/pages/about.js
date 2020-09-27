@@ -1,15 +1,14 @@
 import React from "react"
 
 import Img from "gatsby-image"
+import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import GoodReads from "../components/goodreads"
 
 import styles from "./about.module.css"
 
 const About = ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <SEO title="About" />
@@ -33,7 +32,6 @@ const About = ({ data }) => {
             <li> Dance (mostly ballroom and west coast swing) </li>
           </ul>
         </div>
-        <GoodReads />
       </div>
     </Layout>
   )

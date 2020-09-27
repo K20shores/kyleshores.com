@@ -1,0 +1,49 @@
+@import "../theme";
+
+.container {
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px solid $header-grey;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    padding: 1em;
+    box-shadow: 2px 2px #888888;
+    grid-template-areas:
+        "header header header"
+        "metadata excerpt excerpt";
+    gap: 5px;
+}
+
+.header {
+    grid-area: header;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header > a {
+    color: $header-grey;
+}
+
+.metadata {
+    grid-area: metadata;
+    position: relative;
+}
+
+.excerpt {
+    grid-area: excerpt;
+}
+
+.published {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.timeToRead {
+    position: absolute;
+    color: #adadad;
+    bottom: 0;
+    left: 0;
+}

@@ -1,11 +1,12 @@
 .link {
+    display: inline-flex;
     color: #00ad43;
     text-decoration: none;
     font-family: Tahoma, Geneva, sans-serif;
     transition: 0.2s;
 }
 
-span a:nth-child(n+1):nth-last-child(n+2) {
+.link:nth-child(n+1):nth-last-child(n+2) {
     margin-right: 1em;
 }
 
@@ -26,12 +27,12 @@ span a:nth-child(n+1):nth-last-child(n+2) {
     margin-bottom: .45rem;
 }
 
-svg {
+.logo {
     fill: #00ad43;
     stroke-width:.26458;
     transition: 0.2s;
 }
 
-svg:hover {
+.logo:hover {
     fill:#AD4200;
 }
