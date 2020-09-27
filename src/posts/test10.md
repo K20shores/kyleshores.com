@@ -3,7 +3,7 @@ title: "Testing super duper long title to see what will happen and how this will
 author: "Kyle Shores"
 categories: ["one", "two", "3", "four", "potato", "button", "yay", "efff", "morr", "brrr", "mordor", "muckduck"]
 tags: ["1", "2", "3", "Lorem", "ipsum", "dolor", "sit", "amet", "consectetuer", "a", "new", "tag", "FI", "cast iron"]
-published: "2020-09-14 08:22 -06:00"
+published: "2014-09-14"
 ---
 
 # Hi

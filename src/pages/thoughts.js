@@ -5,16 +5,18 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BlogCard from "../components/blog-card"
 import styles from "./thoughts.module.scss"
+import DatePicker from "react-datepicker"
 
 const onlyUnique = (value, index, self) => {
   return self.indexOf(value) === index;
 }
 
-function getBlogCards(data, filteredTags, filteredCategories)
+function getBlogCards(data, filteredTags, filteredCategories, minDate, maxDate)
 {
   return data.allMarkdownRemark.nodes
     .filter(a => {
         let include = true
+        let published = new Date(a.frontmatter.published)
         if (filteredTags.length > 0)
         {
           const intersection = filteredTags.filter(e => a.frontmatter.tags.includes(e))
@@ -24,6 +26,16 @@ function getBlogCards(data, filteredTags, filteredCategories)
         {
           const intersection = filteredCategories.filter(e => a.frontmatter.categories.includes(e))
           include &= intersection.length > 0
+        }
+        if (minDate)
+        {
+          console.log("min", minDate, published, minDate <= published)
+          include &= minDate <= published;
+        }
+        if (maxDate)
+        {
+          console.log("min", maxDate, published, maxDate >= published)
+          include &= maxDate >= published;
         }
         return include
       })
@@ -81,11 +93,19 @@ const addOrRemoveCallback = (arr, elem, set) => {
   }
 }
 
+const formatDate= (date) => {
+  if (date) return `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}-${date.getDate()}`
+  return '';
+}
+
 const Blog = ({data}) => {
   const [filteredCategories, setFilteredCategories] = useState([]);
   const [filteredTags, setFilteredTags] = useState([]);
+  const [minDate, setMinDate] = useState(null)
+  const [maxDate, setMaxDate] = useState(null)
+  console.log(minDate, maxDate)
 
-  let blogCards = getBlogCards(data, filteredTags, filteredCategories)
+  let blogCards = getBlogCards(data, filteredTags, filteredCategories, minDate, maxDate)
   let tags = getTags(data, addOrRemoveCallback, filteredTags, setFilteredTags)
   let categories = getCategories(data, addOrRemoveCallback, filteredCategories, setFilteredCategories)
 
@@ -97,11 +117,25 @@ const Blog = ({data}) => {
           <h1>Thoughts</h1>
         </section>
         <section className={styles.tags}>
+          <h3>Tags</h3>
           { tags }
         </section>
         <section className={styles.categories}>
           <h3>Categories</h3>
           { categories }
+        </section>
+        <section className={styles.date}>
+          <h3>Date</h3>
+          <input 
+            value={formatDate(minDate)}
+            className={styles.datepicker} 
+            type="date" 
+            onChange={(event) => setMinDate(event.target.value ? new Date(event.target.value) : null)}/>
+          <input 
+            value={formatDate(maxDate)}
+            className={styles.datepicker} 
+            type="date" 
+            onChange={(event) => {console.log(event.target.value); setMaxDate(event.target.value ? new Date(event.target.value) : null)}}/>
         </section>
         <section className={styles.cards}>
         { blogCards }
@@ -121,7 +155,7 @@ query {
       frontmatter {
         author
         categories
-        published(formatString: "MMM. D, YYYY")
+        published(formatString: "MMM D, YYYY")
         tags
         title
       }

@@ -5,10 +5,23 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
         "header header ."
-        "tags tags categories"
+        "tags categories date"
         "cards cards cards"
         "cards cards cards";
     gap: 1em;
+}
+
+.date {
+    grid-area: date;
+    .datepicker {
+        border-radius: 5px;
+        margin-bottom: 1em;
+        border: 1px solid $site-grey;
+        &:focus{
+            outline: none;
+            box-shadow: 0 0 3px $tetrad-3;
+        }
+    }
 }
 
 .header {
@@ -18,9 +31,21 @@
 .cards {
     margin-top: 2em;
     grid-area: cards;
+    flex-flow: row wrap;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    display: flex;
 }
 
 .categories {
+    h3 {
+        width: 100%;
+    }
+
+    flex-flow: row wrap;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    display: flex;
     grid-area: categories;
 
     .category {
@@ -30,6 +55,11 @@
         text-transform: capitalize;
         margin: .2em .4em;
         transition: 0.2s;
+
+        &:hover {
+            border-color: $tetrad-1;
+            transform: scale(1.03);
+        }
 
         &:focus {
             outline: none;
@@ -44,6 +74,9 @@
 }
 
 .tags {
+    h3 {
+        width: 100%;
+    }
     flex-flow: row wrap;
     -moz-box-pack: start;
     justify-content: flex-start;
@@ -76,8 +109,7 @@
     }
 
     .activeTag {
-        color: white;
-        background-color: $tag-color;
+        color: $primary-color;
+        background-color: $tetrad-4;
     }
 }
-

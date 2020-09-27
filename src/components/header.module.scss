@@ -1,6 +1,8 @@
+@import "../theme";
+
 .link {
     display: inline-flex;
-    color: #00ad43;
+    color: $primary-color;
     text-decoration: none;
     font-family: Tahoma, Geneva, sans-serif;
     transition: 0.2s;
@@ -11,13 +13,13 @@
 }
 
 .link:hover{
-    color:#AD4200;
+    color:$tetrad-4;
 }
 
 .navStyle {
     margin: 0 auto;
-    max-width: 80%;
-    padding: 1.45rem 1.0875rem;
+    max-width: $footer-header-max-width;
+    padding: 1.5rem 1.0rem;
     display: flex;
     justify-content: space-between;
 }
@@ -28,11 +30,11 @@
 }
 
 .logo {
-    fill: #00ad43;
+    fill: $primary-color;
     stroke-width:.26458;
     transition: 0.2s;
 }
 
 .logo:hover {
-    fill:#AD4200;
+    fill:$tetrad-4;
 }

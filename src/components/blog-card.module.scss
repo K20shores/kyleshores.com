@@ -1,11 +1,19 @@
 @import "../theme";
 
+.card {
+    margin: 1em 1em;
+    &:focus {
+        outline: none;
+    }
+}
+
 a.card {
     color: black;
+    display: inline-block;
 }
 
 .container {
-    max-width: 500px;
+    max-width: 400px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     border: 1px solid $primary-color;
@@ -30,7 +38,7 @@ a.card {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: $tetrad-4;
+    color: $complementary-3;
 }
 
 .header > a {
