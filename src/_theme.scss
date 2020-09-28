@@ -2,6 +2,7 @@
 $background-color: #ffffff;
 $primary-color: #00ad43;
 $site-grey: #adadad;
+$site-dark-grey: rgb(119, 124, 155);
 
 $complementary-1: #0FFF6C;
 $complementary-2: #00DB55;
@@ -18,7 +19,7 @@ $tetrad-2pale: #4200AD4D;
 $tetrad-3pale: #05FF664D;
 $tetrad-4pale: #AD42004D;
 
-$footer-header-max-width: 70%;
+$site-content-width: 80%;
 
 :export {
     backgroundColor: $background-color;

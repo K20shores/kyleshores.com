@@ -5,7 +5,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
         "header header ."
-        "tags categories date"
+        "tags categories categories"
         "cards cards cards"
         "cards cards cards";
     gap: 1em;
@@ -40,6 +40,7 @@
 .categories {
     h3 {
         width: 100%;
+        color: $site-grey
     }
 
     flex-flow: row wrap;
@@ -55,6 +56,8 @@
         text-transform: capitalize;
         margin: .2em .4em;
         transition: 0.2s;
+        max-height: max-content;
+        display: block;
 
         &:hover {
             border-color: $tetrad-1;
@@ -76,6 +79,7 @@
 .tags {
     h3 {
         width: 100%;
+        color: $site-grey
     }
     flex-flow: row wrap;
     -moz-box-pack: start;
@@ -109,7 +113,7 @@
     }
 
     .activeTag {
-        color: $primary-color;
-        background-color: $tetrad-4;
+        color: white;
+        background-color: $site-grey;
     }
 }

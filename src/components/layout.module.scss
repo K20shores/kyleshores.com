@@ -1,0 +1,9 @@
+@import "../theme";
+
+.main {
+    margin: 0 auto;
+    max-width: $site-content-width;
+    padding: 0 1.0875rem 1.45rem;
+    min-height: 80vh;
+    display: block;
+}

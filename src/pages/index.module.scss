@@ -1,0 +1,17 @@
+@import "../theme";
+
+.title {
+    font-size: 4em;
+}
+
+.subtitle {
+    color: $site-grey;
+    max-width: 80%;
+}
+
+.content {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}

@@ -5,4 +5,4 @@
  */
 
 import "./src/global.scss"
-import "./node_modules/react-datepicker/src/stylesheets/datepicker.scss";
+import "./node_modules/react-datepicker/src/stylesheets/datepicker.scss"
