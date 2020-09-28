@@ -1,0 +1,119 @@
+@import "../theme";
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "header header ."
+        "tags categories categories"
+        "cards cards cards"
+        "cards cards cards";
+    gap: 1em;
+}
+
+.date {
+    grid-area: date;
+    .datepicker {
+        border-radius: 5px;
+        margin-bottom: 1em;
+        border: 1px solid $site-grey;
+        &:focus{
+            outline: none;
+            box-shadow: 0 0 3px $tetrad-3;
+        }
+    }
+}
+
+.header {
+    grid-area: header;
+}
+
+.cards {
+    margin-top: 2em;
+    grid-area: cards;
+    flex-flow: row wrap;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    display: flex;
+}
+
+.categories {
+    h3 {
+        width: 100%;
+        color: $site-grey
+    }
+
+    flex-flow: row wrap;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    display: flex;
+    grid-area: categories;
+
+    .category {
+        color: $tetrad-1;
+        padding: 5px;
+        border-bottom: 1px solid $tetrad-1pale;
+        text-transform: capitalize;
+        margin: .2em .4em;
+        transition: 0.2s;
+        max-height: max-content;
+        display: block;
+
+        &:hover {
+            border-color: $tetrad-1;
+            transform: scale(1.03);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .activeCategory {
+        color: white;
+        background-color: $tetrad-1pale;
+        border-radius: 5px;
+    }
+}
+
+.tags {
+    h3 {
+        width: 100%;
+        color: $site-grey
+    }
+    flex-flow: row wrap;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    display: flex;
+    grid-area: tags;
+
+    $tag-color: rgb(135, 140, 170); 
+
+    .tag {
+
+        height: max-content;
+        margin: 2px;
+        display: inline-block;
+        padding: .2em .4em;
+        border: 1px solid $site-grey;
+        border-radius: 5px;
+        text-align: center;
+        color: $tag-color;
+        transition: 0.2s;
+        text-transform: capitalize;
+
+        &:hover{
+            border-color: $tetrad-1;
+            transform: scale(1.03);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .activeTag {
+        color: white;
+        background-color: $site-grey;
+    }
+}

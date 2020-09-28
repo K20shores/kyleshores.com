@@ -1,0 +1,13 @@
+@import "../theme";
+
+.footer {
+    margin: 0 auto;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    max-width: $site-content-width;
+}
+
+.link {
+    display: inline-flex;;
+}

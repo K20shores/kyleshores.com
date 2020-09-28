@@ -4,4 +4,5 @@
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
 
-import "./src/global.css"
+import "./src/global.scss"
+import "./node_modules/react-datepicker/src/stylesheets/datepicker.scss"

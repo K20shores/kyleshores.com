@@ -1,0 +1,40 @@
+@import "../theme";
+
+.link {
+    display: inline-flex;
+    color: $primary-color;
+    text-decoration: none;
+    font-family: Tahoma, Geneva, sans-serif;
+    transition: 0.2s;
+}
+
+.link:nth-child(n+1):nth-last-child(n+2) {
+    margin-right: 1em;
+}
+
+.link:hover{
+    color:$tetrad-4;
+}
+
+.navStyle {
+    margin: 0 auto;
+    max-width: $site-content-width;
+    padding: 1.5rem 1.0rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerStyle {
+    background: white;
+    margin-bottom: .45rem;
+}
+
+.logo {
+    fill: $primary-color;
+    stroke-width:.26458;
+    transition: 0.2s;
+}
+
+.logo:hover {
+    fill:$tetrad-4;
+}
