@@ -71,3 +71,4 @@ yarn-error.log
 .vscode
 kyleshores-com.code-workspace
 static/favicon.xcf
+.obsidian/

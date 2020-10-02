@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import BlogCard from "../components/blog-card"
+import ThoughtCard from "../components/thought-card"
 import styles from "./thoughts.module.scss"
 // import DatePicker from "react-datepicker"
 
@@ -11,26 +11,26 @@ const onlyUnique = (value, index, self) => {
   return self.indexOf(value) === index
 }
 
-function getBlogCards(
+function getCards(
   data,
   filteredTags,
   filteredCategories,
   minDate,
   maxDate
 ) {
-  return data.allMarkdownRemark.nodes
+  return data.allMdx.edges
     .filter(a => {
       let include = true
-      let date = new Date(a.frontmatter.date)
+      let date = new Date(a.node.frontmatter.date)
       if (filteredTags.length > 0) {
         const intersection = filteredTags.filter(e =>
-          a.frontmatter.tags.includes(e)
+          a.node.frontmatter.tags.includes(e)
         )
         include &= intersection.length > 0
       }
       if (filteredCategories.length > 0) {
         const intersection = filteredCategories.filter(e =>
-          a.frontmatter.categories.includes(e)
+          a.node.frontmatter.categories.includes(e)
         )
         include &= intersection.length > 0
       }
@@ -43,13 +43,13 @@ function getBlogCards(
       return include
     })
     .map(a => {
-      return <BlogCard key={a.id} {...a} />
+      return <ThoughtCard key={a.node.id} {...a.node} />
     })
 }
 
 function getTags(data, callBack, filteredTags, setFilteredTags) {
   let tags = []
-  data.allMarkdownRemark.nodes.forEach(a => tags.push(...a.frontmatter.tags))
+  data.allMdx.edges.forEach(a => tags.push(...a.node.frontmatter.tags))
   return tags.filter(onlyUnique).map((a, i) => {
     let isActive = filteredTags.indexOf(a) >= 0
     return (
@@ -78,8 +78,8 @@ function getCategories(
   setFilteredCategories
 ) {
   let categories = []
-  data.allMarkdownRemark.nodes.forEach(a =>
-    categories.push(...a.frontmatter.categories)
+  data.allMdx.edges.forEach(a =>
+    categories.push(...a.node.frontmatter.categories)
   )
   return categories.filter(onlyUnique).map((a, i) => {
     let isActive = filteredCategories.indexOf(a) >= 0
@@ -120,13 +120,13 @@ const addOrRemoveCallback = (arr, elem, set) => {
   }
 }
 
-const Blog = ({ data }) => {
+const Thoughts = ({ data }) => {
   const [filteredCategories, setFilteredCategories] = useState([])
   const [filteredTags, setFilteredTags] = useState([])
   // const [minDate, setMinDate] = useState(null)
   // const [maxDate, setMaxDate] = useState(null)
 
-  let blogCards = getBlogCards(
+  let blogCards = getCards(
     data,
     filteredTags,
     filteredCategories,
@@ -180,21 +180,17 @@ const Blog = ({ data }) => {
   )
 }
 
-export default Blog
+export default Thoughts
 
 export const query = graphql`
-  query {
-    allMarkdownRemark(
-      sort: { fields: frontmatter___published, order: DESC }
-      filter: { frontmatter: { published: { eq: true } } }
-    ) {
-      totalCount
-      nodes {
+query {
+  allMdx(sort: {fields: frontmatter___published, order: DESC}, filter: {frontmatter: {published: {eq: true}}}) {
+    edges {
+      node {
         frontmatter {
           author
           categories
-          published
-          date(formatString: "MMM D, YYYY")
+          date(formatString: "MMM DD, YYYY")
           tags
           title
         }
@@ -206,5 +202,7 @@ export const query = graphql`
         id
       }
     }
+    totalCount
   }
+}
 `

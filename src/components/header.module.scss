@@ -27,6 +27,11 @@
 .headerStyle {
     background: white;
     margin-bottom: .45rem;
+
+    hr {
+        width: $site-content-width;
+        margin: auto;
+    }
 }
 
 .logo {
