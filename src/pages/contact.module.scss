@@ -1,48 +1,28 @@
 @import "../theme";
 
-.form{
-    margin-top: 5em;
-    input {
-        flex-grow: 1;
-        padding-left: 6px;
-        border: 1px solid $site-grey;
-        color: $site-dark-grey;
-        border-radius: 5px;
-    }
-    .wrapper {
-        list-style-type: none;
-        margin: unset;
-    }
-    .form-row {
+.form {
+    display: flex;
+    flex-direction: column;
+
+    label {
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
     }
-    .form-row > label {
-        display: block;
+
+    input, textarea { 
+        flex-grow: 2;
+        margin-left: 1em;
+        border: 1px solid $site-light-grey;
+        border-radius: 6px;
     }
-    .form-row > input {
-        flex: 1;
-        vertical-align: middle;
-    }
-    .form-row > input:first-child {
-        margin-right: 1em;
-    }
-    .form-row > input[type=email],
-    .form-row > input[type=text],
-    .form-row > button {
-      max-width: 100%;
-      padding: .5em;
-      margin-left: 1em;
-      box-sizing: border-box;
-    }
-    .form-row > button {
-        background: $site-grey;
+
+    button {
         color: white;
-        border: 0;
-    }
-    .form-row > textarea {
-        width: 100%;
-        min-height: 100px;
+        background-color: $primary-color;
+        border-radius: 6px;
+        border: none;
+        align-self: flex-start;
+        height: 40px;
     }
 }

@@ -11,6 +11,14 @@ const onlyUnique = (value, index, self) => {
   return self.indexOf(value) === index
 }
 
+const notNullOrEmpty = (value, index, self) => {
+  if (value)
+  {
+    return true;
+  }
+  return false;
+}
+
 function getCards(
   data,
   filteredTags,
@@ -50,7 +58,10 @@ function getCards(
 function getTags(data, callBack, filteredTags, setFilteredTags) {
   let tags = []
   data.allMdx.edges.forEach(a => tags.push(...a.node.frontmatter.tags))
-  return tags.filter(onlyUnique).map((a, i) => {
+  return tags
+    .filter(onlyUnique)
+    .filter(notNullOrEmpty)
+    .map((a, i) => {
     let isActive = filteredTags.indexOf(a) >= 0
     return (
       <span
@@ -81,7 +92,10 @@ function getCategories(
   data.allMdx.edges.forEach(a =>
     categories.push(...a.node.frontmatter.categories)
   )
-  return categories.filter(onlyUnique).map((a, i) => {
+  return categories
+    .filter(onlyUnique)
+    .filter(notNullOrEmpty)
+    .map((a, i) => {
     let isActive = filteredCategories.indexOf(a) >= 0
     return (
       <span

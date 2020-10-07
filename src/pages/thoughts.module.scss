@@ -31,10 +31,10 @@
 .cards {
     margin-top: 2em;
     grid-area: cards;
+    display: flex;
     flex-flow: row wrap;
     -moz-box-pack: start;
     justify-content: flex-start;
-    display: flex;
 }
 
 .categories {
@@ -72,7 +72,8 @@
     .activeCategory {
         color: white;
         background-color: $tetrad-1pale;
-        border-radius: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
 }
 
@@ -114,6 +115,6 @@
 
     .activeTag {
         color: white;
-        background-color: $site-grey;
+        background-color: $site-dark-grey;
     }
 }
