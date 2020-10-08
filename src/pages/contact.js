@@ -36,7 +36,7 @@ const SecondPage = () => (
       <label>Name 
         <input required type="text" name="name" placeholder="First Last"/>
       </label>
-      <label for="message">
+      <label htmlFor="message">
         Message
         <textarea required id="message" name="message"></textarea>
       </label>

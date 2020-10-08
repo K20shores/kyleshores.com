@@ -9,18 +9,18 @@ date: "2020-10-01 08:22 -06:00"
 
 <h1>{props.frontmatter.title}</h1>
 
-# A New Hope
+# A Bit About Me
 Good morning! I realize that it may not be morning when you read this, but morning is my favorite time of day!
 That's when I feel most peaceful and I'm going to pretend that I'm talking to you when I feel most happy.
-I am about to change my life entirely and leave the world of software consulting to become a graduate
-student in the Atmospheric Science department at Texas A&M to purse a graduate degree. I would like to explain
-why that is, and I would like to detail my experiences as a go through graduate school. My thoughts will be
-laid out for you to examine so that you can see why I made this decision and to detail how I got into graduate school.
 
-Leaving the workforce to attend graduate school is not something that anyone should do lightly, and I've certainly
-place a good deal of thought into it. I am going to explain a little about myself, my personality, and my experiences.
-My decision to change the path of my life is calculated. It's not something done on a whim. I will walk you through
-my college experience, my (brief) professional&mdash;a word I'm not sure can be applied to me&mdash;career in software development, 
+I am about to change my life entirely and leave the world of software consulting to become a graduate
+student in the Atmospheric Science department at Texas A&M. This post is going to outline my path into graduate school. This blog in general wioll detail my experiences as I go through graduate school. 
+
+Leaving the workforce to attend graduate school is not something that anyone should do lightly, 
+and I've certainly place a good deal of thought into it. I am going to explain a little about myself,
+my personality, and my experiences. My decision to change the path of my life is calculated. It's
+not something done on a whim. I will walk you through my college experience, my (brief) 
+professional&mdash;a word I'm not sure can be applied to me&mdash;career in software development, 
 and how my personal philosophy lead me to ultimately uppend my life and rip stability out from under me.
 
 # A Bit About Me

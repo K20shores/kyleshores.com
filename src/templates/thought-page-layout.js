@@ -10,7 +10,7 @@ const shortcodes = { Link }
 
 export default function PageTemplate({ data: { mdx } }) {
   return (
-    <Layout contentWidth="50%">
+    <Layout>
       <SEO title={mdx.frontmatter.title} />
       <MDXProvider components={shortcodes}>
         <MDXRenderer {...mdx}>{mdx.body}</MDXRenderer>
