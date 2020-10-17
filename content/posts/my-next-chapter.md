@@ -4,7 +4,7 @@ author: "Kyle Shores"
 categories: ["Personal"]
 tags: ["Climate Change", "Graduate School", "FI"]
 published: true
-date: "2020-10-01 08:22 -06:00"
+date: "2020-10-17 12:01 -05:00"
 featuredimage:
     src: "./../../static/images/acceptance.png"
     alt: "Acceptance into Texas A&M University"
