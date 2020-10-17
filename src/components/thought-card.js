@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 import styles from "./thought-card.module.scss"
 
 export default props => {
-  console.log(props)
   return (
     <Link to={`/${props.fields.slug}`} className={styles.card}>
       <Img 

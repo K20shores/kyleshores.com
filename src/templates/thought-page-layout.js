@@ -8,7 +8,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "../components/image"
 
-const shortcodes = { Link, Img, Image }
+const shortcodes = { Link, Image }
 
 export default function PageTemplate({ data: { mdx } }) {
   return (
