@@ -30,27 +30,17 @@ const SecondPage = () => (
       method="post"
       action="https://getform.io/f/c3309246-ab8e-4da9-8136-3d37ff1b0614"
     >
-      <ul className={styles.wrapper}>
-        <li className={styles.formRow}>
-          <label> Email </label>
-          <input type="email" name="email" placeholder="you@something.com"/>
-        </li>
-        <li className={styles.formRow}>
-          <label> Name </label>
-          <input type="text" name="name" placeholder="First Last"/>
-        </li>
-        <li className={styles.formRow}>
-          <label for="message">
-            Message
-          </label>
-        </li>
-        <li className={styles.formRow}>
-            <textarea id="message" name="message"></textarea>
-        </li>
-        <li>
-          <button type="submit">Send</button>
-        </li>
-      </ul>
+      <label>Email
+        <input required type="email" name="email" placeholder="you@something.com"/>
+      </label>
+      <label>Name 
+        <input required type="text" name="name" placeholder="First Last"/>
+      </label>
+      <label htmlFor="message">
+        Message
+        <textarea required id="message" name="message"></textarea>
+      </label>
+      <button type="submit">Send</button>
     </form>
   </Layout>
 )

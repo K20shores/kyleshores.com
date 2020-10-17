@@ -1,6 +1,11 @@
 @import "../theme";
 
+.title {
+    white-space: break-spaces;
+}
+
 .card {
+    position: relative;
     margin-right: 1em;
     &:focus {
         outline: none;
@@ -16,22 +21,27 @@ a.card {
     max-width: 400px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    border: 1px solid $primary-color;
-    margin-bottom: 1em;
+    border: 1px solid $site-light-grey;
+    box-shadow: $site-light-grey 0px 1px 2px;
+    // margin-bottom: 1em;
     border-radius: 5px;
     padding: 1em;
     grid-template-areas:
         "header header header"
-        "metadata excerpt excerpt";
+        "excerpt excerpt excerpt"
+        "metadata metadata metadata";
     gap: 5px;
     transition: 0.2s;
 }
 
 .container:hover{
+    border-top: 1px solid $primary-color;
     box-shadow: 
-        0px 2px 2px $site-grey, 
-        -2px 2px 2px $site-grey, 
-        2px 2px 2px $site-grey;
+        0px 2px 2px $site-light-grey, 
+        -2px 2px 2px $site-light-grey, 
+        2px 2px 2px $site-light-grey;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     transform: scale(1.03);
     filter: brightness(1.05);
 }
@@ -50,6 +60,7 @@ a.card {
 .metadata {
     grid-area: metadata;
     position: relative;
+    min-height: 20px;
 }
 
 .excerpt {
@@ -57,15 +68,15 @@ a.card {
     color: $site-grey;
 }
 
-.published {
+.date {
     position: absolute;
-    top: 25%;
+    top: 0;
     left: 0;
 }
 
 .timeToRead {
     position: absolute;
     color: $site-grey;
-    bottom: 0;
-    left: 0;
+    top: 0;
+    right: 0;
 }

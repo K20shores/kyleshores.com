@@ -7,7 +7,6 @@ import SEO from "../components/seo"
 import styles from "./index.module.scss"
 
 const IndexPage = ({data}) => {
-  console.log(data)
   return (
     <Layout>
       <SEO title="Home" />

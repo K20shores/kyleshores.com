@@ -30,11 +30,38 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/posts`,
+        path: `${__dirname}/content/posts`,
         name: `posts`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/content/posts`,
+      },
+    },
+    `gatsby-remark-images`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              backgroundColor: 'none',
+            }
+          },
+          {
+            resolve: `gatsby-remark-image-attributes`,
+            options: {
+              styleAttributes: true,
+              dataAttributes: true
+            }
+          }
+        ]
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
