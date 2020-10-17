@@ -14,6 +14,11 @@ export default function PageTemplate({ data: { mdx } }) {
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} />
+      <h1>{mdx.frontmatter.title}</h1>
+      <Img 
+          fluid={mdx.frontmatter.featuredimage.src.childImageSharp.fluid}
+          alt={mdx.frontmatter.featuredimage.altj}
+          />
       <MDXProvider components={shortcodes}>
         <MDXRenderer {...mdx}>{mdx.body}</MDXRenderer>
       </MDXProvider>
