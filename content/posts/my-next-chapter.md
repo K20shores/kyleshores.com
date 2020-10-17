@@ -16,6 +16,7 @@ featuredimage:
     alt={props.frontmatter.featuredimage.altj}
     />
 
+
 # A Bit About Me
 I am about to change my life entirely and leave the world of software consulting to become a graduate
 student in the Atmospheric Science department at Texas A&M. I'd like to share my journey into graduate school

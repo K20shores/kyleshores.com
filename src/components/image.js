@@ -2,8 +2,7 @@ import React from "react"
 import Img from 'gatsby-image';
 import { StaticQuery, graphql } from 'gatsby';
 
-function renderImage(file, caption, style) {
-    console.log(style)
+function renderImage(file, alt, caption, style) {
     return (
         <div
             style={{
@@ -11,16 +10,22 @@ function renderImage(file, caption, style) {
             }}
         >
             <Img fluid={file.node.childImageSharp.fluid} />
+            {
+                caption &&
             <span 
                 dangerouslySetInnerHTML={{ __html: caption }} 
                 style={{
-                    display: `inline-block`,
+                    display: `block`,
                     textAlign: `center`,
                     color: `grey`,
                     fontSize: `80%`,
                 }}>
                 </span>
-            <hr></hr>
+            }
+            {
+                caption && 
+                <hr></hr>
+            }
         </div>
     )
   }
@@ -48,7 +53,7 @@ const Image = function(props) {
       const image = data.images.edges.find(
         image => image.node.relativePath === props.src
       )
-      return(renderImage(image, props.caption, props.style))
+      return(renderImage(image, props.alt, props.caption, props.style))
     }}
   />
 }

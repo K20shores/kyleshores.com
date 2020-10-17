@@ -2,12 +2,13 @@ import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link, graphql} from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "../components/image"
 
-const shortcodes = { Link, Image}
+const shortcodes = { Link, Img, Image }
 
 export default function PageTemplate({ data: { mdx } }) {
   return (
