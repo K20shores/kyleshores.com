@@ -1,6 +1,11 @@
 @import "../theme";
 
+.title {
+    white-space: break-spaces;
+}
+
 .card {
+    position: relative;
     margin-right: 1em;
     &:focus {
         outline: none;
@@ -18,7 +23,7 @@ a.card {
     grid-template-columns: 1fr 1fr 1fr;
     border: 1px solid $site-light-grey;
     box-shadow: $site-light-grey 0px 1px 2px;
-    margin-bottom: 1em;
+    // margin-bottom: 1em;
     border-radius: 5px;
     padding: 1em;
     grid-template-areas:

@@ -207,6 +207,16 @@ query {
           date(formatString: "MMM DD, YYYY")
           tags
           title
+          featuredimage {
+            alt
+            src {
+              childImageSharp {
+                fluid(maxWidth: 1024) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
         timeToRead
         excerpt

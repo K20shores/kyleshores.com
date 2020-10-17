@@ -40,12 +40,26 @@ module.exports = {
         path: `${__dirname}/content/posts`,
       },
     },
+    `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
-        gatsbyRemarkPlugins: ['gatsby-remark-images'],
-        plugins: ['gatsby-remark-images'],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              backgroundColor: 'none',
+            }
+          },
+          {
+            resolve: `gatsby-remark-image-attributes`,
+            options: {
+              styleAttributes: true,
+              dataAttributes: true
+            }
+          }
+        ]
       },
     },
     `gatsby-transformer-sharp`,

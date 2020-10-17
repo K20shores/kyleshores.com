@@ -7,6 +7,12 @@ const Links = ({className}) => {
   return (
     <span className={className}>
       <Link 
+        to="/" 
+        aria-label="View home page" 
+        className={styles.link}>
+        Home
+      </Link>
+      <Link 
         to="/about" 
         aria-label="View about page" 
         className={styles.link}>
@@ -37,19 +43,20 @@ const DesktopMenu = () => {
 }
 
 const MobileMenu = () => {
-  let [showLinks, toggleShowLinks] = useState(false);
+  let [menuOpened, toggleShowLinks] = useState(false);
   return (
     <div className={styles.mobileMenu}>
       <input 
+        aria-label={menuOpened ? "open menu" : "close menu"}
         type="checkbox" 
         id="mobile-menu-toggle"
-        onChange={() => toggleShowLinks(!showLinks)}/>
+        onChange={() => toggleShowLinks(!menuOpened)}/>
       <label id="mobile-menu-icon" htmlFor="mobile-menu-toggle">
-        <span className={showLinks ? styles.topRotation : undefined}></span>
-        <span className={showLinks ? styles.middleRotation : undefined}></span>
-        <span className={showLinks ? styles.bottomRotation : undefined}></span>
+        <span className={menuOpened ? styles.topRotation : undefined}></span>
+        <span className={menuOpened ? styles.middleRotation : undefined}></span>
+        <span className={menuOpened ? styles.bottomRotation : undefined}></span>
       </label>
-      {showLinks && 
+      {menuOpened && 
         <div className={styles.overlay}>
           <Links className={styles.vertical}/>
         </div>

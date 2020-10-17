@@ -5,7 +5,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === "Mdx") {
     const value = `thoughts${createFilePath({ node, getNode })}`
-    console.log(value)
     createNodeField({
       node,
       name: "slug",
