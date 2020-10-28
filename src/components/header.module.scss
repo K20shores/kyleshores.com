@@ -24,6 +24,7 @@
     padding: 1.5rem 1.0rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .headerStyle {
@@ -32,6 +33,7 @@
     position: sticky;
     top: 0;
     z-index: 2;
+    border-bottom: 1px solid $primary-color;
 
     hr {
         width: $site-content-width;
