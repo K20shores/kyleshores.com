@@ -30,11 +30,18 @@ const SecondPage = () => (
       method="post"
       action="https://getform.io/f/c3309246-ab8e-4da9-8136-3d37ff1b0614"
     >
-      <label>Email
-        <input required type="email" name="email" placeholder="you@something.com"/>
+      <label>
+        Email
+        <input
+          required
+          type="email"
+          name="email"
+          placeholder="you@something.com"
+        />
       </label>
-      <label>Name 
-        <input required type="text" name="name" placeholder="First Last"/>
+      <label>
+        Name
+        <input required type="text" name="name" placeholder="First Last" />
       </label>
       <label htmlFor="message">
         Message

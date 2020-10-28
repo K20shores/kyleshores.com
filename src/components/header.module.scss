@@ -27,8 +27,11 @@
 }
 
 .headerStyle {
-    background: white;
+    background: $primary-color-pale;
     margin-bottom: .45rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 
     hr {
         width: $site-content-width;
@@ -107,7 +110,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(255,255,255,1.0); /* Black background with opacity */
+        background: white;
         z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
         cursor: pointer; /* Add a pointer on hover */
     }

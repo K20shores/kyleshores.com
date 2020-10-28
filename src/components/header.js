@@ -3,31 +3,23 @@ import { Link } from "gatsby"
 
 import styles from "./header.module.scss"
 
-const Links = ({className}) => {
+const Links = ({ className }) => {
   return (
     <span className={className}>
-      <Link 
-        to="/" 
-        aria-label="View home page" 
-        className={styles.link}>
+      <Link to="/" aria-label="View home page" className={styles.link}>
         Home
       </Link>
-      <Link 
-        to="/about" 
-        aria-label="View about page" 
-        className={styles.link}>
+      <Link to="/about" aria-label="View about page" className={styles.link}>
         About
       </Link>
-      <Link 
-        to="/thoughts" 
-        aria-label="View thoughts" 
-        className={styles.link}>
+      <Link to="/thoughts" aria-label="View thoughts" className={styles.link}>
         Thoughts
       </Link>
       <Link
         to="/contact"
         aria-label="View contact page"
-        className={styles.link}>
+        className={styles.link}
+      >
         Contact
       </Link>
     </span>
@@ -35,32 +27,33 @@ const Links = ({className}) => {
 }
 
 const DesktopMenu = () => {
-    return (
+  return (
     <div className={styles.desktopMenu}>
-      <Links className={styles.horizontal}/>
+      <Links className={styles.horizontal} />
     </div>
-    )
+  )
 }
 
 const MobileMenu = () => {
-  let [menuOpened, toggleShowLinks] = useState(false);
+  let [menuOpened, toggleShowLinks] = useState(false)
   return (
     <div className={styles.mobileMenu}>
-      <input 
+      <input
         aria-label={menuOpened ? "open menu" : "close menu"}
-        type="checkbox" 
+        type="checkbox"
         id="mobile-menu-toggle"
-        onChange={() => toggleShowLinks(!menuOpened)}/>
+        onChange={() => toggleShowLinks(!menuOpened)}
+      />
       <label id="mobile-menu-icon" htmlFor="mobile-menu-toggle">
         <span className={menuOpened ? styles.topRotation : undefined}></span>
         <span className={menuOpened ? styles.middleRotation : undefined}></span>
         <span className={menuOpened ? styles.bottomRotation : undefined}></span>
       </label>
-      {menuOpened && 
+      {menuOpened && (
         <div className={styles.overlay}>
-          <Links className={styles.vertical}/>
+          <Links className={styles.vertical} />
         </div>
-      }
+      )}
     </div>
   )
 }
@@ -85,7 +78,6 @@ const Header = () => {
         <MobileMenu />
         <DesktopMenu />
       </nav>
-      <hr/>
     </header>
   )
 }

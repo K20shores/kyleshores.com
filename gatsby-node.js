@@ -4,7 +4,11 @@ const path = require("path")
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === "Mdx") {
-    const value = `thoughts${createFilePath({ node, getNode })}`
+    const value = `thoughts${createFilePath({
+      node,
+      getNode,
+      trailingSlash: false,
+    })}`
     createNodeField({
       node,
       name: "slug",

@@ -12,20 +12,13 @@ const onlyUnique = (value, index, self) => {
 }
 
 const notNullOrEmpty = (value, index, self) => {
-  if (value)
-  {
-    return true;
+  if (value) {
+    return true
   }
-  return false;
+  return false
 }
 
-function getCards(
-  data,
-  filteredTags,
-  filteredCategories,
-  minDate,
-  maxDate
-) {
+function getCards(data, filteredTags, filteredCategories, minDate, maxDate) {
   return data.allMdx.edges
     .filter(a => {
       let include = true
@@ -62,24 +55,24 @@ function getTags(data, callBack, filteredTags, setFilteredTags) {
     .filter(onlyUnique)
     .filter(notNullOrEmpty)
     .map((a, i) => {
-    let isActive = filteredTags.indexOf(a) >= 0
-    return (
-      <span
-        key={a}
-        className={`${styles.tag} ${isActive ? styles.activeTag : ""}`}
-        role="button"
-        tabIndex={i}
-        onClick={e =>
-          callBack(filteredTags, e.target.textContent, setFilteredTags)
-        }
-        onKeyDown={e =>
-          callBack(filteredTags, e.target.textContent, setFilteredTags)
-        }
-      >
-        {a}
-      </span>
-    )
-  })
+      let isActive = filteredTags.indexOf(a) >= 0
+      return (
+        <span
+          key={a}
+          className={`${styles.tag} ${isActive ? styles.activeTag : ""}`}
+          role="button"
+          tabIndex={i}
+          onClick={e =>
+            callBack(filteredTags, e.target.textContent, setFilteredTags)
+          }
+          onKeyDown={e =>
+            callBack(filteredTags, e.target.textContent, setFilteredTags)
+          }
+        >
+          {a}
+        </span>
+      )
+    })
 }
 
 function getCategories(
@@ -96,34 +89,34 @@ function getCategories(
     .filter(onlyUnique)
     .filter(notNullOrEmpty)
     .map((a, i) => {
-    let isActive = filteredCategories.indexOf(a) >= 0
-    return (
-      <span
-        key={a}
-        className={`${styles.category} ${
-          isActive ? styles.activeCategory : ""
-        }`}
-        role="button"
-        tabIndex={i}
-        onClick={e =>
-          callBack(
-            filteredCategories,
-            e.target.textContent,
-            setFilteredCategories
-          )
-        }
-        onKeyDown={e =>
-          callBack(
-            filteredCategories,
-            e.target.textContent,
-            setFilteredCategories
-          )
-        }
-      >
-        {a}
-      </span>
-    )
-  })
+      let isActive = filteredCategories.indexOf(a) >= 0
+      return (
+        <span
+          key={a}
+          className={`${styles.category} ${
+            isActive ? styles.activeCategory : ""
+          }`}
+          role="button"
+          tabIndex={i}
+          onClick={e =>
+            callBack(
+              filteredCategories,
+              e.target.textContent,
+              setFilteredCategories
+            )
+          }
+          onKeyDown={e =>
+            callBack(
+              filteredCategories,
+              e.target.textContent,
+              setFilteredCategories
+            )
+          }
+        >
+          {a}
+        </span>
+      )
+    })
 }
 
 const addOrRemoveCallback = (arr, elem, set) => {
@@ -140,7 +133,7 @@ const Thoughts = ({ data }) => {
   // const [minDate, setMinDate] = useState(null)
   // const [maxDate, setMaxDate] = useState(null)
 
-  let blogCards = getCards(
+  let thoughtCards = getCards(
     data,
     filteredTags,
     filteredCategories,
@@ -188,7 +181,7 @@ const Thoughts = ({ data }) => {
             onChange={date => setMaxDate(date)} /
           >
         </section> */}
-        <section className={styles.cards}>{blogCards}</section>
+        <section className={styles.cards}>{thoughtCards}</section>
       </div>
     </Layout>
   )
@@ -197,36 +190,39 @@ const Thoughts = ({ data }) => {
 export default Thoughts
 
 export const query = graphql`
-query {
-  allMdx(sort: {fields: frontmatter___published, order: DESC}, filter: {frontmatter: {published: {eq: true}}}) {
-    edges {
-      node {
-        frontmatter {
-          author
-          categories
-          date(formatString: "MMM DD, YYYY")
-          tags
-          title
-          featuredimage {
-            alt
-            src {
-              childImageSharp {
-                fluid(maxWidth: 1024) {
-                  ...GatsbyImageSharpFluid
+  query {
+    allMdx(
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { frontmatter: { published: { eq: true } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            author
+            categories
+            date(formatString: "MMM DD, YYYY")
+            tags
+            title
+            featuredimage {
+              alt
+              src {
+                childImageSharp {
+                  fluid(maxWidth: 1024) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
             }
           }
+          timeToRead
+          excerpt
+          fields {
+            slug
+          }
+          id
         }
-        timeToRead
-        excerpt
-        fields {
-          slug
-        }
-        id
       }
+      totalCount
     }
-    totalCount
   }
-}
 `

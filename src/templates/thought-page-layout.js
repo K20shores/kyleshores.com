@@ -1,27 +1,127 @@
-import React from "react"
+import React, { useState, useEffect } from 'react';
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { Link, graphql} from "gatsby"
+import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "../components/image"
+import styles from "./thought-page-layout.module.scss"
 
 const shortcodes = { Link, Image }
 
+const ToToCId = (id) => {
+  if (id.startsWith(`#`))
+  {
+    return `${id.slice(1)}-toc`
+  }
+  return `${id}-toc`
+}
+
+const getLinks = (items, activeId) => {
+  if (!items) return <></>
+  return (
+    <ul>
+      {
+        items.map((item) => (
+          <li id={ToToCId(item.url)} key={item.url}>
+            <a 
+              style={activeId === item.url.slice(1) ? { filter: `brightness(1.5)`} : null}
+              href={item.url}
+            >
+              {item.title}
+            </a>
+            {getLinks(item.items, activeId)}
+          </li>
+        ))}
+    </ul>
+  )
+}
+
+const CloneAndReverse = arr => [...arr].reverse()
+
+const getUrls = (toc) => {
+  if (!toc.items) return []
+
+  let stack = []
+  let urls = []
+  stack.push(...CloneAndReverse(toc.items))
+
+  while(stack.length > 0)
+  {
+    let item = stack.pop()
+    urls.push(item.url.slice(1))
+    item.items && stack.push(...CloneAndReverse(item.items))
+  }
+
+  return urls
+}
+
+const TableOfContents = mdx => {
+  let itemIds = getUrls(mdx.tableOfContents)
+  const [activeId, setActiveId] = useState(``);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let front = entries.filter(a => a.isIntersecting).shift() 
+        if (!front && entries.length === 1) front = entries.shift()
+        front && setActiveId(front.target.id)
+      },
+      { 
+        threshold: 1.0,
+        root: null
+      }
+    );
+
+    itemIds.forEach((id) => {
+      observer.observe(document.getElementById(id));
+    });
+
+    return () => {
+      itemIds.forEach((id) => {
+        observer.unobserve(document.getElementById(id));
+      });
+    };
+  }, [itemIds]);
+
+  return (
+    <aside className={styles.tableOfContents}>
+      {getLinks(mdx.tableOfContents.items, activeId)}
+    </aside>
+  )
+}
+
+const ThoughtHeader = mdx => {
+  return (
+    <>
+      <h1>{mdx.frontmatter.title}</h1>
+      <div className={styles.thoughtSubtitle}>
+        <span>{mdx.frontmatter.date}</span>
+        <span>{mdx.timeToRead} minutes</span>
+      </div>
+      <Img
+        fluid={mdx.frontmatter.featuredimage.src.childImageSharp.fluid}
+        alt={mdx.frontmatter.featuredimage.altj}
+      />
+    </>
+  )
+}
+
 export default function PageTemplate({ data: { mdx } }) {
+  // set the width to 75 percent if there is a table of contents
+  // otherwise the width will be 100% of the available space
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} />
-      <h1>{mdx.frontmatter.title}</h1>
-      <Img 
-          fluid={mdx.frontmatter.featuredimage.src.childImageSharp.fluid}
-          alt={mdx.frontmatter.featuredimage.altj}
-          />
-      <MDXProvider components={shortcodes}>
-        <MDXRenderer {...mdx}>{mdx.body}</MDXRenderer>
-      </MDXProvider>
+      <TableOfContents {...mdx}></TableOfContents>
+      <div className={styles.thought}>
+        <ThoughtHeader {...mdx}></ThoughtHeader>
+        <MDXProvider components={shortcodes}>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </MDXProvider>
+      </div>
     </Layout>
   )
 }
@@ -31,7 +131,10 @@ export const pageQuery = graphql`
     mdx(id: { eq: $id }) {
       id
       body
+      tableOfContents
+      timeToRead
       frontmatter {
+        date(formatString: "MMM DD, YYYY")
         title
         featuredimage {
           alt

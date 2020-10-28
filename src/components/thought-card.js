@@ -7,19 +7,19 @@ import styles from "./thought-card.module.scss"
 export default props => {
   return (
     <Link to={`/${props.fields.slug}`} className={styles.card}>
-      <Img 
-          fluid={props.frontmatter.featuredimage.src.childImageSharp.fluid}
-          alt={props.frontmatter.featuredimage.altj}
-          style={{
-            position: "absolute",
-            left: 0,
-            top: 0,
-            width: "100%",
-            height: "100%",
-            opacity: 0.1,
-            zIndex: -1
-          }}
-          />
+      <Img
+        fluid={props.frontmatter.featuredimage.src.childImageSharp.fluid}
+        alt={props.frontmatter.featuredimage.altj}
+        style={{
+          position: "absolute",
+          left: 0,
+          top: 0,
+          width: "100%",
+          height: "100%",
+          opacity: 0.1,
+          zIndex: -1,
+        }}
+      />
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>{props.frontmatter.title}</h2>
