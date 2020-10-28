@@ -1,0 +1,67 @@
+@import "../theme";
+
+.container {
+    width: 75%;
+}
+
+.thought {
+    @media only screen and (min-width: $minMD) {
+        width: 75%;
+    }
+    a > svg {
+        display: none;
+    }
+}
+
+.thoughtSubtitle {
+    display: flex;
+    justify-content: space-between;
+    color: $site-grey;
+}
+
+
+.tableOfContents {
+    @media only screen and (max-width: $minMD - 1px) {
+        display: none;
+    }
+
+    $spacing: 1.00rem;
+
+    position: fixed;
+    left: calc(75%);
+    top: 50%;
+    transform: translate(0%, -50%);
+    max-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid $site-grey;
+    padding: $spacing;
+    margin: $spacing 0px;
+
+    ul {
+        list-style: none;
+        margin: 0;
+    }
+
+    li {
+        margin: 0;
+        margin-bottom: $spacing;
+
+        .active {
+            filter: brightness(1.5)
+        }
+    }
+
+    li > ul {
+        margin-left: $spacing;
+        margin-top: $spacing;
+    }
+
+    li:last-child {
+        margin: 0;
+    }
+     
+    &:empty {
+        display: none;
+    }
+}

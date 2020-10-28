@@ -10,10 +10,7 @@ const Layout = ({ children, contentWidth }) => {
   return (
     <>
       <Header />
-      <main 
-        className={styles.main}
-        style={{maxWidth: width}}
-      >
+      <main className={styles.main} style={{ maxWidth: width }}>
         {children}
       </main>
       <Footer />
@@ -23,7 +20,7 @@ const Layout = ({ children, contentWidth }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  siteContentWidth: PropTypes.string
+  siteContentWidth: PropTypes.string,
 }
 
 export default Layout

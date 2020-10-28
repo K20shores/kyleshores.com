@@ -1,6 +1,7 @@
 /* from http://green-pantone.colorcode.is/ */
 $background-color: #ffffff;
 $primary-color: #00ad43;
+$primary-color-pale: #00ad434d;
 $site-grey: #adadad;
 $site-dark-grey: rgb(119, 124, 155);
 $site-light-grey: rgba(52, 61, 68, 0.1);
@@ -31,6 +32,7 @@ $minXXL: 1920px;
 :export {
     backgroundColor: $background-color;
     primaryColor: $primary-color;
+    primaryColorPale: $primary-color-pale;
     siteGrey: $site-grey;
 
     complementary1: $complementary-1;

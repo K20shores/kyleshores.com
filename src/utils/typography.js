@@ -1,5 +1,12 @@
 import Typography from "typography"
 import twinPeaksTheme from "typography-theme-twin-peaks"
+import siteTheme from "../_theme.scss"
+
+twinPeaksTheme.overrideThemeStyles = () => ({
+  a: {
+    color: siteTheme.tetrad1,
+  },
+})
 
 const typography = new Typography(twinPeaksTheme)
 

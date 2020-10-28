@@ -47,19 +47,13 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
-              backgroundColor: 'none',
-            }
+              backgroundColor: "none",
+            },
           },
-          {
-            resolve: `gatsby-remark-image-attributes`,
-            options: {
-              styleAttributes: true,
-              dataAttributes: true
-            }
-          }
-        ]
+          `gatsby-remark-autolink-headers`,
+        ],
       },
     },
     `gatsby-transformer-sharp`,
