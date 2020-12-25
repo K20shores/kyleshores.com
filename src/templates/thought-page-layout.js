@@ -87,15 +87,15 @@ const TableOfContents = mdx => {
   }, [itemIds]);
 
   return (
-    <aside className={styles.tableOfContents}>
+    <nav className={styles.tableOfContents}>
       {getLinks(mdx.tableOfContents.items, activeId)}
-    </aside>
+    </nav>
   )
 }
 
 const ThoughtHeader = mdx => {
   return (
-    <>
+    <div style={{marginBottom: `1rem`}}>
       <h1>{mdx.frontmatter.title}</h1>
       <div className={styles.thoughtSubtitle}>
         <span>{mdx.frontmatter.date}</span>
@@ -105,15 +105,13 @@ const ThoughtHeader = mdx => {
         fluid={mdx.frontmatter.featuredimage.src.childImageSharp.fluid}
         alt={mdx.frontmatter.featuredimage.altj}
       />
-    </>
+    </div>
   )
 }
 
 export default function PageTemplate({ data: { mdx } }) {
-  // set the width to 75 percent if there is a table of contents
-  // otherwise the width will be 100% of the available space
   return (
-    <Layout>
+    <Layout marginLeft={`0`} marginRight={`0`}>
       <SEO title={mdx.frontmatter.title} />
       <TableOfContents {...mdx}></TableOfContents>
       <div className={styles.thought}>
