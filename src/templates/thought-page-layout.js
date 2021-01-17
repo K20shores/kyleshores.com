@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link, graphql } from "gatsby"
@@ -11,9 +11,8 @@ import styles from "./thought-page-layout.module.scss"
 
 const shortcodes = { Link, Image }
 
-const ToToCId = (id) => {
-  if (id.startsWith(`#`))
-  {
+const ToToCId = id => {
+  if (id.startsWith(`#`)) {
     return `${id.slice(1)}-toc`
   }
   return `${id}-toc`
@@ -23,33 +22,35 @@ const getLinks = (items, activeId) => {
   if (!items) return <></>
   return (
     <ul>
-      {
-        items.map((item) => (
-          <li id={ToToCId(item.url)} key={item.url}>
-            <a 
-              style={activeId === item.url.slice(1) ? { filter: `brightness(1.5)`} : null}
-              href={item.url}
-            >
-              {item.title}
-            </a>
-            {getLinks(item.items, activeId)}
-          </li>
-        ))}
+      {items.map(item => (
+        <li id={ToToCId(item.url)} key={item.url}>
+          <a
+            style={
+              activeId === item.url.slice(1)
+                ? { filter: `brightness(1.5)` }
+                : null
+            }
+            href={item.url}
+          >
+            {item.title}
+          </a>
+          {getLinks(item.items, activeId)}
+        </li>
+      ))}
     </ul>
   )
 }
 
 const CloneAndReverse = arr => [...arr].reverse()
 
-const getUrls = (toc) => {
+const getUrls = toc => {
   if (!toc.items) return []
 
   let stack = []
   let urls = []
   stack.push(...CloneAndReverse(toc.items))
 
-  while(stack.length > 0)
-  {
+  while (stack.length > 0) {
     let item = stack.pop()
     urls.push(item.url.slice(1))
     item.items && stack.push(...CloneAndReverse(item.items))
@@ -60,31 +61,31 @@ const getUrls = (toc) => {
 
 const TableOfContents = mdx => {
   let itemIds = getUrls(mdx.tableOfContents)
-  const [activeId, setActiveId] = useState(``);
+  const [activeId, setActiveId] = useState(``)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        let front = entries.filter(a => a.isIntersecting).shift() 
+      entries => {
+        let front = entries.filter(a => a.isIntersecting).shift()
         if (!front && entries.length === 1) front = entries.shift()
         front && setActiveId(front.target.id)
       },
-      { 
+      {
         threshold: 1.0,
-        root: null
+        root: null,
       }
-    );
+    )
 
-    itemIds.forEach((id) => {
-      observer.observe(document.getElementById(id));
-    });
+    itemIds.forEach(id => {
+      observer.observe(document.getElementById(id))
+    })
 
     return () => {
-      itemIds.forEach((id) => {
-        observer.unobserve(document.getElementById(id));
-      });
-    };
-  }, [itemIds]);
+      itemIds.forEach(id => {
+        observer.unobserve(document.getElementById(id))
+      })
+    }
+  }, [itemIds])
 
   return (
     <nav className={styles.tableOfContents}>
@@ -95,7 +96,7 @@ const TableOfContents = mdx => {
 
 const ThoughtHeader = mdx => {
   return (
-    <div style={{marginBottom: `1rem`}}>
+    <div style={{ marginBottom: `1rem` }}>
       <h1>{mdx.frontmatter.title}</h1>
       <div className={styles.thoughtSubtitle}>
         <span>{mdx.frontmatter.date}</span>

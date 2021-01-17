@@ -6,6 +6,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styles from "./index.module.scss"
 import ThoughtCard from "../components/thought-card"
+import Carousel from "../components/carousel"
+import ICarousel from "../components/carousel"
+import projects from "../data/projects.json" 
 // import siteTheme from "../_theme.scss"
 
 const IndexPage = ({ data }) => {
@@ -22,6 +25,9 @@ const IndexPage = ({ data }) => {
       </h2>
       <div className={styles.content}>
         <div>
+          <Carousel data={projects}/>
+        </div>
+        {/* <div>
           <h3>Projects</h3>
           <p>
             I was heavily inspired by a post titled{" "}
@@ -42,7 +48,14 @@ const IndexPage = ({ data }) => {
             your own!
           </p>
           <Img fluid={data.lifegraph.childImageSharp.fluid} />
-        </div>
+          <h4>
+            <a href="https://themannerlydog.com">The Mannerly Dog</a>
+          </h4>
+          <p>
+            I manage a WordPress website for a Houston area animal behaviorist
+            who specializes in dog trianing.
+          </p>
+        </div> */}
         <div>
           <h2>Recent Thoughts</h2>
           <div className={styles.cards}>{cards}</div>
