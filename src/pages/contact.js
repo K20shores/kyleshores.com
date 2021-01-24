@@ -20,8 +20,7 @@ const SecondPage = () => (
       <li>Task automation</li>
       <li>
         This site was built with <a href="https://www.gatsbyjs.com/">Gatsby</a>.
-        I can also build one of these for you.. I can also build one of these
-        for you.{" "}
+        I can also build one of these for you.
       </li>
     </ul>
     <form

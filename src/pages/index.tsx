@@ -7,11 +7,10 @@ import SEO from "../components/seo"
 import styles from "./index.module.scss"
 import ThoughtCard from "../components/thought-card"
 import Carousel from "../components/carousel"
-import ICarousel from "../components/carousel"
-import projects from "../data/projects.json" 
 // import siteTheme from "../_theme.scss"
 
 const IndexPage = ({ data }) => {
+  const projects = data.dataJson.projects
   let cards = data.posts.edges.map(a => {
     return <ThoughtCard key={a.node.id} {...a.node} />
   })
@@ -24,38 +23,10 @@ const IndexPage = ({ data }) => {
         world.
       </h2>
       <div className={styles.content}>
-        <div>
+        <div style={{ marginBottom: `2rem`}}>
+          <h2>Projects</h2>
           <Carousel data={projects}/>
         </div>
-        {/* <div>
-          <h3>Projects</h3>
-          <p>
-            I was heavily inspired by a post titled{" "}
-            <a target="_" href="https://waitbutwhy.com/2014/05/life-weeks.html">
-              {" "}
-              "Your Life in Weeks"
-            </a>{" "}
-            from{" "}
-            <a target="_" href="https://waitbutwhy.com">
-              waitbutwhy.com
-            </a>
-            to create a python package to help me make these life graphs. Don't
-            worry, I asked for permssion before publishing the code.
-          </p>
-          <p>
-            Here's my own life graph. Download the project from{" "}
-            <a href="https://github.com/K20shores/Life-Graph">github</a> to make
-            your own!
-          </p>
-          <Img fluid={data.lifegraph.childImageSharp.fluid} />
-          <h4>
-            <a href="https://themannerlydog.com">The Mannerly Dog</a>
-          </h4>
-          <p>
-            I manage a WordPress website for a Houston area animal behaviorist
-            who specializes in dog trianing.
-          </p>
-        </div> */}
         <div>
           <h2>Recent Thoughts</h2>
           <div className={styles.cards}>{cards}</div>
@@ -74,10 +45,18 @@ export const query = graphql`
         title
       }
     }
-    lifegraph: file(relativePath: { eq: "lifegraph.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
+    dataJson {
+      projects {
+        alt
+        description
+        link
+        title
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }
