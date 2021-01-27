@@ -23,9 +23,9 @@ const IndexPage = ({ data }) => {
         world.
       </h2>
       <div className={styles.content}>
-        <div style={{ marginBottom: `2rem`}}>
+        <div style={{ marginBottom: `2rem` }}>
           <h2>Projects</h2>
-          <Carousel data={projects}/>
+          <Carousel data={projects} />
         </div>
         <div>
           <h2>Recent Thoughts</h2>

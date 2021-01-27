@@ -155,8 +155,8 @@ const Thoughts = ({ data }) => {
         <section className={styles.header}>
           <h1>Thoughts</h1>
           <p>
-            It's a blog. However, I don't like the word blog so I call
-            them thoughts. They will probalby end up being about only a few very
+            It's a blog. However, I don't like the word blog so I call them
+            thoughts. They will probalby end up being about only a few very
             specific things, but they have the potential to be about anything.
           </p>
         </section>
