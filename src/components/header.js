@@ -12,8 +12,8 @@ const Links = ({ className }) => {
       <Link to="/about" aria-label="View about page" className={styles.link}>
         About
       </Link>
-      <Link to="/thoughts" aria-label="View thoughts" className={styles.link}>
-        Thoughts
+      <Link to="/blog" aria-label="View blog" className={styles.link}>
+        Blog
       </Link>
       <Link
         to="/contact"

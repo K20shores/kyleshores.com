@@ -1,6 +1,6 @@
 @import "../theme";
 
-.thought {
+.blog {
     @media only screen and (min-width: $minMD) {
         margin-left: 20%;
         margin-right: 20%;
@@ -16,7 +16,7 @@
     }
 }
 
-.thoughtSubtitle {
+.blogSubtitle {
     display: flex;
     justify-content: space-between;
     color: $site-grey;

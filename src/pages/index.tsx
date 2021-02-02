@@ -5,14 +5,14 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styles from "./index.module.scss"
-import ThoughtCard from "../components/thought-card"
+import BlogCard from "../components/blog-card"
 import Carousel from "../components/carousel"
 // import siteTheme from "../_theme.scss"
 
 const IndexPage = ({ data }) => {
   const projects = data.dataJson.projects
   let cards = data.posts.edges.map(a => {
-    return <ThoughtCard key={a.node.id} {...a.node} />
+    return <BlogCard key={a.node.id} {...a.node} />
   })
   return (
     <Layout>
@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
           <Carousel data={projects} />
         </div>
         <div>
-          <h2>Recent Thoughts</h2>
+          <h2>Recent Posts</h2>
           <div className={styles.cards}>{cards}</div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-import styles from "./thought-card.module.scss"
+import styles from "./blog-card.module.scss"
 
 export default props => {
   return (

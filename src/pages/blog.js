@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ThoughtCard from "../components/thought-card"
-import styles from "./thoughts.module.scss"
+import BlogCard from "../components/blog-card"
+import styles from "./blog.module.scss"
 // import DatePicker from "react-datepicker"
 
 const onlyUnique = (value, index, self) => {
@@ -44,7 +44,7 @@ function getCards(data, filteredTags, filteredCategories, minDate, maxDate) {
       return include
     })
     .map(a => {
-      return <ThoughtCard key={a.node.id} {...a.node} />
+      return <BlogCard key={a.node.id} {...a.node} />
     })
 }
 
@@ -127,13 +127,13 @@ const addOrRemoveCallback = (arr, elem, set) => {
   }
 }
 
-const Thoughts = ({ data }) => {
+const Blog = ({ data }) => {
   const [filteredCategories, setFilteredCategories] = useState([])
   const [filteredTags, setFilteredTags] = useState([])
   // const [minDate, setMinDate] = useState(null)
   // const [maxDate, setMaxDate] = useState(null)
 
-  let thoughtCards = getCards(
+  let blogCards = getCards(
     data,
     filteredTags,
     filteredCategories,
@@ -150,13 +150,13 @@ const Thoughts = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Thoughts" />
+      <SEO title="Blog" />
       <div className={styles.container}>
         <section className={styles.header}>
-          <h1>Thoughts</h1>
+          <h1>Blog</h1>
           <p>
             It's a blog. However, I don't like the word blog so I call them
-            thoughts. They will probalby end up being about only a few very
+            blog. They will probalby end up being about only a few very
             specific things, but they have the potential to be about anything.
           </p>
         </section>
@@ -181,13 +181,13 @@ const Thoughts = ({ data }) => {
             onChange={date => setMaxDate(date)} /
           >
         </section> */}
-        <section className={styles.cards}>{thoughtCards}</section>
+        <section className={styles.cards}>{blogCards}</section>
       </div>
     </Layout>
   )
 }
 
-export default Thoughts
+export default Blog
 
 export const query = graphql`
   query {

@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "../components/image"
-import styles from "./thought-page-layout.module.scss"
+import styles from "./blog-page-layout.module.scss"
 
 const shortcodes = { Link, Image }
 
@@ -94,11 +94,11 @@ const TableOfContents = mdx => {
   )
 }
 
-const ThoughtHeader = mdx => {
+const BlogHeader = mdx => {
   return (
     <div style={{ marginBottom: `1rem` }}>
       <h1>{mdx.frontmatter.title}</h1>
-      <div className={styles.thoughtSubtitle}>
+      <div className={styles.blogSubtitle}>
         <span>{mdx.frontmatter.date}</span>
         <span>{mdx.timeToRead} minutes</span>
       </div>
@@ -115,8 +115,8 @@ export default function PageTemplate({ data: { mdx } }) {
     <Layout marginLeft={`0`} marginRight={`0`}>
       <SEO title={mdx.frontmatter.title} />
       <TableOfContents {...mdx}></TableOfContents>
-      <div className={styles.thought}>
-        <ThoughtHeader {...mdx}></ThoughtHeader>
+      <div className={styles.blog}>
+        <BlogHeader {...mdx}></BlogHeader>
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
