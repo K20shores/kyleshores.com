@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styles from "./contact.module.scss"
 
-const SecondPage = () => (
+const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
     <h1>Contact</h1>
@@ -20,8 +20,7 @@ const SecondPage = () => (
       <li>Task automation</li>
       <li>
         This site was built with <a href="https://www.gatsbyjs.com/">Gatsby</a>.
-        I can also build one of these for you.. I can also build one of these
-        for you.{" "}
+        I can also build one of these for you.
       </li>
     </ul>
     <form
@@ -52,4 +51,4 @@ const SecondPage = () => (
   </Layout>
 )
 
-export default SecondPage
+export default ContactPage

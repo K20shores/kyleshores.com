@@ -1,16 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styles from "./index.module.scss"
-import ThoughtCard from "../components/thought-card"
+import BlogCard from "../components/blog-card"
+import Carousel from "../components/carousel"
 // import siteTheme from "../_theme.scss"
 
 const IndexPage = ({ data }) => {
+  const projects = data.dataJson.projects
   let cards = data.posts.edges.map(a => {
-    return <ThoughtCard key={a.node.id} {...a.node} />
+    return <BlogCard key={a.node.id} {...a.node} />
   })
   return (
     <Layout>
@@ -21,30 +22,12 @@ const IndexPage = ({ data }) => {
         world.
       </h2>
       <div className={styles.content}>
-        <div>
-          <h3>Projects</h3>
-          <p>
-            I was heavily inspired by a post titled{" "}
-            <a target="_" href="https://waitbutwhy.com/2014/05/life-weeks.html">
-              {" "}
-              "Your Life in Weeks"
-            </a>{" "}
-            from{" "}
-            <a target="_" href="https://waitbutwhy.com">
-              waitbutwhy.com
-            </a>
-            to create a python package to help me make these life graphs. Don't
-            worry, I asked for permssion before publishing the code.
-          </p>
-          <p>
-            Here's my own life graph. Download the project from{" "}
-            <a href="https://github.com/K20shores/Life-Graph">github</a> to make
-            your own!
-          </p>
-          <Img fluid={data.lifegraph.childImageSharp.fluid} />
+        <div style={{ marginBottom: `2rem` }}>
+          <h2>Projects</h2>
+          <Carousel data={projects} />
         </div>
         <div>
-          <h2>Recent Thoughts</h2>
+          <h2>Recent Posts</h2>
           <div className={styles.cards}>{cards}</div>
         </div>
       </div>
@@ -61,10 +44,18 @@ export const query = graphql`
         title
       }
     }
-    lifegraph: file(relativePath: { eq: "lifegraph.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
+    dataJson {
+      projects {
+        alt
+        description
+        link
+        title
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }

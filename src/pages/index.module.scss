@@ -10,14 +10,12 @@
 }
 
 .content {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
+    display: flex;
+    flex-direction: column;
 }
 
 .cards {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
 }
