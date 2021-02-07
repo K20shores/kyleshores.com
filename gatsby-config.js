@@ -38,6 +38,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-page-creator",
       options: {
         path: `${__dirname}/content/posts`,
@@ -58,14 +64,13 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-transformer-json`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-transformer-sharp`,
       options: {
-        path: `./src/data/`,
+        checkSupportedExtensions: false,
       },
     },
+    `gatsby-transformer-json`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

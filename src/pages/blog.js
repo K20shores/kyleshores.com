@@ -25,13 +25,13 @@ function getCards(data, filteredTags, filteredCategories, minDate, maxDate) {
       let date = new Date(a.node.frontmatter.date)
       if (filteredTags.length > 0) {
         const intersection = filteredTags.filter(e =>
-          a.node.frontmatter.tags.includes(e)
+          a?.node?.frontmatter?.tags?.includes(e) || false
         )
         include &= intersection.length > 0
       }
       if (filteredCategories.length > 0) {
         const intersection = filteredCategories.filter(e =>
-          a.node.frontmatter.categories.includes(e)
+          a?.node?.frontmatter?.categories?.includes(e) || false
         )
         include &= intersection.length > 0
       }

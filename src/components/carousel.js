@@ -26,7 +26,7 @@ const Slide = ({
       </div>
       <div className={styles.image}>
         <Img
-          fluid={image.childImageSharp.fluid}
+          fluid={image?.childImageSharp?.fluid}
           alt={alt}
           style={{ maxHeight: maxHeight }}
           imgStyle={{ objectFit: "contain" }}
@@ -50,7 +50,7 @@ const Dot = ({ number, activeSlide, setActiveSlide }) => {
   )
 }
 
-const Carousel = props => {
+export default props => {
   const [activeSlide, setActiveSlide] = useState(0)
   const maxHeight = props.maxHeight || `300px`
 
@@ -117,5 +117,3 @@ const Carousel = props => {
     </div>
   )
 }
-
-export default Carousel

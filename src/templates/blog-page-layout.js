@@ -103,7 +103,7 @@ const BlogHeader = mdx => {
         <span>{mdx.timeToRead} minutes</span>
       </div>
       <Img
-        fluid={mdx.frontmatter.featuredimage.src.childImageSharp.fluid}
+        fluid={mdx?.frontmatter?.featuredimage?.src?.childImageSharp?.fluid}
         alt={mdx.frontmatter.featuredimage.altj}
       />
     </div>
