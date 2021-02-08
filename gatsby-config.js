@@ -37,6 +37,7 @@ module.exports = {
         name: `posts`,
       },
     },
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -70,7 +71,6 @@ module.exports = {
         checkSupportedExtensions: false,
       },
     },
-    `gatsby-transformer-json`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
