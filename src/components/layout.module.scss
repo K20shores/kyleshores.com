@@ -1,6 +1,126 @@
-@import "../theme";
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.header {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  color: white;
+  font-family: var(--fontFamily-sans);
+  position: relative;
+  max-width: 30%;
+
+  background-image: url("../images/stormy-atlantic-background.jpg");
+  background-size: auto 100%;
+  background-repeat:no-repeat;
+  background-position: center center;
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    z-index: 1;
+    background-color: rgba(0.1, 0.1, 0.1, 0.3);
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    padding: var(--spacing-12);
+
+    a {
+      text-decoration: none;
+    }
+
+    h1 {
+      margin: unset;
+      color: white;
+      font-weight: var(--fontWeight-semibold);
+    }
+
+    hr {
+      height: 30px;
+      width: 60%;
+      border-style: solid;
+      border-width: 1px 0 0 0;
+      border-radius: 20px;
+      border-color: var(--color-accent);
+
+      &:before {
+        display: block;
+        content: "";
+        border-color: var(--color-accent);
+        height: 30px;
+        margin-top: -31px;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        border-radius: 20px;
+      }
+    }
+
+    .bio-avatar {
+      margin-bottom: var(--spacing-0);
+      border-radius: 100%;
+      border: 2px solid var(--color-accent);
+    }
+
+    .nav {
+      list-style-type: none;
+      margin-left: 0;
+      display: inline-block;
+
+
+      a {
+        color: var(--color-accent);
+      }
+      
+      li {
+        border: 1px solid;
+        border-radius: 5px;
+        border-color: black;
+        background-color: black;
+        padding: var(--spacing-2)
+      }
+    }
+  }
+
+  .tsparticles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: auto;
+  }
+}
+
+.content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
 
 .main {
-    min-height: 80vh;
-    display: block;
+  flex: 5;
+  margin: 0 10%;
+}
+
+.footer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  max-height: 15%;
+  flex-direction: column;
+  font-size: var(--fontSize-0);
+
+  .copyright {
+    padding-right: var(--spacing-3);
+
+  }
+
+  border-top: 1px solid var(--color-accent);
 }

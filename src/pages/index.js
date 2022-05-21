@@ -1,97 +1,48 @@
-import React from "react"
+import * as React from "react"
 import { graphql } from "gatsby"
+import * as styles from "./index.module.scss"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import styles from "./index.module.scss"
-import BlogCard from "../components/blog-card"
-import Carousel from "../components/carousel"
-// import siteTheme from "../_theme.scss"
+import Seo from "../components/seo"
 
-const IndexPage = ({ data }) => {
-  const projects = data.dataJson.projects
-  let cards = data.posts.edges.map(a => {
-    return <BlogCard key={a.node.id} {...a.node} />
-  })
+const HomePage = ({ data }) => {
+  let content = data.allMarkdownRemark.nodes[0]
   return (
     <Layout>
-      <SEO title="Home" />
-      <h1 className={styles.title}> {data.site.siteMetadata.title} </h1>
-      <h2 className={styles.subtitle}>
-        Attempting to explain climate change and a little about myself to the
-        world.
-      </h2>
+      <Seo title="Kyle Shores" />
       <div className={styles.content}>
-        <div style={{ marginBottom: `2rem` }}>
-          <h2>Projects</h2>
-          <Carousel data={projects} />
-        </div>
-        <div>
-          <h2>Recent Posts</h2>
-          <div className={styles.cards}>{cards}</div>
-        </div>
+        <section dangerouslySetInnerHTML={{ __html: content.html }}
+          itemProp="articleBody"
+        />
       </div>
     </Layout>
   )
 }
 
-export default IndexPage
+export default HomePage
 
-export const query = graphql`
+export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
         title
       }
     }
-    dataJson {
-      projects {
-        alt
-        description
-        link
-        title
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
+    allMarkdownRemark(
+          filter: { fileAbsolutePath: {regex : "\/pages/index/"} },
+      ) {
+      nodes {
+        excerpt
+        html
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
         }
       }
-    }
-    posts: allMdx(
-      sort: { fields: frontmatter___date, order: DESC }
-      filter: { frontmatter: { published: { eq: true } } }
-      limit: 5
-    ) {
-      edges {
-        node {
-          frontmatter {
-            author
-            categories
-            date(formatString: "MMM DD, YYYY")
-            tags
-            title
-            featuredimage {
-              alt
-              src {
-                childImageSharp {
-                  fluid(maxWidth: 1024) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          }
-          timeToRead
-          excerpt
-          fields {
-            slug
-          }
-          id
-        }
-      }
-      totalCount
     }
   }
 `

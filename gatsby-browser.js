@@ -1,8 +1,10 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+// custom typefaces
+import "typeface-montserrat"
+import "typeface-merriweather"
+// normalize CSS across browsers
+import "./src/normalize.css"
+// custom CSS styles
+import "./src/style.css"
 
-import "./src/global.scss"
-import "./node_modules/react-datepicker/src/stylesheets/datepicker.scss"
+// Highlighting for code blocks
+import "prismjs/themes/prism.css"

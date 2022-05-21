@@ -1,21 +1,5 @@
-@import "../theme";
-
-.title {
-    font-size: 4em;
-}
-
-.subtitle {
-    color: $site-grey;
-    max-width: 80%;
-}
-
 .content {
-    display: flex;
-    flex-direction: column;
-}
-
-.cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    section {
+        font-size: 1.2rem;
+    }
 }

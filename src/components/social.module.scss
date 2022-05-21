@@ -1,0 +1,22 @@
+.social-list {
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    display: inline-block;
+
+    li {
+      display: inline
+    }
+  }
+
+  svg {
+      color: white;
+      display: inline-block;
+      width: 2.5em;
+      height: 2.5em;
+      stroke: currentColor;
+      stroke-width: 0;
+      fill: currentColor;
+      padding-right: 10px;
+  }
+}
