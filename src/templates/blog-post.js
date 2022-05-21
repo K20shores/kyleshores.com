@@ -1,4 +1,5 @@
 import * as React from "react"
+import * as styles from "./blog-post.module.scss"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -10,7 +11,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const { previous, next } = data
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -31,16 +32,8 @@ const BlogPostTemplate = ({ data, location }) => {
         />
         <hr />
       </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+      <nav className={styles.blogPostNav}>
+        <ul >
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">

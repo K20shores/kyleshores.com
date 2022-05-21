@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
             interactivity: {
               events: {
                 onClick: {
-                  enable: true,
+                  enable: false,
                   mode: "push",
                 },
                 onHover: {
@@ -67,7 +67,15 @@ const Layout = ({ children }) => {
             },
             particles: {
               color: {
-                value: "#ffffff",
+                // https://www.schemecolor.com/lgbt-flag-colors.php
+                value: [
+                  "#FF0018",
+                  "#FFA52C",
+                  "#FFFF41",
+                  "#008018",
+                  "#0000F9",
+                  "#86007D"
+                ]
               },
               links: {
                 color: "#ffffff",
@@ -86,7 +94,7 @@ const Layout = ({ children }) => {
                   default: "bounce",
                 },
                 random: false,
-                speed: .1,
+                speed: .11,
                 straight: false,
               },
               number: {
@@ -110,16 +118,18 @@ const Layout = ({ children }) => {
           }}
         />
         <div className={styles.headerContainer}>
-          <StaticImage
-            className={styles.bioAvatar}
-            layout="fixed"
-            formats={["auto", "webp", "avif"]}
-            src="../images/profile-pic.png"
-            width={150}
-            height={150}
-            quality={100}
-            alt="Profile picture"
-          />
+          <Link to="/">
+            <StaticImage
+              className={styles.bioAvatar}
+              layout="fixed"
+              formats={["auto", "webp", "avif"]}
+              src="../images/profile-pic.png"
+              width={150}
+              height={150}
+              quality={100}
+              alt="Profile picture"
+            />
+          </Link>
           <hr/>
           <Link to="/">
             <h1>
@@ -128,11 +138,6 @@ const Layout = ({ children }) => {
           </Link>
           <Social />
           <uL className={styles.nav}>
-            <li>
-              <Link to="/about">
-                About
-              </Link>
-            </li>
             <li>
               <Link to="/thoughts">
                 Thoughts
@@ -152,8 +157,7 @@ const Layout = ({ children }) => {
           {children}
         </main>
         <footer className={styles.footer}>
-          <hr/>
-          <div classname={styles.copyright}>
+          <div className={styles.copyright}>
             © {new Date().getFullYear()} {author?.name}, Built with&nbsp;<a href="https://www.gatsbyjs.com" target="_blank" rel="noreferrer">Gatsby</a>
           </div>
         </footer>
