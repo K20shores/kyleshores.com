@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Kyle Shores`,
     author: {
       name: `Kyle Shores`,
     },
@@ -10,7 +10,8 @@ module.exports = {
       linkedin: `shoreskyle`,
       orcid: `0000-0002-4272-5187`,
       github: `k20shores`,
-      googlescholar: `t1Si6MYAAAAJ`
+      googlescholar: `t1Si6MYAAAAJ`,
+      publons: `5213635`
     },
   },
   plugins: [
@@ -18,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content`,
+        name: `content`,
       },
     },
     {
@@ -36,7 +37,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 1000
             },
           },
           {
@@ -91,6 +92,7 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
+                  filter: { fileAbsolutePath: {regex : "\/blog/"} },
                   sort: { order: DESC, fields: [frontmatter___date] },
                 ) {
                   nodes {

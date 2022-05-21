@@ -12,8 +12,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       {
         allMarkdownRemark(
+          filter: { fileAbsolutePath: {regex : "\/blog/"} },
           sort: { fields: [frontmatter___date], order: ASC }
-          limit: 1000
         ) {
           nodes {
             id
@@ -94,7 +94,10 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Social {
-      twitter: String
+      github: String
+      linkedin: String
+      orcid: String
+      googlescholar: String
     }
 
     type MarkdownRemark implements Node {
