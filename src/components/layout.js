@@ -137,7 +137,7 @@ const Layout = ({ children }) => {
             </h1>
           </Link>
           <Social />
-          <uL className={styles.nav}>
+          <ul className={styles.nav}>
             <li>
               <Link to="/thoughts">
                 Thoughts
@@ -148,7 +148,12 @@ const Layout = ({ children }) => {
                 Research
               </Link>
             </li>
-          </uL>
+            <li>
+              <Link to="/store">
+                Store
+              </Link>
+            </li>
+          </ul>
         </div>
       </header>
 

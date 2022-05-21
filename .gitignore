@@ -72,3 +72,8 @@ yarn-error.log
 kyleshores-com.code-workspace
 static/favicon.xcf
 .obsidian/
+
+# dotenv environment variables files
+.env
+.env.development
+.env.production
