@@ -1,5 +1,4 @@
 import * as React from "react"
-import * as styles from "./research.module.scss"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -10,7 +9,7 @@ const Research = ({ data }) => {
   return (
     <Layout >
       <Seo title="Research interets of Kyle Shores" />
-      <div className={styles.content}>
+      <div>
         <section dangerouslySetInnerHTML={{ __html: content.html }}
           itemProp="articleBody"
         />
