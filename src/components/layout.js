@@ -136,7 +136,11 @@ const Layout = ({ children }) => {
               {author.name}
             </h1>
           </Link>
-          <Social />
+
+          <div className={styles.social}>
+            <Social/>
+          </div>
+
           <ul className={styles.nav}>
             <li>
               <Link to="/thoughts">
@@ -162,6 +166,9 @@ const Layout = ({ children }) => {
           {children}
         </main>
         <footer className={styles.footer}>
+          <div className={styles.social}>
+            <Social/>
+          </div>
           <div className={styles.copyright}>
             © {new Date().getFullYear()} {author?.name}, Built with&nbsp;<a href="https://www.gatsbyjs.com" target="_blank" rel="noreferrer">Gatsby</a>
           </div>

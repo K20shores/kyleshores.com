@@ -1,6 +1,13 @@
 .layout {
   display: flex;
   height: 100vh;
+  flex-direction: column;
+  overflow-y: hidden;
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 .header {
@@ -12,12 +19,17 @@
   color: white;
   font-family: var(--fontFamily-sans);
   position: relative;
-  max-width: 30%;
 
   background-image: url("../images/stormy-atlantic-background.jpg");
-  background-size: auto 100%;
+  background-size: cover;
   background-repeat:no-repeat;
   background-position: center center;
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    background-size: auto 100%;
+    flex-direction: row;
+  }
 
   .header-container {
     display: flex;
@@ -49,6 +61,12 @@
       border-width: 1px 0 0 0;
       border-radius: 20px;
       border-color: var(--color-accent);
+      display: none;
+
+      /* Medium devices (landscape tablets, 768px and up) */
+      @media only screen and (min-width: 768px) {
+        display: block;
+      }
 
       &:before {
         display: block;
@@ -68,6 +86,15 @@
       border: 2px solid var(--color-accent);
     }
 
+    .social {
+      display: none;
+
+      /* Medium devices (landscape tablets, 768px and up) */
+      @media only screen and (min-width: 768px) {
+        display: inline-block;
+      }
+    }
+
     .nav {
       list-style-type: none;
       margin-left: 0;
@@ -83,7 +110,13 @@
         border-radius: 5px;
         border-color: black;
         background-color: black;
-        padding: var(--spacing-2)
+        padding: var(--spacing-2);
+        display: inline;
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+          display: list-item;
+        }
       }
     }
   }
@@ -115,12 +148,54 @@
   align-items: end;
   max-height: 15%;
   flex-direction: column;
+  align-items: center;
   font-size: var(--fontSize-0);
+  border-top: 1px solid var(--color-accent);
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    align-items: flex-end;
+  }
 
   .copyright {
     padding-right: var(--spacing-3);
-
   }
 
-  border-top: 1px solid var(--color-accent);
+  .social {
+    display: inline-block;
+
+    svg {
+      color: black;
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }
