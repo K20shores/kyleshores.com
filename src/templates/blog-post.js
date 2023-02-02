@@ -1,9 +1,22 @@
 import * as React from "react"
-import * as styles from "./blog-post.module.scss"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+
+import styled from 'styled-components';
+
+const BlogNav = styled.nav`
+  padding: 0 1rem;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+  }
+`
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -31,7 +44,7 @@ const BlogPostTemplate = ({ data, location }) => {
         />
         <hr />
       </article>
-      <nav className={styles.blogPostNav}>
+      <BlogNav>
         <ul >
           <li>
             {previous && (
@@ -48,7 +61,7 @@ const BlogPostTemplate = ({ data, location }) => {
             )}
           </li>
         </ul>
-      </nav>
+      </BlogNav>
     </Layout>
   )
 }

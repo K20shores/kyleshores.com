@@ -7,8 +7,6 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { Social } from "."
 
-// import Social from "./social"
-
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
