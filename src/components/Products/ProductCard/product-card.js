@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import getStripe from "../../utils/stripe_loader"
-import * as styles from "./product-card.module.scss"
+import getStripe from "../../../utils/stripe_loader"
+import { StyledProductCard, StyledProductForm, StyledButton } from './product-card.styled';
 
 const formatPrice = (amount, currency) => {
   let price = (amount / 100).toFixed(2)
@@ -35,11 +35,10 @@ const ProductCard = ({ product }) => {
       setLoading(false)
     }
   }
-
   return (
-    <div className={styles.card}>
-      <form className={styles.centeredColumn} onSubmit={handleSubmit}>
-        <fieldset className={styles.centeredColumn} style={{ border: "none" }}>
+    <StyledProductCard>
+      <StyledProductForm onSubmit={handleSubmit}>
+        <fieldset>
           <legend>
             <h4>{product.name}</h4>
           </legend>
@@ -59,17 +58,12 @@ const ProductCard = ({ product }) => {
             }
           </label>
         </fieldset>
-        <button
-          disabled={loading}
-          className={
-              loading ? `${styles.button} ${styles.disabled}}` : `${styles.button}`
-          }
-        >
+        <StyledButton disabled={loading}>
           Purchase
-        </button>
-      </form>
-    </div>
+        </StyledButton>
+      </StyledProductForm>
+    </StyledProductCard>
   )
 }
 
-export default ProductCard
+export default ProductCard;

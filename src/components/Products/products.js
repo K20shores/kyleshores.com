@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-import ProductCard from "./product-card"
+import ProductCard from "./ProductCard"
 
 const containerStyles = {
   display: "flex",
@@ -47,6 +47,7 @@ const Products = () => {
         }
         return (
           <div style={containerStyles}>
+            {/* <h1>hello</h1> */}
             {Object.keys(products).map(key => (
               <ProductCard key={products[key].id} product={products[key]} />
             ))}
@@ -57,4 +58,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default Products;
