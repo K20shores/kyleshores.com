@@ -5,7 +5,9 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import Social from "./social"
+import { Social } from "."
+
+// import Social from "./social"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -137,9 +139,7 @@ const Layout = ({ children }) => {
             </h1>
           </Link>
 
-          <div className={styles.social}>
-            <Social/>
-          </div>
+          <Social/>
 
           <ul className={styles.nav}>
             <li>
