@@ -1,10 +1,9 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import styled from 'styled-components';
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
-import styled from 'styled-components';
 
 const Container = styled.section`
   font-size: 1.2rem;

@@ -1,5 +1,4 @@
 import * as React from "react"
-// import * as styles from "./store.module.scss"
 import Products from "../components/Products/products"
 
 import Layout from "../components/layout"

@@ -1,9 +1,13 @@
 import * as React from "react"
-import * as styles from "./thoughts.module.scss"
 import { Link, graphql } from "gatsby"
+import styled from 'styled-components';
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+
+const PostList = styled.ol`
+  list-style: none;
+`
 
 const BlogIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
@@ -12,40 +16,38 @@ const BlogIndex = ({ data }) => {
     <Layout>
       <Seo title="All posts" />
       <h1>Thoughts</h1>
-      <div className={styles.postList}>
-        <ol>
-          {posts.map(post => {
-            const title = post.frontmatter.title || post.fields.slug
+      <PostList>
+        {posts.map(post => {
+          const title = post.frontmatter.title || post.fields.slug
 
-            return (
-              <li key={post.fields.slug}>
-                <article
-                  className="post-list-item"
-                  itemScope
-                  itemType="http://schema.org/Article"
-                >
-                  <header>
-                    <h2>
-                      <Link to={post.fields.slug} itemProp="url">
-                        <span itemProp="headline">{title}</span>
-                      </Link>
-                    </h2>
-                    <small>{post.frontmatter.date}</small>
-                  </header>
-                  <section>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: post.excerpt || post.frontmatter.description,
-                      }}
-                      itemProp="description"
-                    />
-                  </section>
-                </article>
-              </li>
-            )
-          })}
-        </ol>
-      </div>
+          return (
+            <li key={post.fields.slug}>
+              <article
+                className="post-list-item"
+                itemScope
+                itemType="http://schema.org/Article"
+              >
+                <header>
+                  <h2>
+                    <Link to={post.fields.slug} itemProp="url">
+                      <span itemProp="headline">{title}</span>
+                    </Link>
+                  </h2>
+                  <small>{post.frontmatter.date}</small>
+                </header>
+                <section>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: post.excerpt || post.frontmatter.description,
+                    }}
+                    itemProp="description"
+                  />
+                </section>
+              </article>
+            </li>
+          )
+        })}
+      </PostList>
     </Layout>
   )
 }
