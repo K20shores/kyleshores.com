@@ -1,20 +1,20 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import * as styles from "./index.module.scss"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import styled from 'styled-components';
+
+const Container = styled.section`
+  font-size: 1.2rem;
+`
 const HomePage = ({ data }) => {
   let content = data.allMarkdownRemark.nodes[0]
   return (
     <Layout>
       <Seo title="Kyle Shores" />
-      <div className={styles.content}>
-        <section dangerouslySetInnerHTML={{ __html: content.html }}
-          itemProp="articleBody"
-        />
-      </div>
+      <Container dangerouslySetInnerHTML={{__html: content.html}} itemProp="articleBody" />
     </Layout>
   )
 }

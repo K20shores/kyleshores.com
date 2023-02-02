@@ -97,8 +97,8 @@ const Icons = () => {
   ];
 
   return (
-    icons.map((icon) => (
-      <StyledSocialLi>
+    icons.map((icon, index) => (
+      <StyledSocialLi key={index}>
         <a href={icon.link} target="_blank" rel="noreferrer">
           {icon.src}
         </a>
