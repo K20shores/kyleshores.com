@@ -16,14 +16,8 @@ const StyledLayout = styled.div`
 
 const StyledHeader = styled.header`
   flex: 2;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-  color: white;
   font-family: var(--fontFamily-sans);
   position: relative;
-  flex-direction: column;
 
   background-image: url(${StormyAtlantic});
   background-size: cover;
@@ -31,6 +25,17 @@ const StyledHeader = styled.header`
   background-position: center center;
 
   box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, .3);
+`
+
+const StyledHeaderContent = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+  height: 100%;
+  z-index: 1;
+  position: relative;
 
   a {
     text-decoration: none;
@@ -99,12 +104,47 @@ const StyledContent = styled.div`
 
 const StyledMain = styled.main`
   flex: 5;
-  margin: 0 10%;
+  overflow-y: scroll;
+  padding: 0 10%;
+`
+
+const StyledFooter = styled.footer`
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: end;
+max-height: 15%;
+flex-direction: column;
+align-items: center;
+font-size: var(--fontSize-0);
+border-top: 1px solid var(--color-accent);
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  align-items: flex-end;
+}
+
+.copyright {
+  padding-right: var(--spacing-3);
+}
+
+.social {
+  display: inline-block;
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+
+  svg {
+    color: black;
+  }
+}
 `
 
 export {
   StyledLayout,
   StyledHeader,
+  StyledHeaderContent,
   StyledContent,
-  StyledMain
+  StyledMain,
+  StyledFooter
 }

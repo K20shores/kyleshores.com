@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import styled from 'styled-components';
 
-import Layout from "../components/layout"
+import { Layout } from "../components"
 import Seo from "../components/seo"
 
 const PostList = styled.ol`

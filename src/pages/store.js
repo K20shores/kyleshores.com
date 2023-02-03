@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Products } from "../components"
 
-import Layout from "../components/layout"
+import { Layout } from "../components"
 import Seo from "../components/seo"
 
 const Store = ({ location }) => {

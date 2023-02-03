@@ -6,6 +6,14 @@ const theme = {
   // https://coolors.co/00ad43-cacfd6-2f2504-594e36-29339b
   colors: {
     green:"#00ad43", // Green Pantone
+    analagous1: "#009435",
+    analagous2: "#2dbd5e",
+    grey1: "#d6d6d6", 
+    grey2: "#a7a9ac",
+    grey3: "#8c8f91",
+    textBlue: "#00b0f0",
+    textYellow: "#ffff55",
+
     grey :"#00000033", // Light Slate Gray
     accent: "#d1dce5",
     complementary1: "#0FFF6C",
@@ -40,4 +48,7 @@ const Theme = ({ children }) => {
   )
 }
 
-export default Theme;
+export {
+  Theme,
+  theme
+}

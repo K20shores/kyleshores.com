@@ -2,12 +2,14 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import styled from 'styled-components';
 
-import Layout from "../components/layout"
 import Seo from "../components/seo"
+
+import { Layout } from "../components"
 
 const Container = styled.section`
   font-size: 1.2rem;
 `
+
 const HomePage = ({ data }) => {
   let content = data.allMarkdownRemark.nodes[0]
   return (

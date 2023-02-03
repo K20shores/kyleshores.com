@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import { Social, Particles } from "../"
 import { Theme } from "../../theme";
-import { StyledLayout, StyledHeader, StyledContent, StyledMain } from "./layout.styled"
+import { StyledLayout, StyledHeader, StyledContent, StyledMain, StyledFooter, StyledHeaderContent } from "./layout.styled"
 
 let styles = {
 
@@ -31,6 +31,7 @@ const Layout = ({ children }) => {
       <StyledLayout>
         <StyledHeader>
           <Particles/>
+          <StyledHeaderContent>
             <Link to="/">
             <StaticImage
               className="bio-avatar"
@@ -49,42 +50,43 @@ const Layout = ({ children }) => {
                 {author.name}
               </h1>
             </Link>
-          <Social/>
-          <ul className={styles.nav}>
-            <li>
-              <Link to="/">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/thoughts">
-                Thoughts
-              </Link>
-            </li>
-            <li>
-              <Link to="/research">
-                Research
-              </Link>
-            </li>
-            <li>
-              <Link to="/store">
-                Store
-              </Link>
-            </li>
-          </ul>
+            <Social/>
+            <ul className={styles.nav}>
+              <li>
+                <Link to="/">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/thoughts">
+                  Thoughts
+                </Link>
+              </li>
+              <li>
+                <Link to="/research">
+                  Research
+                </Link>
+              </li>
+              <li>
+                <Link to="/store">
+                  Store
+                </Link>
+              </li>
+            </ul>
+          </StyledHeaderContent>
         </StyledHeader>
         <StyledContent>
           <StyledMain>
             {children}
           </StyledMain>
-          <footer className={styles.footer}>
-            <div className={styles.social}>
+          <StyledFooter className={styles.footer}>
+            <div className='social'>
               <Social/>
             </div>
-            <div className={styles.copyright}>
+            <div className='copyright'>
               © {new Date().getFullYear()} {author?.name}, Built with&nbsp;<a href="https://www.gatsbyjs.com" target="_blank" rel="noreferrer">Gatsby</a>
             </div>
-          </footer>
+          </StyledFooter>
         </StyledContent>
       </StyledLayout>
     </Theme>

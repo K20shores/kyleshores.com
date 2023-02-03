@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/layout"
+import { Layout } from "../components"
 import Seo from "../components/seo"
 
 import styled from 'styled-components';
@@ -29,7 +29,6 @@ const BlogPostTemplate = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article
-        style={{padding: `5em`}}
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
