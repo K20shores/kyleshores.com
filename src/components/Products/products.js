@@ -15,10 +15,7 @@ const Products = () => {
     <StaticQuery
       query={graphql`
         query ProductPrices {
-          prices: allStripePrice(
-            filter: { active: { eq: true } }
-            sort: { fields: [unit_amount] }
-          ) {
+          prices: allStripePrice(filter: {active: {eq: true}}, sort: {unit_amount: ASC}) {
             edges {
               node {
                 id
