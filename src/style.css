@@ -83,7 +83,6 @@ body {
   color: var(--color-text);
   background: rgba(228,226,227,0.712);;
   height: 100vh;
-  margin: 0;
 }
 
 footer {
