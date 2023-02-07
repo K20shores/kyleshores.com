@@ -1,6 +1,5 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from './global';
 
 const theme = {
   // https://coolors.co/00ad43-cacfd6-2f2504-594e36-29339b
@@ -42,7 +41,6 @@ const theme = {
 const Theme = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
         {children}
     </ThemeProvider>
   )
