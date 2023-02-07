@@ -54,23 +54,25 @@ const StyledHeaderContent = styled.div`
     border-width: 1px 0 0 0;
     border-radius: 20px;
     border-color: var(--color-accent);
+    overflow: visible;
+
+    &:before {
+      display: block;
+      content: "";
+      border-color: var(--color-accent);
+      height: 30px;
+      margin-top: -31px;
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      border-radius: 20px;
+    }
   }
 
-  hr:before {
-    display: block;
-    content: "";
-    border-color: white;
-    height: 30px;
-    margin-top: -31px;
-    border-style: solid;
-    border-width: 0 0 1px 0;
-    border-radius: 20px;
-  }
 
   .bio-avatar {
     margin-bottom: var(--spacing-0);
     border-radius: 100%;
-    border: 2px solid var(--color-accent);
+    border: 1px solid var(--color-primary);
   }
 
   ul {

@@ -2,13 +2,9 @@ import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-import { Social, Particles } from "../"
+import { Social } from "../"
 import { Theme } from "../../theme";
 import { StyledLayout, StyledHeader, StyledContent, StyledMain, StyledFooter, StyledHeaderContent } from "./layout.styled"
-
-let styles = {
-
-}
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -30,7 +26,6 @@ const Layout = ({ children }) => {
     <Theme>
       <StyledLayout>
         <StyledHeader>
-          <Particles/>
           <StyledHeaderContent>
             <Link to="/">
             <StaticImage
@@ -51,7 +46,7 @@ const Layout = ({ children }) => {
               </h1>
             </Link>
             <Social/>
-            <ul className={styles.nav}>
+            <ul >
               <li>
                 <Link to="/">
                   Home
@@ -79,7 +74,7 @@ const Layout = ({ children }) => {
           <StyledMain>
             {children}
           </StyledMain>
-          <StyledFooter className={styles.footer}>
+          <StyledFooter>
             <div className='social'>
               <Social/>
             </div>
