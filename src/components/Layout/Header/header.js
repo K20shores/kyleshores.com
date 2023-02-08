@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+
+import ProfilePic from "../../../images/profile-pic.png"
 
 import { StyledHeader, StyledHeaderContent } from './header.styled';
 import { Social } from "../../"
@@ -12,16 +13,7 @@ const Header = ({ author }) => {
     <StyledHeader>
       <StyledHeaderContent>
         <Link to="/">
-        <StaticImage
-          className="bio-avatar"
-          layout="fixed"
-          formats={["auto", "webp", "avif"]}
-          src="../../images/profile-pic.png"
-          width={150}
-          height={150}
-          quality={100}
-          alt="Profile picture"
-        />
+          <img src={ProfilePic} className="bio-avatar" alt="Profile" />
         </Link>
         <hr/>
         <Link to="/">

@@ -56,11 +56,12 @@ const StyledHeaderContent = styled.div`
     }
   }
 
-
   .bio-avatar {
     margin-bottom: var(--spacing-0);
     border-radius: 100%;
     border: 1px solid var(--color-primary);
+    width: 150px;
+    height: 150px;
   }
 
   ul {
