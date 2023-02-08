@@ -1,11 +1,12 @@
 import * as React from "react"
-import { useState, useEffect } from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 
 import { Theme, themeData } from "../../theme";
 import { StyledLayout, StyledContent, StyledMain } from "./layout.styled"
 
 import { Header, Footer } from "."
+
+import { useScreenWidth } from "../../hooks"
 
 const isMobile = function(width) {
   return width <= themeData.breakpoints.mobile;
@@ -33,17 +34,7 @@ const Layout = ({ children }) => {
     }
   `)
 
-  const [width, setWidth] = useState(window.innerWidth);
-
-  function handleWindowSizeChange() {
-      setWidth(window.innerWidth);
-  }
-  useEffect(() => {
-      window.addEventListener('resize', handleWindowSizeChange);
-      return () => {
-          window.removeEventListener('resize', handleWindowSizeChange);
-      }
-  }, []);
+  let width = useScreenWidth();
 
   console.log(width, isMobile(width), isTablet(width), isDesktop(width));
 

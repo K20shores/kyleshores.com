@@ -17,8 +17,8 @@ const Links = () => {
         </Link>
       </li>
       <li>
-        <Link to="/thoughts">
-          Thoughts
+        <Link to="/blog">
+          Blog
         </Link>
       </li>
       <li>

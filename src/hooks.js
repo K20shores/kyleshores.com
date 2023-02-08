@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { themeData } from './theme'
+
 // https://www.netlify.com/blog/2020/12/05/building-a-custom-react-media-query-hook-for-more-responsive-apps/
 // let isPageWide = useMediaQuery('(min-width: 800px)')
 export function useMediaQuery(query) {
@@ -18,6 +20,25 @@ export function useMediaQuery(query) {
   }, [matches, query]);
 
   return matches;
+}
+
+export function useScreenWidth() {
+  const [width, setWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : themeData.breakpoints.mobile
+  );
+
+  const listener = () => {
+      setWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+      window.addEventListener('resize', listener);
+      return () => {
+          window.removeEventListener('resize', listener);
+      }
+  }, []);
+
+  return width;
 }
 
 export const useOnClickOutside = (ref, handler) => {
