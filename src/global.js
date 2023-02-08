@@ -61,6 +61,9 @@ export const GlobalStyles = createGlobalStyle`
   --color-heading: ${(props) => props.theme.colors.heading};
   --color-heading-black: ${(props) => props.theme.colors.headingBlack};
   --color-accent: ${(props) => props.theme.colors.accent};
+  --breakpoint-desktop: ${(props) => props.theme.breakpoints.desktop};
+  --breakpoint-tablet: ${(props) => props.theme.breakpoints.tablet};
+  --breakpoint-mobile: ${(props) => props.theme.breakpoints.mobile};
 }
 
 /* HTML elements */
@@ -82,7 +85,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
-  background: rgba(228,226,227,0.712);;
+  background: white;
   height: 100vh;
   margin: 0;
 }

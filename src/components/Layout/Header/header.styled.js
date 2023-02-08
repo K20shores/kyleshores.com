@@ -15,6 +15,35 @@ const StyledHeader = styled.header`
   box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, .3);
 `
 
+const StyledHR = styled.hr`
+  height: 30px;
+  width: 60%;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+  border-color: var(--color-accent);
+  overflow: visible;
+
+  &:before {
+    display: block;
+    content: "";
+    border-color: var(--color-accent);
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+  }
+`
+
+const StyledProfilePicture = styled.img`
+  margin-bottom: var(--spacing-0);
+  border-radius: 100%;
+  border: 1px solid var(--color-primary);
+  width: 150px;
+  height: 150px;
+`
+
 const StyledHeaderContent = styled.div`
   display: flex;
   align-items: center;
@@ -34,59 +63,37 @@ const StyledHeaderContent = styled.div`
     color: white;
     font-weight: var(--fontWeight-semibold);
   }
+`
 
-  hr {
-    height: 30px;
-    width: 60%;
-    border-style: solid;
-    border-width: 1px 0 0 0;
-    border-radius: 20px;
-    border-color: var(--color-accent);
-    overflow: visible;
+const StyledMenu = styled.ul`
+  list-style-type: none;
+  margin-left: 0;
+  display: inline-block;
 
-    &:before {
-      display: block;
-      content: "";
+  a {
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    padding: var(--spacing-2);
+    display: flex;
+    justify-content: center;
+    color: var(--color-accent);
+    transition: 0.2s ease-in-out;
+    font-weight: var(--fontWeight-medium);
+
+    &:hover {
       border-color: var(--color-accent);
-      height: 30px;
-      margin-top: -31px;
-      border-style: solid;
-      border-width: 0 0 1px 0;
-      border-radius: 20px;
-    }
-  }
-
-  .bio-avatar {
-    margin-bottom: var(--spacing-0);
-    border-radius: 100%;
-    border: 1px solid var(--color-primary);
-    width: 150px;
-    height: 150px;
-  }
-
-  ul {
-    list-style-type: none;
-    margin-left: 0;
-    display: inline-block;
-
-
-    a {
-      color: var(--color-accent);
-    }
-    
-    li {
-      border: 1px solid;
-      border-radius: 5px;
-      border-color: black;
-      background-color: black;
-      padding: var(--spacing-2);
-      display: flex;
-      justify-content: center;
+      background-color: var(--color-accent);
+      color: var(--color-primary);
     }
   }
 `
 
 export {
   StyledHeader,
-  StyledHeaderContent
+  StyledHeaderContent,
+  StyledHR,
+  StyledProfilePicture,
+  StyledMenu
 }
