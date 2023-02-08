@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import { Theme } from "../../theme";
 import { StyledLayout, StyledContent, StyledMain } from "./layout.styled"
-// import { StaticImage } from "gatsby-plugin-image"
 
 import { Header, Footer } from "."
 
