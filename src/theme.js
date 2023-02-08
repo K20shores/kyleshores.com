@@ -39,9 +39,10 @@ const theme = {
     large: "3em"
   },
   breakpoints : {
-    mobile: '420px',
-    tablet: '768px',
-    desktop: '1280px',
+    // in pixels
+    mobile: 420,
+    tablet: 768,
+    desktop: 1280,
   }
 };
 
@@ -56,5 +57,5 @@ const Theme = ({ children }) => {
 
 export {
   Theme,
-  theme
+  theme as themeData
 }
