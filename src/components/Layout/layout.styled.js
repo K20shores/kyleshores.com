@@ -20,7 +20,6 @@ const StyledContent = styled.div`
 
 const StyledMain = styled.main`
   flex: 5;
-  overflow-y: scroll;
   padding: 0 10%;
 `
 
