@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const StyledBurger = styled.button`
-  display: flex;
+  display: none;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    display: flex;
+  }
   transition: all ${({ theme }) => theme.transitionSpeed}s linear;
   flex-direction: column;
   justify-content: space-around;
