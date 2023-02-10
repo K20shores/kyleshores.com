@@ -61,9 +61,9 @@ export const GlobalStyles = createGlobalStyle`
   --color-heading: ${(props) => props.theme.colors.heading};
   --color-heading-black: ${(props) => props.theme.colors.headingBlack};
   --color-accent: ${(props) => props.theme.colors.accent};
-  --breakpoint-desktop: ${(props) => props.theme.breakpoints.desktop};
-  --breakpoint-tablet: ${(props) => props.theme.breakpoints.tablet};
-  --breakpoint-mobile: ${(props) => props.theme.breakpoints.mobile};
+  --breakpoint-desktop: ${(props) => props.theme.breakpoints.desktop}px;
+  --breakpoint-tablet: ${(props) => props.theme.breakpoints.tablet}px;
+  --breakpoint-mobile: ${(props) => props.theme.breakpoints.mobile}px;
 }
 
 /* HTML elements */

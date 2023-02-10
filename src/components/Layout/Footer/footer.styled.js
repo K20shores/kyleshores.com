@@ -5,7 +5,6 @@ flex: 1;
 display: flex;
 justify-content: center;
 align-items: end;
-max-height: 10%;
 flex-direction: column;
 align-items: center;
 font-size: var(--fontSize-0);

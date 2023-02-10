@@ -36,14 +36,12 @@ const Layout = ({ children }) => {
 
   let width = useScreenWidth();
 
-  console.log(width, isMobile(width), isTablet(width), isDesktop(width));
-
   const author = data.site.siteMetadata?.author
 
   return (
     <Theme>
       <StyledLayout>
-        <Header author={author}/>
+        <Header author={author} desktop={isDesktop(width)}/>
         <StyledContent>
           <StyledMain>
             {children}
