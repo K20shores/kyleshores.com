@@ -6,7 +6,7 @@ import { StyledHeader, StyledHR, StyledProfilePicture, StyledMenu } from './head
 
 import { Burger } from "../"
 import { Social } from "../../"
-import ProfilePic from "../../../images/profile-pic.png"
+import ProfilePic from "../../../images/profile-pic.jpg"
 import { useOnClickOutside } from '../../../hooks';
 
 
