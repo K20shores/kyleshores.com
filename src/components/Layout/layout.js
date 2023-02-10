@@ -8,14 +8,6 @@ import { Header, Footer } from "."
 
 import { useScreenWidth } from "../../hooks"
 
-const isMobile = function(width) {
-  return width <= themeData.breakpoints.mobile;
-}
-
-const isTablet = function(width) {
-  return (width > themeData.breakpoints.mobile) && (width <= themeData.breakpoints.tablet);
-}
-
 const isDesktop = function(width) {
   return width > themeData.breakpoints.tablet;
 }
