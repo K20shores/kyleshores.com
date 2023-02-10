@@ -21,7 +21,7 @@ const theme = {
     headingBlack: "black",
     accent: "#d1dce5",
 
-    grey :"#00000033", // Light Slate Gray
+    grey :"#00000099", // Light Slate Gray
     complementary1: "#0FFF6C",
     complementary2: "#00DB55",
     complementary3: "#AD005C",

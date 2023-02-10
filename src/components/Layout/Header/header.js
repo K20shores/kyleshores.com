@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from "gatsby"
-
-import ProfilePic from "../../../images/profile-pic.png"
-
-import { StyledHeader, StyledHeaderContent, StyledHR, StyledProfilePicture, StyledMenu } from './header.styled';
-import { Social } from "../../"
-
 import { object } from 'prop-types';
 
-const Links = () => {
+import { StyledHeader, StyledHR, StyledProfilePicture, StyledMenu } from './header.styled';
+
+import { Burger } from "../"
+import { Social } from "../../"
+import ProfilePic from "../../../images/profile-pic.png"
+import { useOnClickOutside } from '../../../hooks';
+
+
+const Links = ({open}) => {
   return (
-    <StyledMenu>
+    <StyledMenu open={open}>
       <li>
         <Link to="/">
           Home
@@ -35,22 +37,27 @@ const Links = () => {
   )
 }
 
-const Header = ({ author }) => {
+const Header = ({ author, desktop }) => {
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  useOnClickOutside(node, () => setOpen(false));
+
   return (
-    <StyledHeader>
-      <StyledHeaderContent>
-        <Link to="/">
-          <StyledProfilePicture src={ProfilePic} alt="Protile" />
-        </Link>
-        <StyledHR />
-        <Link to="/">
-          <h1>
-            {author.name}
-          </h1>
-        </Link>
-        <Social/>
-        <Links/>
-      </StyledHeaderContent>
+    <StyledHeader ref={node}>
+      <Link to="/">
+        <StyledProfilePicture src={ProfilePic} alt="Protile" />
+      </Link>
+      {desktop &&
+        <>
+          <StyledHR />
+          <Link to="/">
+            <h1> {author.name} </h1>
+          </Link> 
+          <Social/>
+        </> 
+      }
+      <Links open={open}/>
+      {!desktop && <Burger open={open} setOpen={setOpen} aria-controls={"main-menu"} /> }
     </StyledHeader>
   )
 }

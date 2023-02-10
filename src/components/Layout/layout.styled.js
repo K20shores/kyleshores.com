@@ -6,8 +6,7 @@ const StyledLayout = styled.div`
   flex-direction: column;
   overflow-y: hidden;
 
-  /* Medium devices (landscape tablets, 768px and up) */
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     flex-direction: row;
   }
 `
