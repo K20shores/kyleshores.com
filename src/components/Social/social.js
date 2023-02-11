@@ -77,29 +77,34 @@ const Icons = () => {
     {
       src: <Linkedin/>,
       link: `https://www.linkedin.com/in/${social?.linkedin}`,
+      alt: 'Click to read my Linkedin profile'
     },
     {
       src: <Github/>, 
       link: `https://www.github.com/${social?.github}`,
+      alt: 'Click to see my Github'
     },
     {
       src: <GoogleScholar/>, 
       link: `https://scholar.google.com/citations?user=${social?.googlescholar}`,
+      alt: 'Click to see my citations on Google Scholar'
     },
     {
       src: <Orcid/>, 
       link: `https://www.orcid.org/${social?.orcid}`,
+      alt: 'Click to see my researcher profile on Orcid'
     },
     {
       src: <Publons/>,
       link: `https://publons.com/researcher/${social?.publons}`,
+      alt: 'Click to see academic reviews I have participated in on Publons'
     },
   ];
 
   return (
     icons.map((icon, index) => (
       <StyledSocialLi key={index}>
-        <a href={icon.link} target="_blank" rel="noreferrer">
+        <a href={icon.link} target="_blank" rel="noreferrer" alt={icon.alt} aria-label={icon.alt}>
           {icon.src}
         </a>
       </StyledSocialLi>
