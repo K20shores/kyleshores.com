@@ -14,7 +14,7 @@ const StyledSocialList = styled.ul`
   margin-left: 0;
 `
 
-const StyledSocialLi = styled.div`
+const StyledSocialLi = styled.li`
   display: inline
 `
 
