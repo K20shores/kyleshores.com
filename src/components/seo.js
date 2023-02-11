@@ -52,7 +52,10 @@ const Seo = ({ description, lang, meta, title }) => {
           content: `website`,
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+    </Helmet>
   )
 }
 
