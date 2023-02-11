@@ -15,7 +15,7 @@ const BlogIndex = ({ data }) => {
   return (
     <Layout>
       <Seo title="All posts" />
-      <h1>Thoughts</h1>
+      <h1>Blog</h1>
       <PostList>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug

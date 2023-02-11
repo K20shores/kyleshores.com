@@ -56,6 +56,11 @@ export const GlobalStyles = createGlobalStyle`
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
   --color-primary: ${(props) => props.theme.colors.primary};
+  --color-complementary-1: ${(props) => props.theme.colors.complementary1};
+  --color-complementary-2: ${(props) => props.theme.colors.complementary2};
+  --color-complementary-3: ${(props) => props.theme.colors.complementary3};
+  --color-complementary-4: ${(props) => props.theme.colors.complementary4};
+
   --color-text: ${(props) => props.theme.colors.text};
   --color-text-light: ${(props) => props.theme.colors.textLight};
   --color-heading: ${(props) => props.theme.colors.heading};
@@ -144,20 +149,6 @@ h6 {
   font-size: var(--fontSize-1);
 }
 
-h1 > a {
-  color: inherit;
-  text-decoration: none;
-}
-
-h2 > a,
-h3 > a,
-h4 > a,
-h5 > a,
-h6 > a {
-  text-decoration: none;
-  color: inherit;
-}
-
 /* Prose */
 
 p {
@@ -231,46 +222,8 @@ table thead tr th {
 /* Link */
 
 a {
-  color: var(--color-primary);
-}
-
-a:hover,
-a:focus {
+  color: var(--color-complementary-4);
   text-decoration: none;
 }
 
-/* Custom classes */
-
-.post-list-item {
-  margin-bottom: var(--spacing-8);
-  margin-top: var(--spacing-8);
-}
-
-.post-list-item p {
-  margin-bottom: var(--spacing-0);
-}
-
-.post-list-item h2 {
-  font-size: var(--fontSize-4);
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-2);
-  margin-top: var(--spacing-0);
-}
-
-.post-list-item header {
-  margin-bottom: var(--spacing-4);
-}
-
-/* Media queries */
-
-@media (max-width: 42rem) {
-  blockquote {
-    padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);
-    margin-left: var(--spacing-0);
-  }
-  ul,
-  ol {
-    list-style-position: inside;
-  }
-}
 `

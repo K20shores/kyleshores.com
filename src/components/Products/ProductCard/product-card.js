@@ -13,7 +13,6 @@ const formatPrice = (amount, currency) => {
 }
 
 const ProductCard = ({ product }) => {
-  console.log('loaded')
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async event => {
