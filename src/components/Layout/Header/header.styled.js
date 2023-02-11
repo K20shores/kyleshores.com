@@ -7,7 +7,7 @@ const StyledHeader = styled.header`
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  color: white;
+  color: var(--color-white);
   width:300px;
   overflow-x: clip;
 
@@ -17,7 +17,7 @@ const StyledHeader = styled.header`
 
   h1 {
     margin: unset;
-    color: white;
+    color: var(--color-white);
     font-weight: var(--fontWeight-semibold);
   }
   font-family: var(--fontFamily-sans);

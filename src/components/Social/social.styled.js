@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledSVG = styled.svg`
-  color: white;
+  color: var(--color-white);
   width: 2.5em;
   height: 2.5em;
   stroke: currentColor;

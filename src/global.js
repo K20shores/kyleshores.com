@@ -64,7 +64,9 @@ export const GlobalStyles = createGlobalStyle`
   --color-text: ${(props) => props.theme.colors.text};
   --color-text-light: ${(props) => props.theme.colors.textLight};
   --color-heading: ${(props) => props.theme.colors.heading};
-  --color-heading-black: ${(props) => props.theme.colors.headingBlack};
+  --color-heading-black: ${(props) => props.theme.colors.black};
+  --color-black: ${(props) => props.theme.colors.black};
+  --color-white: ${(props) => props.theme.colors.white};
   --color-accent: ${(props) => props.theme.colors.accent};
   --breakpoint-desktop: ${(props) => props.theme.breakpoints.desktop}px;
   --breakpoint-tablet: ${(props) => props.theme.breakpoints.tablet}px;
@@ -90,7 +92,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
-  background: white;
+  background: var(--color-white);
   height: 100vh;
   margin: 0;
 }

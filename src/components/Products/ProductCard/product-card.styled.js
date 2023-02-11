@@ -26,7 +26,7 @@ const StyledButton = styled.button`
   font-size: 13px;
   text-align: center;
   color: ${({ theme }) => theme.colors.accent};
-  background-color: black;
+  background-color: var(--color-black);
   padding: 12px 60px;
   box-shadow: 2px 5px 10px rgba(0,0,0,.1);
   border-radius: 6px;
@@ -40,7 +40,7 @@ const StyledButton = styled.button`
   &:hover {
       transform: scale(1.1);
       background-color: ${({ theme }) => theme.colors.accent};
-      color: black;
+      color: var(--color-black);
   }
 }
 `

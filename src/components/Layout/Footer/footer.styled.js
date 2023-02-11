@@ -24,7 +24,7 @@ border-top: 1px solid var(--color-accent);
   }
 
   svg {
-    color: black;
+    color: var(--color-black);
   }
 }
 `

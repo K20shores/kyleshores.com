@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
   background-color: ${ ({ theme }) => theme.colors.green };
-  color: white;
+  color: var(--color-white);
   border: none;
   padding: 6px 20px;
   border-radius: 5px;
@@ -11,7 +11,7 @@ const StyledButton = styled.button`
   border: solid 0.5px transparent;
 
   &:hover {
-    background-color: white;
+    background-color: var(--color-white);
     color: ${ ({ theme }) => theme.colors.green };
     border: 0.5px solid ${ ({ theme }) => theme.colors.green };
   }

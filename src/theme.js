@@ -18,8 +18,9 @@ const theme = {
     text: "#2e353f",
     textLight: "#4f5969",
     heading: "#1a202c",
-    headingBlack: "black",
     accent: "#d1dce5",
+    black: "#222222",
+    white: "#F2F2F2",
 
     grey :"#00000099", // Light Slate Gray
     complementary1: "#0FFF6C",
