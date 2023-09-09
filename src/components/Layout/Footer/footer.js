@@ -7,12 +7,10 @@ import { object } from 'prop-types';
 const Footer = ({ author }) => {
   return (
     <StyledFooter>
-      <div className='social'>
-        <Social/>
-      </div>
-      <div className='copyright'>
-        © {new Date().getFullYear()} {author?.name}
-      </div>
+      <Social size={25}/>
+      <p >
+        &copy; {new Date().getFullYear()} {author?.name}
+      </p>
     </StyledFooter>
   )
 }

@@ -1,69 +1,53 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from "react"
 import { Link } from "gatsby"
-import { object } from 'prop-types';
+import { bool } from "prop-types"
 
-import { StyledHeader, StyledHR, StyledProfilePicture, StyledMenu } from './header.styled';
+import { StyledHeader, StyledMenu } from "./header.styled"
 
 import { Burger } from "../"
-import { Social } from "../../"
-import ProfilePic from "../../../images/profile-pic.webp"
-import { useOnClickOutside } from '../../../hooks';
+import Logo from "../../../../static/images/ks-icon.svg"
 
+import SvgDisplay from "../../SVG/svg"
 
-const Links = ({open}) => {
-  return (
-    <StyledMenu open={open}>
-      <li>
-        <Link to="/">
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link to="/blog">
-          Blog
-        </Link>
-      </li>
-      <li>
-        <Link to="/research">
-          Research
-        </Link>
-      </li>
-      <li>
-        <Link to="/store">
-          Store
-        </Link>
-      </li>
-    </StyledMenu>
-  )
-}
+const Header = ({ desktop }) => {
+  const [open, setOpen] = useState(false)
 
-const Header = ({ author, desktop }) => {
-  const [open, setOpen] = useState(false);
-  const node = useRef();
-  useOnClickOutside(node, () => setOpen(false));
+  const handleClick = (e) => {
+    if (open) {
+      setOpen(false);
+    }
+  }
+
+  const sz = 25;
 
   return (
-    <StyledHeader ref={node}>
+    <StyledHeader onClick={handleClick}>
       <Link to="/">
-        <StyledProfilePicture src={ProfilePic} alt="Protile" />
+        <SvgDisplay uri={Logo} width={sz} height={sz} />
       </Link>
-      {desktop &&
-        <>
-          <StyledHR />
-          <Link to="/">
-            <h1> {author.name} </h1>
-          </Link> 
-          <Social/>
-        </> 
-      }
-      <Links open={open}/>
-      {!desktop && <Burger open={open} setOpen={setOpen} aria-controls={"main-menu"} /> }
+      <StyledMenu open={open}>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/blog">Blog</Link>
+        </li>
+        <li>
+          <Link to="/research">Research</Link>
+        </li>
+        <li>
+          <Link to="/store">Store</Link>
+        </li>
+      </StyledMenu>
+      {!desktop && (
+        <Burger open={open} setOpen={setOpen} aria-controls={"main-menu"} />
+      )}
     </StyledHeader>
   )
 }
 
 Header.propTypes = {
-  author: object.isRequired,
-};
+  desktop: bool.isRequired,
+}
 
-export default Header;
+export default Header

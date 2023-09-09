@@ -21,6 +21,7 @@ const Layout = ({ children }) => {
             name
             summary
           }
+          version
         }
       }
     }
@@ -33,7 +34,7 @@ const Layout = ({ children }) => {
   return (
     <Theme>
       <StyledLayout>
-        <Header author={author} desktop={isDesktop(width)}/>
+        <Header desktop={isDesktop(width)}/>
         <StyledContent>
           <StyledMain>
             {children}
