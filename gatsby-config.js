@@ -11,6 +11,7 @@ module.exports = {
     author: {
       name: `Kyle Shores`,
     },
+    version: '1.0.0',
     description: `A personal website`,
     siteUrl: `https://kyleshores.com`,
     social: {
@@ -35,7 +36,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/static/images`,
       },
     },
     {
@@ -143,9 +144,9 @@ module.exports = {
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        theme_color: `#00ad43`,
         display: `minimal-ui`,
-        icon: `src/images/ks-icon.svg`, // This path is relative to the root of the site.
+        icon: `static/images/ks-icon.svg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

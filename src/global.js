@@ -68,6 +68,7 @@ export const GlobalStyles = createGlobalStyle`
   --color-black: ${(props) => props.theme.colors.black};
   --color-white: ${(props) => props.theme.colors.white};
   --color-accent: ${(props) => props.theme.colors.accent};
+  --color-grey: ${(props) => props.theme.colors.grey};
   --breakpoint-desktop: ${(props) => props.theme.breakpoints.desktop}px;
   --breakpoint-tablet: ${(props) => props.theme.breakpoints.tablet}px;
   --breakpoint-mobile: ${(props) => props.theme.breakpoints.mobile}px;

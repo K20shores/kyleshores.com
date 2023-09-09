@@ -5,10 +5,6 @@ const StyledLayout = styled.div`
   height: 100vh;
   flex-direction: column;
   overflow-y: hidden;
-
-  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    flex-direction: row;
-  }
 `
 
 const StyledContent = styled.div`
