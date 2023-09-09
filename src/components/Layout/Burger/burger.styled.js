@@ -8,15 +8,15 @@ export const StyledBurger = styled.button`
   transition: all ${({ theme }) => theme.transitionSpeed}s linear;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
   z-index: 10;
   span {
-    width: 2rem;
+    width: 1.5rem;
     height: 0.25rem;
     background: ${({ theme, open }) =>  theme.colors.primary };
     border-radius: 10px;
