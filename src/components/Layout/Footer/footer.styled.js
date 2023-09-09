@@ -1,34 +1,19 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 const StyledFooter = styled.footer`
-display: flex;
-justify-content: center;
-align-items: end;
-flex-direction: column;
-align-items: center;
-font-size: var(--fontSize-0);
-border-top: 1px solid var(--color-accent);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--fontFamily-sans);
+  font-size: var(--fontSize-0);
+  border-top: 1px solid var(--color-accent);
 
-@media only screen and (min-width: 768px) {
-  align-items: flex-end;
-}
+  padding: var(--spacing-3) var(--spacing-2);
 
-.copyright {
-  padding-right: var(--spacing-3);
-}
-
-.social {
-  display: inline-block;
-  @media only screen and (min-width: 768px) {
-    display: none;
+  p {
+    margin: 0;
   }
-
-  svg {
-    color: var(--color-black);
-  }
-}
 `
 
-export {
-  StyledFooter
-}
+export { StyledFooter }

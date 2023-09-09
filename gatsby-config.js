@@ -19,7 +19,6 @@ module.exports = {
       orcid: `0000-0002-4272-5187`,
       github: `k20shores`,
       googlescholar: `t1Si6MYAAAAJ`,
-      publons: `5213635`
     },
   },
   plugins: [

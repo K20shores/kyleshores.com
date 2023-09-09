@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   width: 100%;
   padding: 20px 1em;
 
-  border-bottom: 2px solid var(--color-grey);
+  border-bottom: 1px solid var(--color-accent);
 
   font-family: var(--fontFamily-sans);
 
@@ -39,7 +39,7 @@ const StyledMenu = styled.ul`
     font-weight: var(--fontWeight-medium);
 
     &:hover {
-      color: var(--color-accent);
+      color: var(--color-text-light);
     }
   }
 

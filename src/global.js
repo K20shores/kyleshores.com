@@ -33,7 +33,7 @@ export const GlobalStyles = createGlobalStyle`
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
     Times, serif;
-  --font-body: var(--fontFamily-serif);
+  --font-body: var(--fontFamily-sans);
   --font-heading: var(--fontFamily-sans);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
@@ -127,7 +127,6 @@ h6 {
 }
 
 h1 {
-  font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-7);
   color: var(--color-heading-black);
 }
