@@ -7,8 +7,8 @@ import { themeData } from '../../theme'
 
 // https://stackoverflow.com/a/42296853/5217293
 // the SVG is embedded because Safari refused to render the use element since it thought the data was from some other place
-const Icon = ({ name, color, size }) => (
-  <svg className={`icon icon-${name}`} fill={color} width={size} height={size}>
+const Icon = ({ name, size }) => (
+  <svg className={`icon icon-${name}`} width={size} height={size}>
     <use xlinkHref={`#icon-${name}`} fill={`url(#gradient-${name})`} />
     <symbol id="icon-google-scholar" viewBox="0 0 512 512">
       <path d="m408 107l0-28 20-15-214 0-130 112 86 0c0 2 0 4 0 7 0 20 7 38 22 51 14 14 32 21 53 21 5 0 10 0 14-1-3 6-4 13-4 18 0 10 4 21 13 32-39 2-68 10-86 21-11 6-19 15-25 24-7 10-10 21-10 32 0 10 2 19 6 26 4 8 10 15 17 19 6 5 14 10 23 13 9 3 17 6 26 7 8 1 17 2 26 2 13 0 27-2 40-5 14-4 26-9 38-16 12-6 22-16 29-27 8-12 11-25 11-40 0-11-2-21-6-30-5-9-10-16-17-22-6-6-13-11-19-16-7-5-12-10-17-15-4-5-7-10-7-15 0-5 2-10 6-14 3-5 7-9 12-14 5-4 10-9 15-14 5-5 9-12 13-20 3-8 5-17 5-27 0-14-3-25-8-34 0-1-1-2-2-3l57-46 0 17c-7 1-6 5-6 10l0 129c0 6 5 11 10 11l4 0c6 0 11-5 11-11l0-129c0-5 1-9-6-10z m-108 222c2 1 4 3 8 6 4 3 7 6 8 8 2 1 4 4 7 7 3 4 4 6 5 9 1 2 2 5 4 9 1 3 1 7 1 10 0 17-7 30-20 38-13 8-28 13-47 13-9 0-18-2-27-4-8-2-17-5-25-9-8-5-15-10-20-18-4-8-7-16-7-26 0-11 3-20 8-27 6-8 13-14 23-18 9-3 18-6 27-8 9-2 19-3 29-3 4 0 7 1 10 1 0 0 3 2 8 6 4 3 7 5 8 6z m-3-100c-7 8-18 13-31 13-12 0-22-5-31-14-9-10-16-21-20-33-3-12-5-24-5-36 0-13 3-25 10-35 8-9 18-14 31-14 12 0 23 5 32 15 9 10 15 22 19 34 4 13 6 25 6 36 0 14-4 25-11 34z" />
@@ -28,17 +28,8 @@ const Icon = ({ name, color, size }) => (
 
     <defs>
       <radialGradient id={`gradient-${name}`} cx="50%" cy="50%" r="50%">
-        {/* <stop offset="0%" stopColor="#black" />
-        <stop offset="100%" stopColor={themeData.colors.primary} /> */}
-
-        {/* <stop offset="0%" stopColor={themeData.colors.primary} />
-        <stop offset="100%" stopColor={themeData.colors.accent} /> */}
-
         <stop offset="0%" stopColor={themeData.colors.complementary2} />
         <stop offset="100%" stopColor={themeData.colors.primary} />
-
-        {/* <stop offset="0%" stopColor={themeData.colors.primary} />
-        <stop offset="100%" stopColor="#black" /> */}
       </radialGradient>
     </defs>
   </svg>
@@ -100,10 +91,10 @@ const Icons = props => {
   ))
 }
 
-const Social = ({ size = 30, color = "black" }) => {
+const Social = ({ size = 30}) => {
   return (
     <StyledSocialList>
-      <Icons size={size} color={color} />
+      <Icons size={size}/>
     </StyledSocialList>
   )
 }
