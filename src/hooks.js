@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import { graphql, useStaticQuery } from "gatsby"
 import { themeData } from './theme'
 
 // https://www.netlify.com/blog/2020/12/05/building-a-custom-react-media-query-hook-for-more-responsive-apps/
@@ -58,3 +58,19 @@ export const useOnClickOutside = (ref, handler) => {
   [ref, handler],
   );
 };
+
+export const useSiteMetadata = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          siteUrl
+        }
+      }
+    }
+  `)
+
+  return data.site.siteMetadata
+}

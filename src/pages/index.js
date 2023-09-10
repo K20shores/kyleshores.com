@@ -14,7 +14,6 @@ const HomePage = ({ data }) => {
   let content = data.allMarkdownRemark.nodes[0]
   return (
     <Layout>
-      <Seo title="Kyle Shores" />
       <Container dangerouslySetInnerHTML={{__html: content.html}} itemProp="articleBody" />
     </Layout>
   )
@@ -47,3 +46,6 @@ export const pageQuery = graphql`
     }
   }
 `
+export const Head = () => (
+  <Seo />
+)

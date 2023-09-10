@@ -8,7 +8,6 @@ const Research = ({ data }) => {
   let content = data.allMarkdownRemark.nodes[0]
   return (
     <Layout >
-      <Seo title="Research interets of Kyle Shores" />
       <div>
         <section dangerouslySetInnerHTML={{ __html: content.html }}
           itemProp="articleBody"
@@ -45,3 +44,7 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = () => (
+  <Seo title="Research interests of Kyle Shores" />
+)

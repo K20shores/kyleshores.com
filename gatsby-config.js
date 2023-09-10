@@ -148,7 +148,6 @@ module.exports = {
         icon: `static/images/ks-icon.svg`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-stripe`,
       options: {
