@@ -7,7 +7,7 @@ import { object } from 'prop-types';
 const Footer = ({ author }) => {
   return (
     <StyledFooter>
-      <Social/>
+      <Social />
       <p >
         &copy; {new Date().getFullYear()} {author?.name}
       </p>
