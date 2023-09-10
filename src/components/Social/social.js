@@ -4,12 +4,12 @@ import PropTypes from "prop-types"
 
 import { StyledSocialList, StyledSocialLi } from "./social.styled"
 
-import IconsFile from "../../../static/images/icons.svg" // Path to your icons.svg
+import IconsFile from "../../../static/images/icons.svg"
 
 // https://stackoverflow.com/a/42296853/5217293
 const Icon = ({ name, color, size }) => (
   <svg className={`icon icon-${name}`} fill={color} width={size} height={size}>
-    <use xlinkHref={`${IconsFile}#icon-${name}`} />
+    <use href={`${IconsFile}#icon-${name}`} xlinkHref={`${IconsFile}#icon-${name}`} />
   </svg>
 )
 

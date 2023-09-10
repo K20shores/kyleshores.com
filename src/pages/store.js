@@ -9,10 +9,13 @@ const Store = ({ location }) => {
   const purchased = (params.get("purchased") === 'true') || false; // eslint-disable-line no-unused-vars
   return (
     <Layout >
-      <Seo title="Products of Kyle Shores" />
       <Products />
     </Layout>
   )
 }
 
 export default Store
+
+export const Head = () => (
+  <Seo title="Products of Kyle Shores" />
+)

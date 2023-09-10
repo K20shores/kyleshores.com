@@ -19,6 +19,8 @@ const StyledHeader = styled.header`
     display: inline-flex;
   }
   position: relative;
+
+  z-index: 1;
 `
 
 const StyledMenu = styled.ul`
