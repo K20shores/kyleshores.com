@@ -94,7 +94,6 @@ body {
   font-size: var(--fontSize-1);
   color: var(--color-text);
   background: var(--color-white);
-  height: 100vh;
   margin: 0;
 }
 

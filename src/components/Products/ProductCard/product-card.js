@@ -40,7 +40,7 @@ const ProductCard = ({ product }) => {
       <StyledProductForm onSubmit={handleSubmit}>
         <fieldset>
           <legend>
-            <h4>{product.name}</h4>
+            <h4 style={{textAlign:`center`}}>{product.name}</h4>
           </legend>
           <label>
             Price{" "}
