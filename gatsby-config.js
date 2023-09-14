@@ -56,7 +56,6 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
         ],
       },
     },
@@ -140,10 +139,10 @@ module.exports = {
         name: `Kyle Shores personal website`,
         short_name: `KyleShores`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: "#ffffff",
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        theme_color: `#00ad43`,
+        theme_color: "#00ad43",
         display: `minimal-ui`,
         icon: `static/images/ks-icon.svg`, // This path is relative to the root of the site.
       },
@@ -156,9 +155,6 @@ module.exports = {
         downloadFiles: false,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-disqus`,
       options: {

@@ -4,19 +4,17 @@ const StyledLayout = styled.div`
   display: flex;
   height: 100vh;
   flex-direction: column;
-  overflow-y: hidden;
 `
 
 const StyledContent = styled.div`
-  flex: 3;
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  flex-grow: 1;
 `
 
 const StyledMain = styled.main`
-  flex: 5;
   padding: 0 10%;
+  flex-grow: 1;
 `
 
 export {

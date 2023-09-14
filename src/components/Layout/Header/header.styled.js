@@ -18,7 +18,6 @@ const StyledHeader = styled.header`
     padding: 0 var(--spacing-2);
     display: inline-flex;
   }
-  position: relative;
 
   z-index: 1;
 `
