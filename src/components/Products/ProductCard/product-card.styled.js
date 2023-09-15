@@ -22,31 +22,7 @@ const StyledProductForm = styled.form`
   }
 `
 
-const StyledButton = styled.button`
-  font-size: 13px;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.accent};
-  background-color: var(--color-black);
-  padding: 12px 60px;
-  box-shadow: 2px 5px 10px rgba(0,0,0,.1);
-  border-radius: 6px;
-  border: none;
-  letter-spacing: 1.5px;
-  transition: all .3s ease-in-out;
-
-  opacity: ${(props) => props.disabled ? 0.5 : 1};
-  cursor: ${(props) => props.disabled ? 'not-allowed' : 'allowed'};
-
-  &:hover {
-      transform: scale(1.1);
-      background-color: ${({ theme }) => theme.colors.accent};
-      color: var(--color-black);
-  }
-}
-`
-
 export {
   StyledProductCard,
   StyledProductForm,
-  StyledButton
 }

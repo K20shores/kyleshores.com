@@ -1,33 +1,24 @@
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-  background-color: ${ ({ theme }) => theme.colors.green };
-  color: var(--color-white);
+  font-size: 13px;
+  text-align: center;
+  padding: 12px 60px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
   border: none;
-  padding: 6px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, transform 0.3s ease;
-  border: solid 0.5px transparent;
+  letter-spacing: 1.5px;
+  transition: all ${({ theme }) => theme.transitionSpeed}s linear;
+  background-color: ${({ theme }) => theme.colors.accent};
+
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 
   &:hover {
-    background-color: var(--color-white);
-    color: ${ ({ theme }) => theme.colors.green };
-    border: 0.5px solid ${ ({ theme }) => theme.colors.green };
+    transform: scale(1.02);
+    color: ${({ theme }) => theme.colors.accent};
+    background-color: ${({ theme }) => theme.colors.primary};
   }
-  @media (prefers-reduced-motion: reduce) {
-    &:hover {
-      transform: scale(1.00);
-    }
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
+`;
 
-`
-
-export {
-  StyledButton
-}
+export { StyledButton };
