@@ -11,12 +11,12 @@ function ContactForm() {
       <form name="contact" method="POST" data-netlify="true">
         <p>
           <label>
-            Your Name: <input type="text" name="name" />
+            Your Name <input type="text" name="name" />
           </label>
         </p>
         <p>
           <label>
-            Your Email: <input type="email" name="email" />
+            Your Email <input type="email" name="email" />
           </label>
         </p>
         <p>
@@ -24,7 +24,7 @@ function ContactForm() {
             Message: <textarea name="message"></textarea>
           </label>
         </p>
-        <Button>Send</Button>
+        <Button type="submit">Send</Button>
       </form>
     </ContactFormWrapper>
   )
