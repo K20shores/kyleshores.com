@@ -2,9 +2,9 @@ import React from 'react';
 import { bool, func, node } from 'prop-types';
 import { StyledButton } from "./button.styled"
  
-const Button = ({ onClick, children, disabled, }) => {
+const Button = ({ onClick, children, disabled, ...otherProps }) => {
   return (
-    <StyledButton onClick={onClick} disabled={disabled}>
+    <StyledButton onClick={onClick} disabled={disabled} {...otherProps}>
       {children}
     </StyledButton>
   )

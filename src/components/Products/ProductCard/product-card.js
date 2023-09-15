@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import getStripe from "../../../utils/stripe_loader"
-import { StyledProductCard, StyledProductForm, StyledButton } from './product-card.styled';
+import { StyledProductCard, StyledProductForm } from './product-card.styled';
+import Button from "../../Button/button";
 
 const formatPrice = (amount, currency) => {
   let price = (amount / 100).toFixed(2)
@@ -58,9 +59,9 @@ const ProductCard = ({ product }) => {
             }
           </label>
         </fieldset>
-        <StyledButton disabled={loading}>
+        <Button disabled={loading}>
           Purchase
-        </StyledButton>
+        </Button>
       </StyledProductForm>
     </StyledProductCard>
   )
