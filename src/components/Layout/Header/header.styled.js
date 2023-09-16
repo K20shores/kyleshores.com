@@ -39,7 +39,7 @@ const StyledMenu = styled.ul`
     font-weight: var(--fontWeight-medium);
 
     &:hover {
-      color: var(--color-accent);
+      color: var(--color-complementary-4);
     }
   }
 

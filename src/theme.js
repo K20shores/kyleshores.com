@@ -3,15 +3,12 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from './global';
 
 const theme = {
-  // https://coolors.co/00ad43-cacfd6-2f2504-594e36-29339b
   colors: {
+    // https://www.canva.com/colors/color-wheel/
     primary:"#00ad43", // Green Pantone
     analagous1: "#009435",
     analagous2: "#2dbd5e",
     grey: "#E8E8E8", 
-
-    textBlue: "#00b0f0",
-    textYellow: "#ffff55",
 
     text: "#2e353f",
     textLight: "#4f5969",
@@ -25,10 +22,10 @@ const theme = {
     complementary2: "#00DB55",
     complementary3: "#AD005C",
     complementary4: "#DB0075",
-    tetrad1: "#AD006B",
-    tetrad2: "#4200AD",
-    tetrad3: "#05FF66",
-    tetrad4: "#AD4200",
+    tetrad1: "#00AD43",
+    tetrad2: "#0013AD",
+    tetrad3: "#AD006A",
+    tetrad4: "#AD9A00",
   },
   transitionSpeed: 0.2,
   fonts: ["sans-serif", "Roboto"],
