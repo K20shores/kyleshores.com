@@ -10,11 +10,13 @@ const Container = styled.section`
   font-size: 1.2rem;
 `
 
-const HomePage = ({ data }) => {
+const HomePage = ({ data, children }) => {
   let content = data.allMarkdownRemark.nodes[0]
   return (
     <Layout>
-      <Container dangerouslySetInnerHTML={{__html: content.html}} itemProp="articleBody" />
+      <Container itemProp="articleBody">
+        {children}
+      </Container>
     </Layout>
   )
 }
@@ -28,12 +30,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
+    allMdx(
           filter: { fileAbsolutePath: {regex : "\/pages/index/"} },
       ) {
       nodes {
         excerpt
-        html
         fields {
           slug
         }

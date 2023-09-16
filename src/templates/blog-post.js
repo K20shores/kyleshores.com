@@ -19,7 +19,7 @@ const BlogNav = styled.nav`
   }
 `
 
-const BlogPostTemplate = ({ data, location}) => {
+const BlogPostTemplate = ({ data, location, children }) => {
   const post = data.markdownRemark
   const { previous, next } = data
 
@@ -44,10 +44,7 @@ const BlogPostTemplate = ({ data, location}) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
+        <section itemProp="articleBody">{children}</section>
         <hr />
       </article>
       <Disqus config={disqusConfig} />
@@ -87,17 +84,16 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    mdx(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
-      html
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
         description
       }
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
+    previous: mdx(id: { eq: $previousPostId }) {
       fields {
         slug
       }
@@ -105,7 +101,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
+    next: mdx(id: { eq: $nextPostId }) {
       fields {
         slug
       }
