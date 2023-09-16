@@ -62,17 +62,17 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       filter: {fileAbsolutePath: {regex: "/blog/"}}
-      sort: {frontmatter: {date: ASC}}
+      sort: {frontmatter: {date: DESC}}
     ) {
       nodes {
         excerpt
+        html
         fields {
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
           title
-          description
+          date(formatString: "MMMM DD, YYYY")
         }
       }
     }

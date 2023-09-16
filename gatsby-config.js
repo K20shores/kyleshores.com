@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   flags: {
-    DEV_SSR: false
+    DEV_SSR: true
   },
   siteMetadata: {
     title: `Kyle Shores`,
@@ -12,7 +12,7 @@ module.exports = {
       name: `Kyle Shores`,
     },
     version: '1.0.0',
-    description: `A personal website`,
+    description: `My personal site to explore ideas and market myself`,
     siteUrl: `https://kyleshores.com`,
     social: {
       linkedin: `shoreskyle`,
@@ -110,8 +110,8 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
-                  filter: { fileAbsolutePath: {regex : "\/blog/"} },
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  filter: {fileAbsolutePath: {regex: "/blog/"}}
+                  sort: {frontmatter: {date: DESC}}
                 ) {
                   nodes {
                     excerpt

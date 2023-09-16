@@ -36,11 +36,10 @@ const StyledMenu = styled.ul`
 
   a {
     color: var(--color-primary);
-    transition: 0.2s ease-in-out;
     font-weight: var(--fontWeight-medium);
 
     &:hover {
-      color: var(--color-text-light);
+      color: var(--color-accent);
     }
   }
 
@@ -65,9 +64,6 @@ const StyledMenu = styled.ul`
     }
 
     a {
-      border: none;
-      background-color: unset;
-      color: var(--color-primary);
       font-size: ${({ open }) => (open ? "3rem" : "inherit")};
     }
   }
