@@ -22,7 +22,7 @@ const Header = ({ desktop }) => {
 
   return (
     <StyledHeader onClick={handleClick}>
-      <Link to="/">
+      <Link to="/" aria-label="An SVG with the letters KS. Press to go to the home screen.">
         <SvgDisplay uri={Logo} width={sz} height={sz} />
       </Link>
       <StyledMenu open={open}>
@@ -42,9 +42,7 @@ const Header = ({ desktop }) => {
           <Link to="/store">Store</Link>
         </li>
       </StyledMenu>
-      {!desktop && (
-        <Burger open={open} setOpen={setOpen} aria-controls={"main-menu"} />
-      )}
+      <Burger open={open} setOpen={setOpen} aria-controls={"main-menu"} />
     </StyledHeader>
   )
 }

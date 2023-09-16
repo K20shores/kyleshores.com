@@ -60,6 +60,10 @@ export const GlobalStyles = createGlobalStyle`
   --color-complementary-2: ${(props) => props.theme.colors.complementary2};
   --color-complementary-3: ${(props) => props.theme.colors.complementary3};
   --color-complementary-4: ${(props) => props.theme.colors.complementary4};
+  --color-tetrad-1: ${(props) => props.theme.colors.tetrad1};
+  --color-tetrad-2: ${(props) => props.theme.colors.tetrad2};
+  --color-tetrad-3: ${(props) => props.theme.colors.tetrad3};
+  --color-tetrad-4: ${(props) => props.theme.colors.tetrad4};
 
   --color-text: ${(props) => props.theme.colors.text};
   --color-text-light: ${(props) => props.theme.colors.textLight};
@@ -223,8 +227,13 @@ table thead tr th {
 /* Link */
 
 a {
-  color: var(--color-complementary-4);
+  color: var(--color-tetrad-2);
   text-decoration: none;
+  transition: ${({ theme }) => theme.transitionSpeed}s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-complementary-4);
 }
 
 `
