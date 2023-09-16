@@ -11,7 +11,8 @@ const Container = styled.section`
 `
 
 const HomePage = ({ data, children }) => {
-  let content = data.allMarkdownRemark.nodes[0]
+  console.log(children)
+  let content = data.allMdx.nodes[0]
   return (
     <Layout>
       <Container itemProp="articleBody">
@@ -30,18 +31,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(
-          filter: { fileAbsolutePath: {regex : "\/pages/index/"} },
-      ) {
+    allMdx(filter: {fields: {slug: {eq: "/pages/index/"}}}) {
       nodes {
-        excerpt
         fields {
           slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
         }
       }
     }
