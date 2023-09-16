@@ -227,13 +227,13 @@ table thead tr th {
 /* Link */
 
 a {
-  color: var(--color-tetrad-2);
+  color: blue;
   text-decoration: none;
   transition: ${({ theme }) => theme.transitionSpeed}s ease-in-out;
 }
 
 a:hover {
-  color: var(--color-accent);
+  color: var(--color-complementary-4);
 }
 
 `
