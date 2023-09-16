@@ -20,7 +20,7 @@ const BlogNav = styled.nav`
 `
 
 const BlogPostTemplate = ({ data, location, children }) => {
-  const post = data.markdownRemark
+  const post = data.mdx
   const { previous, next } = data
 
   let disqusConfig = {
@@ -36,9 +36,6 @@ const BlogPostTemplate = ({ data, location, children }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
@@ -89,7 +86,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date
         description
       }
     }

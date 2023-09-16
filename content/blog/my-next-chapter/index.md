@@ -4,10 +4,11 @@ author: "Kyle Shores"
 categories: ["Personal"]
 tags: ["Climate Change", "Graduate School", "FI"]
 published: true
-date: "2020-10-17 12:01 -05:00"
+date: "2020-10-17"
 featuredimage:
   src: "./../../static/images/acceptance.png"
   alt: "Acceptance into Texas A&M University"
+description: ""
 ---
 
 # A Bit About Me
@@ -29,7 +30,7 @@ So, I spent my freshman year looking at getting into engineering.
 
 It turns out, the easiest way for me to get into engineering was to add a double degree. At the time,
 all freshman engineers were in general engineering. In their second semester, they applied to different
-disciplines, maybe had some interviews, and hoped to get in. I spent 15 minutes in the advisors office,
+disciplines, maybe had some interviews, and hoped to get in. I spent 15 minutes in the advisor's office,
 wrote three sentences on why I wanted to be an engineer and gave them my GPA, and then I was in.
 Starting the summer after my freshman year, I had to take some introductory engineering courses
 
@@ -97,8 +98,8 @@ yourself, though.
 After resigning from the co-op, I applied to work at Lockheed Martin in the Spring of 2017. I worked there for the summer of 2017 in the cybersecurity
 division. I did not know what I was applying for when I said that I was interested in working in cybersecurity. I spent that entire summer making
 power point presentations about the fundamentals of cybersecurity. I did not really enjoy it, but I did learn quite a bit. Lockheed was a cubicle
-farm from my perspective. They also emphasized working 40 hours, but I got the idea that this mostly applied to the interns and not the fulltime
-people. Lockheed was not a good fit for me so I elected not to go back for another summer when they offered.
+farm from my perspective. They also emphasized working 40 hours, but I got the idea that this mostly applied to the interns and not the full time
+people. Lockheed was not a good fit for me, so I elected not to go back for another summer when they offered.
 
 The week after I got back to college from working for Lockheed I started looking for jobs in College Station. I found a very small company with about
 13 employees called Synchrogrid that was looking for a part-time intern software developer. I applied and was accepted. The work was annoying at times,
@@ -111,7 +112,7 @@ I learned that I preferred small companies over large ones.
 I worked at Synchrogrid for a full year and quit at the beginning of the Fall semester of my last semester in college. For the last 6 months
 of my employment at Synchrogrid I had been applying to various companies to get a full time job after I graduated. There is a wonderful medium-sized
 software consulting company in College Station called Capsher Technology. When I went on the interview, I felt very welcome. The atmosphere was
-very friendly, GlassDoor listed them as having between 50-100 employees, and they emphasized a 40 hour work week. I was very happy to receive an offer
+very friendly, GlassDoor listed them as having between 50-100 employees, and they emphasized a 40-hour work week. I was very happy to receive an offer
 of employment from Capsher.
 
 Working at Capsher is and really enjoyable. I learned how to more effectively function on an actual software team. White board communication is heavily

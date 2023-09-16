@@ -10,7 +10,7 @@ const PostList = styled.ol`
 `
 
 const BlogIndex = ({ data }) => {
-  const posts = data.allMarkdownRemark.nodes
+  const posts = data.allMdx.nodes
 
   return (
     <Layout>
@@ -60,19 +60,18 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/blog/"}}
+    allMdx(
+      filter: {fields: {slug: {regex: "\\/blog/"}}}
       sort: {frontmatter: {date: DESC}}
     ) {
       nodes {
         excerpt
-        html
         fields {
           slug
         }
         frontmatter {
           title
-          date(formatString: "MMMM DD, YYYY")
+          date
         }
       }
     }
