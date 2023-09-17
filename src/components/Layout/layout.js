@@ -12,7 +12,7 @@ const isDesktop = function(width) {
   return width > themeData.breakpoints.tablet;
 }
 
-const Layout = ({ children, padding = `10%` }) => {
+const Layout = ({ children, padding = `0 10%` }) => {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
       site {

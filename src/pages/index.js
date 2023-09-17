@@ -5,32 +5,23 @@ import { StaticImage } from "gatsby-plugin-image"
 import { Layout, Seo } from "../components"
 import { themeData } from "../theme"
 
-import heroBackground from "../../static/images/stormy-atlantic-background.jpg"
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0 10%;
-`
-
 const HeroContainer = styled.section`
-  background-image: url(${heroBackground});
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+  display: grid;
+  height: auto;
 `
 
 const HeroText = styled.div`
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  padding: 10px 20px;
+  grid-area: 1/1;
+  position: relative;
+  place-items: center;
+
+  display: flex;
+  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  justify-content: center;
+
+  height: 100%;
 
   h1 {
     margin-top: 0;
@@ -41,12 +32,23 @@ const HeroText = styled.div`
   p {
     font-size: 1.2rem;
     color: var(--color-primary);
+    padding: 0 10%;
   }
 `
 
 const HeroSection = () => {
   return (
     <HeroContainer>
+      <StaticImage
+        style={{
+          gridArea: "1/1",
+          minHeight: "300px",
+          maxHeight: "410px"
+        }}
+        layout="fullWidth"
+        alt=""
+        src={"../../static/images/stormy-atlantic-background.jpg"}
+      />
       <HeroText>
         <h1>Exploring Science and Code</h1>
         <p>
@@ -58,7 +60,7 @@ const HeroSection = () => {
   )
 }
 
-const BioContainer = styled.div`
+const BioContainer = styled.section`
   display: flex;
   flex-direction: column;
 `
@@ -76,7 +78,7 @@ const BioIntro = styled.div`
   }
 `
 
-const Bio = () => {
+const BioSection = () => {
   return (
     <BioContainer>
       <h1>Howdy!</h1>
@@ -102,7 +104,9 @@ const Bio = () => {
                 border: `1px solid ${themeData.colors.accent}`,
               }}
             />
-            <figcaption style={{textAlign: `center`, fontSize: `0.7rem`}}>Me with my wonderful cat, Luna.</figcaption>
+            <figcaption style={{ textAlign: `center`, fontSize: `0.7rem` }}>
+              Me with my wonderful cat, Luna.
+            </figcaption>
           </figure>
         </div>
       </BioIntro>
@@ -152,18 +156,23 @@ const Bio = () => {
   )
 }
 
-const Projects = () => {
-  return <h1>Projects</h1>
+const PortfolioSection = () => {
+  return <h1>Portfolio</h1>
+}
+
+const BlogSection = () => {
+  return <h1>Blogs</h1>
 }
 
 const HomePage = () => {
   return (
     <Layout padding="0">
       <HeroSection />
-      <Container>
-        <Bio />
-        {/* <Projects /> */}
-      </Container>
+      <div style={{padding: "0 10%"}}>
+        <BioSection />
+        <BlogSection />
+        <PortfolioSection />
+      </div>
     </Layout>
   )
 }
