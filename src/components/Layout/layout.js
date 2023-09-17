@@ -12,7 +12,7 @@ const isDesktop = function(width) {
   return width > themeData.breakpoints.tablet;
 }
 
-const Layout = ({ children }) => {
+const Layout = ({ children, padding = `10%` }) => {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
       site {
@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
       <StyledLayout>
         <Header desktop={isDesktop(width)}/>
         <StyledContent>
-          <StyledMain>
+          <StyledMain padding={padding}>
             {children}
           </StyledMain>
           <Footer author={author}/>
