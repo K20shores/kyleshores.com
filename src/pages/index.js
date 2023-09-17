@@ -78,8 +78,9 @@ const BioSection = () => {
         <p>
           Hey there, I'm Kyle Shores, a passionate explorer of the realms where
           code meets climate. With a Bachelor's in Computer Science and a
-          Master's in Atmospheric Sciences while studying with my advisors{" "}
-          <a href="https://yangyangxu.weebly.com/">Dr. Yangyang Xu</a> and{" "}
+          Master's in Atmospheric Sciences, acquired under the guidance of my
+          mentors
+          <a href="https://yangyangxu.weebly.com/">Dr. Yangyang Xu</a> and
           <a href="https://atmo.tamu.edu/people/profiles/faculty/yangping.html">
             Dr. Ping Yang
           </a>
@@ -160,7 +161,7 @@ const HomePage = () => {
   return (
     <Layout padding="0">
       <HeroSection />
-      <div style={{padding: "0 10%"}}>
+      <div style={{ padding: "0 10%" }}>
         <BioSection />
         <BlogSection />
         <PortfolioSection />
