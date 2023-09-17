@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import styled from 'styled-components';
+import styled from "styled-components"
 
 import { Layout } from "../components"
 import Seo from "../components/seo"
@@ -61,8 +61,8 @@ export const pageQuery = graphql`
       }
     }
     allMdx(
-      filter: {fields: {slug: {regex: "\\/blog/"}}}
-      sort: {frontmatter: {date: DESC}}
+      filter: { frontmatter: { published: { eq: true } } }
+      sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
         excerpt
@@ -78,6 +78,4 @@ export const pageQuery = graphql`
   }
 `
 
-export const Head = () => (
-  <Seo title="All posts"/>
-)
+export const Head = () => <Seo title="All posts" />

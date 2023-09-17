@@ -12,8 +12,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       {
         allMdx(
-          filter: {fields: {slug: {regex: "\\/blog/"}}}
-          sort: {frontmatter: {date: DESC}}
+          filter: {
+            fields: { slug: { regex: "/blog/" } }
+            frontmatter: { published: { eq: true } }
+          }
+          sort: { frontmatter: { date: DESC } }
         ) {
           nodes {
             id
@@ -38,6 +41,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMdx.nodes
+
+  console.log(posts)
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
