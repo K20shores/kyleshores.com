@@ -162,7 +162,7 @@ const HomePage = () => {
       <HeroSection />
       <Container>
         <Bio />
-        <Projects />
+        {/* <Projects /> */}
       </Container>
     </Layout>
   )
