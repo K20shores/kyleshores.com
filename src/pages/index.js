@@ -5,23 +5,26 @@ import { StaticImage } from "gatsby-plugin-image"
 import { Layout, Seo } from "../components"
 import { themeData } from "../theme"
 
+import heroBackground from "../../static/images/stormy-atlantic-background.webp"
+
 const HeroContainer = styled.section`
-  display: grid;
-  height: auto;
+  background-image: url(${heroBackground});
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
 `
 
 const HeroText = styled.div`
-  grid-area: 1/1;
-  position: relative;
-  place-items: center;
-
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.6);
   text-align: center;
-  justify-content: center;
-
+  width: 100%;
   height: 100%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.6);
 
   h1 {
     margin-top: 0;
@@ -32,23 +35,12 @@ const HeroText = styled.div`
   p {
     font-size: 1.2rem;
     color: var(--color-primary);
-    padding: 0 10%;
   }
 `
 
 const HeroSection = () => {
   return (
     <HeroContainer>
-      <StaticImage
-        style={{
-          gridArea: "1/1",
-          minHeight: "300px",
-          maxHeight: "410px"
-        }}
-        layout="fullWidth"
-        alt=""
-        src={"../../static/images/stormy-atlantic-background.jpg"}
-      />
       <HeroText>
         <h1>Exploring Science and Code</h1>
         <p>
