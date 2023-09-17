@@ -13,7 +13,7 @@ const StyledContent = styled.div`
 `
 
 const StyledMain = styled.main`
-  padding: 0 10%;
+  padding: 0 ${({ padding }) => (padding)};
   flex-grow: 1;
 `
 

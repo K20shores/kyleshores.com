@@ -4,10 +4,11 @@ author: "Kyle Shores"
 categories: ["Climate Change"]
 tags: [""]
 published: true
-date: "2020-12-25 09:17 -05:00"
+date: "2020-12-25"
 featuredimage:
   src: "./../../static/images/trees.jpg"
   alt: "Some trees"
+description: ""
 ---
 
 Or at least that's what it felt like. On October 10, 2020, my girlfriend and friend planted trees with about 30 other people in

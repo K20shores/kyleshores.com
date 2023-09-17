@@ -56,6 +56,7 @@ export const GlobalStyles = createGlobalStyle`
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
   --color-primary: ${(props) => props.theme.colors.primary};
+  --color-complementary: ${(props) => props.theme.colors.complementary};
   --color-complementary-1: ${(props) => props.theme.colors.complementary1};
   --color-complementary-2: ${(props) => props.theme.colors.complementary2};
   --color-complementary-3: ${(props) => props.theme.colors.complementary3};

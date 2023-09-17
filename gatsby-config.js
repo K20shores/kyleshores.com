@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   flags: {
-    DEV_SSR: true
+    DEV_SSR: false
   },
   siteMetadata: {
     title: `Kyle Shores`,
@@ -39,9 +39,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [`.md`, `.mdx`],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -62,11 +63,10 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      // replace 'gatsby-plugin-google-analytics' with the new one
       resolve: 'gatsby-plugin-google-gtag',
       options: {
           trackingIds: [
-              process.env.GA_MEASUREMENT_ID, // GA Measurement
+              process.env.GA_MEASUREMENT_ID,
           ],
           gtagConfig: {
               optimize_id: 'OPT_CONTAINER_ID',
@@ -77,60 +77,6 @@ module.exports = {
               head: true,
               respectDNT: true,
           },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map(node => {
-                return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
-                })
-              })
-            },
-            query: `
-              {
-                allMarkdownRemark(
-                  filter: {fileAbsolutePath: {regex: "/blog/"}}
-                  sort: {frontmatter: {date: DESC}}
-                ) {
-                  nodes {
-                    excerpt
-                    html
-                    fields {
-                      slug
-                    }
-                    frontmatter {
-                      title
-                      date
-                    }
-                  }
-                }
-              }
-            `,
-            output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
-          },
-        ],
       },
     },
     {

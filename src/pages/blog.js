@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import styled from 'styled-components';
+import styled from "styled-components"
 
 import { Layout } from "../components"
 import Seo from "../components/seo"
@@ -10,7 +10,7 @@ const PostList = styled.ol`
 `
 
 const BlogIndex = ({ data }) => {
-  const posts = data.allMarkdownRemark.nodes
+  const posts = data.allMdx.nodes
 
   return (
     <Layout>
@@ -60,25 +60,22 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/blog/"}}
-      sort: {frontmatter: {date: DESC}}
+    allMdx(
+      filter: { frontmatter: { published: { eq: true } } }
+      sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
         excerpt
-        html
         fields {
           slug
         }
         frontmatter {
           title
-          date(formatString: "MMMM DD, YYYY")
+          date
         }
       }
     }
   }
 `
 
-export const Head = () => (
-  <Seo title="All posts"/>
-)
+export const Head = () => <Seo title="All posts" />

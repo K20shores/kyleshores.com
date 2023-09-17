@@ -18,6 +18,7 @@ const theme = {
     blackTransparent: "#222222cc",
     white: "#ffffff",
 
+    complementary: "#AD006A",
     complementary1: "#0FFF6C",
     complementary2: "#00DB55",
     complementary3: "#AD005C",
