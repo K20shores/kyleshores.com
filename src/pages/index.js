@@ -79,8 +79,8 @@ const BioSection = () => {
           Hey there, I'm Kyle Shores, a passionate explorer of the realms where
           code meets climate. With a Bachelor's in Computer Science and a
           Master's in Atmospheric Sciences, acquired under the guidance of my
-          mentors
-          <a href="https://yangyangxu.weebly.com/">Dr. Yangyang Xu</a> and
+          mentors <a href="https://yangyangxu.weebly.com/">Dr. Yangyang Xu</a>{" "}
+          and{" "}
           <a href="https://atmo.tamu.edu/people/profiles/faculty/yangping.html">
             Dr. Ping Yang
           </a>
@@ -104,9 +104,10 @@ const BioSection = () => {
         </div>
       </BioIntro>
       <p>
-        By day, I'm a software developer at the National Center for Atmospheric
-        Research (<a href="https://ncar.ucar.edu/">NCAR</a>), where I'm part of
-        the Atmospheric Chemistry Observations and Modeling (
+        In my professional capacity, I serve as a software developer at the
+        National Center for Atmospheric Research (
+        <a href="https://ncar.ucar.edu/">NCAR</a>) in the Atmospheric Chemistry
+        Observations and Modeling (
         <a href="https://www2.acom.ucar.edu/">ACOM</a>) lab. It's here that I
         support scientists by writing software to aid their research aimed at
         understanding our planet's complex atmospheric chemistry in weather and
@@ -130,13 +131,6 @@ const BioSection = () => {
         practical steps we can all take. But I'm not stopping at climate
         science; I'll sprinkle in some software engineering wisdom and other
         intriguing hobbies I dabble in.
-      </p>
-      <p>
-        My content is tailored for citizen scientists, the technically curious,
-        and anyone who dares to explore the intersection of science and code.
-        Expect to find fun, interactive graphics that unravel the mysteries of
-        our world, all wrapped up in a friendly yet slightly sassy tone. After
-        all, isn't life a mix of inspiration and a touch of nihilistic humor?
       </p>
       <p>
         Join me in this adventure as we unravel the wonders of our world, one

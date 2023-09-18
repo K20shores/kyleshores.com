@@ -1,11 +1,13 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import { Disqus } from 'gatsby-plugin-disqus'
+import { Disqus } from "gatsby-plugin-disqus"
 import { Layout } from "../components"
 import Seo from "../components/seo"
+import { themeData } from "../theme"
 
-import styled from 'styled-components';
+import styled from "styled-components"
 
 const BlogNav = styled.nav`
   padding: 0 1rem;
@@ -35,18 +37,25 @@ const BlogPostTemplate = ({ data, location, children }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article
-      >
-        <header>
+      <article>
+        <div>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
-        </header>
+        </div>
+        <GatsbyImage
+          image={post.frontmatter.featuredimage.src.childImageSharp.gatsbyImageData}
+          alt={post.frontmatter.featuredimage.alt}
+          style={{
+            borderRadius: "5%",
+            border: `1px solid ${themeData.colors.accent}`,
+          }}
+        />
         <section itemProp="articleBody">{children}</section>
         <hr />
       </article>
       <Disqus config={disqusConfig} />
       <BlogNav>
-        <ul >
+        <ul>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -88,6 +97,14 @@ export const pageQuery = graphql`
         title
         date
         description
+        featuredimage {
+          alt
+          src {
+            childImageSharp {
+              gatsbyImageData 
+            }
+          }
+        }
       }
     }
     previous: mdx(id: { eq: $previousPostId }) {

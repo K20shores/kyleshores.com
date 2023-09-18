@@ -6,7 +6,7 @@ tags: [""]
 published: true
 date: "2020-12-25"
 featuredimage:
-  src: "./../../static/images/trees.jpg"
+  src: "./trees.jpeg"
   alt: "Some trees"
 description: ""
 ---
