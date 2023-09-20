@@ -109,6 +109,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       description: String
       date: Date @dateformat
       featuredImage: FeaturedImage
+      embeddedImages: [File]
     }
 
     type Fields {

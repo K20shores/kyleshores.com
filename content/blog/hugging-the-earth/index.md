@@ -5,10 +5,10 @@ categories: ["Climate Change"]
 tags: [""]
 published: true
 date: "2020-12-25"
-featuredimage:
+description: ""
+featuredImage:
   src: "./trees.jpeg"
   alt: "Some trees"
-description: ""
 ---
 
 Or at least that's what it felt like. On October 10, 2020, my girlfriend and friend planted trees with about 30 other people in

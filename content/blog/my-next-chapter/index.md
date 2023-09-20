@@ -1,14 +1,14 @@
 ---
 title: "My Next Chapter"
 author: "Kyle Shores"
-categories: ["Personal"]
-tags: ["Climate Change", "Graduate School", "FI"]
+categories: ["Climate Change", "Graduate School", "FI"]
+tags: ["Personal"]
 published: true
-date: "2020-10-17 12:01 -05:00"
-featuredimage:
+date: "2020-10-17"
+description: ""
+featuredImage:
   src: "./acceptance.png"
   alt: "Acceptance into Texas A&M University"
-description: ""
 ---
 
 # A Bit About Me

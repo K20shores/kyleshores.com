@@ -43,8 +43,8 @@ const BlogPostTemplate = ({ data, location, children }) => {
           <p>{post.frontmatter.date}</p>
         </div>
         <GatsbyImage
-          image={post.frontmatter.featuredimage.src.childImageSharp.gatsbyImageData}
-          alt={post.frontmatter.featuredimage.alt}
+          image={post.frontmatter.featuredImage.src.childImageSharp.gatsbyImageData}
+          alt={post.frontmatter.featuredImage.alt}
           style={{
             borderRadius: "5%",
             border: `1px solid ${themeData.colors.accent}`,
@@ -97,12 +97,18 @@ export const pageQuery = graphql`
         title
         date
         description
-        featuredimage {
+        featuredImage {
           alt
           src {
             childImageSharp {
               gatsbyImageData 
             }
+          }
+        }
+        embeddedImages {
+          id
+          childImageSharp {
+            gatsbyImageData
           }
         }
       }
