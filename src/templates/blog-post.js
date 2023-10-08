@@ -37,7 +37,7 @@ const BlogPostTemplate = ({ data, location, children }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
+      <article style={{maxWidth: "800px", margin: "auto"}}>
         <div>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
