@@ -1,14 +1,10 @@
 ---
-title: "My Next Chapter"
-author: "Kyle Shores"
-categories: ["Climate Change", "Graduate School", "FI"]
-tags: ["Personal"]
-published: true
-date: "2020-10-17"
-description: ""
-featuredImage:
-  src: "./acceptance.png"
-  alt: "Acceptance into Texas A&M University"
+layout: post
+title: >
+    My Next Chapter
+tags: [Climate Change, Graduate School, FI]
+feature-img: "assets/img/posts/acceptance.png"
+thumbnail: "assets/img/posts/acceptance.png"
 ---
 
 # A Bit About Me
@@ -47,7 +43,7 @@ were about 45 minutes long and filled with fun demonstrations like the magnetic 
 liquid oxygen, and many things with liquid nitrogen. I even froze one of my finger nails for science (accidentally).
 I have a permanently damaged nail, but it was entirely my fault.
 
-![A sample of heat treated BISCO2212](./bisco2212.jpeg)
+{% include aligner.html images="posts/bisco2212.jpeg" column=1 %}
 
 Getting into research was pretty easy. I put my name on a list that the physics advisors keep of
 students interested in doing research. Dr. McIntyre emailed me and I met up with him. He
@@ -128,7 +124,7 @@ for deciding what to spend on. After a few months, my spending stabilized (thank
 and my happiness dramatically increased. There were evenings when I'd be reading a book, drinking a fine (cheap) glass of wine that I would suddenly
 think "I couldn't possibly be more happy than I am right now", and it was true. I didn't want for more.
 
-![The energy budget of Earth](./energy-budget.jpeg)
+{% include aligner.html images="posts/energy-budget.jpeg" column=1 %}
 
 Now, my happiness outside of work was real. Once my financial life was in order I stopped reading about finances and the economy as heavily as I had
 been. When I was in college I learned about the basics of radiative transfer, the process that determines earth's energy budget and is how we

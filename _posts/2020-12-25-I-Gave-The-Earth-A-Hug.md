@@ -1,14 +1,10 @@
 ---
-title: "I Gave The Earth A Hug"
-author: "Kyle Shores"
-categories: ["Climate Change"]
-tags: [""]
-published: true
-date: "2020-12-25"
-description: ""
-featuredImage:
-  src: "./trees.jpeg"
-  alt: "Some trees"
+layout: post
+title: >
+    I Gave The Earth A Hug
+tags: [Conservation]
+feature-img: "assets/img/posts/trees.jpeg"
+thumbnail: "assets/img/posts/trees.jpeg"
 ---
 
 Or at least that's what it felt like. On October 10, 2020, my girlfriend and friend planted trees with about 30 other people in
@@ -25,8 +21,7 @@ throughout the woods. Sure, each time it rains all of my work will have been und
 the trash I did pick up was not deposited downstream. Maybe it is useless. I do not care. This is an activity that I can do that makes me _feel_ like I'm making a difference. And
 anyway, I always feel so much better after I'm done. As a neat bonus, my girlfriend also likes doing this. Trashy dates are a new fun thing for us!
 
-![Luna in front of her Christmas Tree](./luna-christmas.jpeg)
-
+{% include aligner.html images="posts/luna-christmas.jpeg" column=1 %}
 
 Anyways, it's Christmas! I've been spending a lot of time with my family, playing cards, home escape rooms, and watching all of the same Christmas movies that
 we do every year. Also, there is lots of good wine and warm coffee. Both good things to be happy about. I am very thankful that I get to spend this time with my family.
