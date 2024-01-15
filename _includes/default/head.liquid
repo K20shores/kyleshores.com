@@ -70,6 +70,10 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
     {% endif %}
 
+    {% if page.d3 %}
+      <script src="https://d3js.org/d3.v7.min.js"></script>
+    {% endif %}
+
     <!-- seo tags -->
     <meta property="og:image" content="{{ '/' | absolute_url }}{% if page.thumbnail %}{{ page.thumbnail }}{% else %}{{ page.feature-img | default: site.header_feature_image }}{% endif %}">
     {% unless page.layout == post %}
