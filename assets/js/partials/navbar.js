@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const offset = -(window.scrollY || window.pageYOffset || document.body.scrollTop) / 3;
     const main = document.getElementById('main');
     if (main) {
-      main.style.backgroundPosition = '100% ' + (offset - 50) + 'px' + ', 0%, center top';
+      main.style.backgroundPosition = `center calc(50% + ${offset}px)`;
     }
   });
 });

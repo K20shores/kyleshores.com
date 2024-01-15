@@ -50,54 +50,6 @@ gulp.task("img", async function imging() {
     .pipe(gulp.dest('img/'))
 });
 
-// Alternative using "sharp" in case "imagemin" does not work, supported formats: heic, heif, jpeg, jpg, png, raw, tiff, webp
-gulp.task('sharp_img', async function () {
-  const responsive = await import('gulp-responsive');
-  let settings = {
-    quality: 85,
-    progressive: true,
-    compressionLevel: 6,
-  };
-
-  return gulp.src('img/**/*.{png,jpg,webp,jpeg}')
-    .pipe(responsive({
-      '**/*.*': settings,
-      '*.*': settings,
-    }))
-    .pipe(gulp.dest('img'))
-});
-
-gulp.task('thumbnails', async function () {
-  const responsive = await import('gulp-responsive');
-  let settings = {
-    width: '50%',
-    //format: 'jpeg', // convert to jpeg format
-  };
-
-  return gulp.src('img/feature-img/*')
-    .pipe(responsive({
-      '**/*.*': settings,
-      '*.*': settings,
-    }))
-    .pipe(gulp.dest('img/thumbnails/feature-img'))
-});
-
-
-gulp.task('thumbnails-all', async function () {
-  const responsive = await import('gulp-responsive');
-  let settings = {
-    width: '50%',
-    //format: 'jpeg', // convert to jpeg format
-  };
-
-  return gulp.src('img/*.{png,jpg,webp,jpeg}')
-      .pipe(responsive({'*.*': settings}))
-      .pipe(gulp.dest('img/thumbnails')) &&
-    gulp.src('img/!(thumbnails)/*.{png,jpg,webp,jpeg}')
-      .pipe(responsive({'**/*.*': settings}))
-      .pipe(gulp.dest('img/thumbnails'))
-});
-
 gulp.task('webp', () =>
   gulp.src('img/**/*.{png,svg,jpg,jpeg,gif}')
     .pipe(webp({

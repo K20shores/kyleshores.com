@@ -31,7 +31,6 @@
     "gulp-imagemin": "^8.0.0",
     "gulp-less": "^5.0.0",
     "gulp-replace": "^1.1.4",
-    "gulp-responsive": "^3.0.1",
     "gulp-uglify-es": "^3.0.0",
     "gulp-webp": "^4.0.1"
   }

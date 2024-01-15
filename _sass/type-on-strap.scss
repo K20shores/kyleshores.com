@@ -25,7 +25,6 @@
 @import 'includes/navbar';
 @import 'includes/share_buttons';
 @import 'includes/blog_nav';
-@import 'includes/gallery';
 @import 'includes/portfolio';
 
 /* Posts */
@@ -53,3 +52,4 @@ Then create your _custom.scss right next to type-on-strap.scss and add in it all
 of the unique scss that your blog needs.
 
 */
+@import 'includes/contact';
