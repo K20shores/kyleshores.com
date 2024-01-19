@@ -5,6 +5,7 @@ title: >
 tags: [Conservation]
 feature-img: "assets/img/posts/trees.jpeg"
 thumbnail: "assets/img/posts/trees.jpeg"
+author: kshores
 ---
 
 Or at least that's what it felt like. On October 10, 2020, my girlfriend and friend planted trees with about 30 other people in

@@ -1,7 +1,13 @@
-- authors: John Smith
-  title: A Title About Citations
-  key: ref1
+- authors: Newton, Isaac
+  title: Opuscula mathematica, philosophica et philologica
+  publisher: Apud Marcum-Michaelem Bousquet & Socios
+  date: 1744
+  url: https://books.google.at/books?id=i9FJAAAAMAAJ&pg=PA29#v=onepage&q&f=false
+  key: newton1744
 
-- authors: Michael's Rose
-  title: "[Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/markup-syntax-highlighting)"
-  key: highlight
+- authors: Hairer, Ernst, Syvert P. Nørsett, and Gerhard Wanner
+  title: "Solving Ordinary Differential Equations I: Nonstiff Problems"
+  date: 1993
+  publisher: Springer
+  url: https://link.springer.com/book/10.1007/978-3-540-78862-1
+  key: hairer1993

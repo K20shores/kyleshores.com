@@ -5,6 +5,7 @@ tags: [Personal Improvment, FI]
 feature-img: "assets/img/pexels/goals.jpg"
 thumbnail: "assets/img/pexels/goals.jpg"
 d3: true
+author: kshores
 ---
 
 # My goals for 2024
