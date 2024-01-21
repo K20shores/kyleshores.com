@@ -1,0 +1,11 @@
+<!-- _includes/figure.html -->
+<figure>
+    <img src="{{ include.image }}" />
+    {% if include.figcaption %}
+        <figcaption>
+            <span markdown='1'>
+                {{ include.figcaption }}
+            </span>
+        </figcaption>
+    {% endif %}
+</figure>

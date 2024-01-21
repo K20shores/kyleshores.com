@@ -42,7 +42,7 @@ The way to finanical independencd is entirely about [your savings rate](https://
 
 A savings rate of [50%](https://networthify.com/calculator/earlyretirement?income=1&initialBalance=0&expenses=0.5&annualPct=5&withdrawalRate=4) leads to financial independence in 16 years. I've already worked for 4ish years and I'm 28 years old. So, a 50% savings rate should put me at financial independence when I'm 40.
 
-<figure class="image">
+<figure>
     <iframe width="1000" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSxiisgtj5X2S5JMmmWOIpI-j-WNYFlf_Z_0tKp0kHe90FKVLUsQxFa_HceBB6seFEnU4a4OV5RKpFp/pubchart?oid=1601169469&amp;format=interactive"></iframe>
   <figcaption> My savings rate overtime </figcaption>
 </figure>

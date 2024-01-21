@@ -11,3 +11,11 @@
   publisher: Springer
   url: https://link.springer.com/book/10.1007/978-3-540-78862-1
   key: hairer1993
+
+- authors: Hairer, Ernst, and Gerhard Wanner. 
+  title: "Solving Ordinary Differential Equations II: Stiff and Differential-Algebraic Problems"
+  publisher: Springer
+  date: 1996
+  url: https://link.springer.com/book/10.1007/978-3-642-05221-7.
+  key: hairer1996
+

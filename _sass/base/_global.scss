@@ -4,8 +4,22 @@
   box-sizing: border-box;
 }
 
+.figcaption-with-footnote {
+  text-align: center;
+  font-style: italic;
+}
+
 figure {
   margin: 0;
+  margin-bottom: 1em;
+  img {
+    padding: unset;
+    width: 100%;
+  }
+  figcaption {
+    font-size: small;
+    text-align: center;
+  }
 }
 
 html {
@@ -156,8 +170,10 @@ footer *:last-child {
 table {
   word-wrap: break-word;
   table-layout: fixed;
-  width: 100%;
-  display: inline-block;
+  width: fit-content;
+  display: block;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 td,
@@ -167,7 +183,6 @@ th {
   text-align: left;
 }
 
-table,
 dl,
 kbd,
 samp {
@@ -282,4 +297,3 @@ details {
     max-width: 100%;
   }
 }
-
