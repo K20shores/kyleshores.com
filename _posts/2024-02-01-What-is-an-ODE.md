@@ -8,19 +8,59 @@ d3: true
 author: kshores
 ---
 
-# Technology
+# Communication
 
 The most successful technology humans have ever invented is language. Across human history humans have found many ways to
-communicate our shared existence.
+communicate our shared existence. Language allows us to express ourselves,
+rib our friends when their ego gets too big, and debate over the proper
+prounciation of the word gif.
+
+Communication is hard. To be precise with your words when explaining a
+thing, every word matters. Every intention behind what you say, every 
+assumption, every placement of indefinite articles (*a* dog compared to
+*the*) dog has a deep difference in the meaning of your words.
+
+Fortunately, humans are pretty good at working with complexity and ambiguity
+and even if I said "a dog is eating my food" while it is your dog, you'd
+understand which dog I meant. Humans love to ascribe meaning based on
+their life experiences, their environment, and their assumptions about
+how the world ought to be.
+
+The first assignment I had in an introductory program class was not to
+write any code. We had to choose literally any task and write with words
+instructions on how to do exactly that thing. Similar to [this video of
+a dad asking his kids to tell him how to make a sandwhcih](https://www.reddit.com/r/ProgrammerHumor/comments/fioap6/dad_teaching_kids_basic_coding_principles_by/). Specificity is hard. 
+
+And anyways, most of the instructions we write for people are incomplete.
+When we say "grab that thing", we've missed likely billions of steps already. To "grab that thing", the other person has to somehow raise their
+arm, which means their brain has to send some signal down some nerve to
+contract and extend muscles in precise movements. But we don't need to write that down because it's not an operation we consciously control.
+
+Computers, however, need to be told exactly what to do. Except that's also a lie. When we write code, we're only programming the ALU and maybe
+sometimes other connected devices. There is a whole suite of firmware
+and hardware processes that take a binary executable and run it. These other things are fundamental, like loading the executable into memory. We might initiate that, but still certain hardware decisions like refreshing
+the RAM to ensure you still have memory are necessary for operation but not controlled.
+
+Communication is messy. It's full of assumptions, incomplete truths
+presented as fact, and interpreted by fallable humans. And yet the world works. Bridges and buildings don't often randomly collapse, 3-day weather forecasts provide reasonably accurate and useful information, you can 
+scroll on the internet for hours on end rather than doing that new hobby
+that you've almost started. All of this because **Enough** specificity
+provided by algorithms and the *maths* that underly them provide enough
+determinism to allow complex systems to be stable and, more importantly, *useful*.
 
 # I Don't Know What I'm Doing
 
-I have almost no idea what I'm doing fundamentally in nearly every task I engage in. Cooking? Put things in stuff, apply heat or
-not and somehow food happens. Bouldering? Sure, I go up the wall, but how my brain is able to control every muscle, tendon,
-and ounce of grit I have to scale vertical things with tiny handholds is beyond me. At work, I write software. This is
-likely what I have the most understanding of. But if I were to break it down to the most fundamental level of how
-code goes from text to an executable binary and what **every** component is doing to estimate pi with something like this from
-the compiler to the ALU, back to something that allows me to see the result, I will miss a detail.
+In my dayjob, I have almost no idea what I'm fundamentally doing in 
+nearly every task I engage in. Even though software is
+likely what I have the most understanding of. But if I were to break it 
+down to the most fundamental level of how
+code goes from text to an executable binary and what **every** component 
+is doing to estimate pi with something like this from
+the compiler to the ALU, back to something that allows me to see the 
+result, I **will** miss a detail. Probably starting with what happens when
+[I press enter](https://www.youtube.com/watch?v=lwiUCKwCFdg) (even this 
+video gets it wrong, hardware interrupts for the enter key are glossed
+over).
 
 <div id="inputs">
   <div>
