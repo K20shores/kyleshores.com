@@ -59,34 +59,6 @@ Yep. It's cheesy. But part of being a human is taking care of yourself, and I fi
 
 I did it. I made a very, very short thing for this month, and so it has begun.
 
-<style>
-
-/* Bar Chart */
-.bar {
-  fill: steelblue;
-}
-
-.bar:hover {
-  fill: brown;
-}
-
-.axis {
-  font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
-}
-
-</style>
-
 <script>
 
 var margin = {top: 20, right: 30, bottom: 40, left: 90},
