@@ -5,6 +5,7 @@ title: >
 tags: [Climate Change, Graduate School, FI]
 feature-img: "assets/img/posts/acceptance.png"
 thumbnail: "assets/img/posts/acceptance.png"
+author: kshores
 ---
 
 # A Bit About Me

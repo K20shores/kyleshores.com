@@ -1,2 +1,2 @@
 {%- assign citation = site.data.biblio | where:"key", include.key | first -%}
-<span class="cit-authors">{{citation.authors}}</span>, <span class="cit-title">{{citation.title}}</span>
+<span class="cit-authors">{{citation.authors}} ({{citation.date}}):</span> <span class="cit-title"><em>{{citation.title}}.</em></span> <span>{{citation.publisher}}</span> <a href="{{citation.url}}">{{citation.url}}</a>
