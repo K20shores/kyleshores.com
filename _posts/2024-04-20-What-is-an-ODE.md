@@ -1,7 +1,8 @@
 ---
 layout: post
 title: What is an ODE?
-tags: [ODE-series]
+tags: [first order]
+category: [ODE-series]
 feature-img: "assets/img/pexels/math.jpg"
 thumbnail: "assets/img/pexels/math.jpg"
 d3: true
@@ -38,8 +39,9 @@ contract and extend muscles in precise movements. But we don't need to write tha
 
 Computers, however, need to be told exactly what to do. Except that's also a lie. When we write code, we're only programming the ALU and maybe
 sometimes other connected devices. There is a whole suite of firmware
-and hardware processes that take a binary executable and run it. These other things are fundamental, like loading the executable into memory. We might initiate that, but still certain hardware decisions like refreshing
-the RAM to ensure you still have memory are necessary for operation but not controlled.
+and hardware processes that take a binary executable and run it. These other things are fundamental, like loading the executable into memory. We might initiate that, but still certain hardware decisions like [refreshing
+the RAM](https://blog.cloudflare.com/every-7-8us-your-computers-memory-has-a-hiccup)
+to ensure you still have memory are necessary for operation but not controlled by the programmer.
 
 Communication is messy. It's full of assumptions, incomplete truths
 presented as fact, and interpreted by fallable humans. And yet the world works. Bridges and buildings don't often randomly collapse, 3-day weather forecasts provide reasonably accurate and useful information, you can
