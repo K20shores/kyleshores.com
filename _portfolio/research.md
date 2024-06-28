@@ -2,7 +2,7 @@
 layout: post
 title: Research
 img: "assets/img/portfolio/goes-look-angles.png"
-date: September 2014
+date: December 2023
 tags: [research]
 ---
 

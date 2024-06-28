@@ -29,25 +29,35 @@ $x-sm-break: 320px;
 
 /* THEME COLOR SCHEMES */
 html, html[data-theme="light"] {
-  --background: #ffffff;
-  --blockquote: #eef7fa;
+  --md-sys-color-primary: rgb(56 105 60);
+  --md-sys-color-background: rgb(247 251 242);
+  --md-sys-color-on-background: rgb(24 29 24);
+  --md-sys-color-secondary: rgb(81 99 80);
+  --md-sys-color-surface-tint: rgb(56 105 60);
+  --md-sys-color-outline: rgb(114 121 111);
+  --md-sys-color-tertiary-container: rgb(188 235 242);
+  --md-sys-color-on-tertiary-container: rgb(0 31 36);
+
+  --background: var(--md-sys-color-background);
+  --blockquote: var(--md-sys-color-tertiary-container);
+  --on-blockquote: var(--md-sys-color-on-tertiary-container);
   --selection: #d4d4d4;
   --meta: #595959;
-  --link: #0072B5;
+  --link: var(--md-sys-color-primary);
   --header-background: #24292e;
   --header-text: #ffffff;
   --header-link: #383838;
   --code-background: #E0E0E0;
   --code-inline: #24292e;
-  --text-shadow: #3f3f3f;
-  --text: #262626;
-  --h1: #262626;
-  --h2: #262626;
-  --h3: #262626;
-  --h4: #262626;
-  --h5: #262626;
-  --h6: #262626;
-  --border: rgba(0, 0, 0, 0.2);
+  --text: var(--md-sys-color-on-background);
+  --text-shadow: var(--md-sys-color-surface-tint);
+  --h1: var(--md-sys-color-on-background);
+  --h2: var(--md-sys-color-on-background);
+  --h3: var(--md-sys-color-on-background);
+  --h4: var(--md-sys-color-on-background);
+  --h5: var(--md-sys-color-on-background);
+  --h6: var(--md-sys-color-on-background);
+  --border: var(--md-sys-color-outline);
 }
 
 html[data-theme="dark"] {
@@ -93,6 +103,48 @@ html, html[data-theme="light"] {
   --base0d: #82aaff; // Keywords, Storage, Selector, Markup Italic, Diff Changed
   --base0e: #c792ea; // Integers, Boolean, Constants, XML Attributes, Markup Link Url
   --base0f: #ff5370; // Deprecated, Opening/Closing Embedded Language Tags e.g.
+
+  --md-sys-color-on-primary: rgb(255 255 255);
+  --md-sys-color-primary-container: rgb(185 240 184);
+  --md-sys-color-on-primary-container: rgb(0 33 7);
+  --md-sys-color-on-secondary: rgb(255 255 255);
+  --md-sys-color-secondary-container: rgb(212 232 208);
+  --md-sys-color-on-secondary-container: rgb(16 31 16);
+  --md-sys-color-tertiary: rgb(57 101 108);
+  --md-sys-color-on-tertiary: rgb(255 255 255);
+  --md-sys-color-error: rgb(186 26 26);
+  --md-sys-color-on-error: rgb(255 255 255);
+  --md-sys-color-error-container: rgb(255 218 214);
+  --md-sys-color-on-error-container: rgb(65 0 2);
+  --md-sys-color-surface: rgb(247 251 242);
+  --md-sys-color-on-surface: rgb(24 29 24);
+  --md-sys-color-surface-variant: rgb(222 229 217);
+  --md-sys-color-on-surface-variant: rgb(66 73 64);
+  --md-sys-color-outline-variant: rgb(194 201 189);
+  --md-sys-color-shadow: rgb(0 0 0);
+  --md-sys-color-scrim: rgb(0 0 0);
+  --md-sys-color-inverse-surface: rgb(45 50 44);
+  --md-sys-color-inverse-on-surface: rgb(238 242 233);
+  --md-sys-color-inverse-primary: rgb(158 212 157);
+  --md-sys-color-primary-fixed: rgb(185 240 184);
+  --md-sys-color-on-primary-fixed: rgb(0 33 7);
+  --md-sys-color-primary-fixed-dim: rgb(158 212 157);
+  --md-sys-color-on-primary-fixed-variant: rgb(31 80 39);
+  --md-sys-color-secondary-fixed: rgb(212 232 208);
+  --md-sys-color-on-secondary-fixed: rgb(16 31 16);
+  --md-sys-color-secondary-fixed-dim: rgb(185 204 181);
+  --md-sys-color-on-secondary-fixed-variant: rgb(58 75 57);
+  --md-sys-color-tertiary-fixed: rgb(188 235 242);
+  --md-sys-color-on-tertiary-fixed: rgb(0 31 36);
+  --md-sys-color-tertiary-fixed-dim: rgb(161 206 214);
+  --md-sys-color-on-tertiary-fixed-variant: rgb(31 77 83);
+  --md-sys-color-surface-dim: rgb(215 219 211);
+  --md-sys-color-surface-bright: rgb(247 251 242);
+  --md-sys-color-surface-container-lowest: rgb(255 255 255);
+  --md-sys-color-surface-container-low: rgb(241 245 236);
+  --md-sys-color-surface-container: rgb(235 239 230);
+  --md-sys-color-surface-container-high: rgb(230 233 225);
+  --md-sys-color-surface-container-highest: rgb(224 228 219);
 }
 
 // Supernova Theme
@@ -113,24 +165,54 @@ html[data-theme="dark"] {
   --base0d: #b37eff; // Functions, Methods, Attribute IDs, Headings
   --base0e: #00af9e; // Keywords, Storage, Selector, Markup Italic, Diff Changed
   --base0f: #ff66c2; // Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
-}
 
-// Monokai Theme
-//html[data-theme="dark"] {
-//  --base00: #272822; // Default Background
-//  --base01: #383830; // Lighter Background (Used for status bars)
-//  --base02: #49483e; // Selection Background
-//  --base03: #75715e; // Comments, Invisible, Line Highlighting
-//  --base04: #a59f85; // Dark Foreground (Used for status bars)
-//  --base05: #f8f8f2; // Light Foreground (Not often used)
-//  --base06: #f5f4f1; // Light Background (Not often used)
-//  --base07: #f9f8f5; // Default text color
-//  --base08: #f92672; // Parenthesis, Caret, Delimiters, Operators
-//  --base09: #fd971f; // Classes, Markup Bold, Search Text Background
-//  --base0a: #e6db74; // Strings, Inherited Class, Markup Code, Diff Inserted
-//  --base0b: #a6e22e; // Functions, Methods, Attribute IDs, Headings
-//  --base0c: #a1efe4; // Support, Regular Expressions, Escape Characters, Markup Quotes
-//  --base0d: #66d9ef; // Keywords, Storage, Selector, Markup Italic, Diff Changed
-//  --base0e: #ae81ff; // Integers, Boolean, Constants, XML Attributes, Markup Link Url
-//  --base0f: #cc6633; // Deprecated, Opening/Closing Embedded Language Tags e.g.
-//}
+  --md-sys-color-primary: rgb(158 212 157);
+  --md-sys-color-surface-tint: rgb(158 212 157);
+  --md-sys-color-on-primary: rgb(3 57 18);
+  --md-sys-color-primary-container: rgb(31 80 39);
+  --md-sys-color-on-primary-container: rgb(185 240 184);
+  --md-sys-color-secondary: rgb(185 204 181);
+  --md-sys-color-on-secondary: rgb(36 52 36);
+  --md-sys-color-secondary-container: rgb(58 75 57);
+  --md-sys-color-on-secondary-container: rgb(212 232 208);
+  --md-sys-color-tertiary: rgb(161 206 214);
+  --md-sys-color-on-tertiary: rgb(0 54 60);
+  --md-sys-color-tertiary-container: rgb(31 77 83);
+  --md-sys-color-on-tertiary-container: rgb(188 235 242);
+  --md-sys-color-error: rgb(255 180 171);
+  --md-sys-color-on-error: rgb(105 0 5);
+  --md-sys-color-error-container: rgb(147 0 10);
+  --md-sys-color-on-error-container: rgb(255 218 214);
+  --md-sys-color-background: rgb(16 21 16);
+  --md-sys-color-on-background: rgb(224 228 219);
+  --md-sys-color-surface: rgb(16 21 16);
+  --md-sys-color-on-surface: rgb(224 228 219);
+  --md-sys-color-surface-variant: rgb(66 73 64);
+  --md-sys-color-on-surface-variant: rgb(194 201 189);
+  --md-sys-color-outline: rgb(140 147 137);
+  --md-sys-color-outline-variant: rgb(66 73 64);
+  --md-sys-color-shadow: rgb(0 0 0);
+  --md-sys-color-scrim: rgb(0 0 0);
+  --md-sys-color-inverse-surface: rgb(224 228 219);
+  --md-sys-color-inverse-on-surface: rgb(45 50 44);
+  --md-sys-color-inverse-primary: rgb(56 105 60);
+  --md-sys-color-primary-fixed: rgb(185 240 184);
+  --md-sys-color-on-primary-fixed: rgb(0 33 7);
+  --md-sys-color-primary-fixed-dim: rgb(158 212 157);
+  --md-sys-color-on-primary-fixed-variant: rgb(31 80 39);
+  --md-sys-color-secondary-fixed: rgb(212 232 208);
+  --md-sys-color-on-secondary-fixed: rgb(16 31 16);
+  --md-sys-color-secondary-fixed-dim: rgb(185 204 181);
+  --md-sys-color-on-secondary-fixed-variant: rgb(58 75 57);
+  --md-sys-color-tertiary-fixed: rgb(188 235 242);
+  --md-sys-color-on-tertiary-fixed: rgb(0 31 36);
+  --md-sys-color-tertiary-fixed-dim: rgb(161 206 214);
+  --md-sys-color-on-tertiary-fixed-variant: rgb(31 77 83);
+  --md-sys-color-surface-dim: rgb(16 21 16);
+  --md-sys-color-surface-bright: rgb(54 58 52);
+  --md-sys-color-surface-container-lowest: rgb(11 15 11);
+  --md-sys-color-surface-container-low: rgb(24 29 24);
+  --md-sys-color-surface-container: rgb(28 33 27);
+  --md-sys-color-surface-container-high: rgb(39 43 38);
+  --md-sys-color-surface-container-highest: rgb(49 54 48);
+}
