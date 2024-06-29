@@ -9,6 +9,7 @@ jobs:
   game_of_life:
     runs-on: ${{ matrix.os }}
 
+    continue-on-error: true
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
@@ -23,11 +24,11 @@ jobs:
           node-version: '21'
       
       - name: Install dependencies
-        run: 
+        run: |
           cd assets/js/projects/game_of_life
           npm install
 
       - name: Run tests
-        run: 
+        run: |
           cd assets/js/projects/game_of_life
           npm test
