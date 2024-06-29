@@ -1,18 +1,17 @@
 import { createGrid, updateGrid } from './src/gameLogic.js';
 import * as canvas from './src/canvas.js';
-import { drawGrid, drawCells, clearCanvas, setClickHandler } from './src/canvas.js';
 
-let config = canvas.default_config;
+let data = canvas.GridData();
 
 // Initialize the game
-let [rows, cols] = canvas.initializeCanvas('canvas', config);
+let [rows, cols] = canvas.initializeCanvas(data);
 let grid = createGrid(rows, cols);
-drawGrid(grid, config);
-drawCells(grid, config);
+canvas.drawGrid(grid, data);
+canvas.drawCells(grid,data);
 
 let lastUpdate = Date.now();
 
-setClickHandler(config, (x, y) => {
+canvas.setClickHandler(data, (x, y) => {
   console.log(x, y)
 });
 
@@ -21,10 +20,15 @@ function gameLoop() {
   const delta = now - lastUpdate;
 
   if (delta > 500) { 
+    const alive = grid.flat().reduce((acc, cell) => acc + cell, 0);
+    if (alive === 0) {
+      return;
+    }
     grid = updateGrid(grid);
-    clearCanvas();
-    drawGrid(grid, config);
-    drawCells(grid, config);
+
+    canvas.clearCanvas(data);
+    canvas.drawGrid(grid, data);
+    canvas.drawCells(grid, data);
 
     lastUpdate = now;
   }

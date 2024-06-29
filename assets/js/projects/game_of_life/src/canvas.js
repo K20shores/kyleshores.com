@@ -1,91 +1,111 @@
-import { styles } from './styles.js';
+import { styles } from "./styles.js";
 
-const default_config = {
-  cell_size: 50,
-  grid_color: styles['primary'],
-  cell_color: styles['tertiary'],
-  border_size: 1
+const GridData = () => {
+  return {
+    cell_size: 15,
+    grid_color: styles["primary"],
+    cell_color: styles["tertiary"],
+    border_size: 1,
+    canvas_id: "canvas",
+    canvas: null,
+    ctx: null,
+    offsetX: 0,
+    offsetY: 0,
+  };
 };
 
-let ctx;
-let canvas = null;
-
-const initializeCanvas = (id, config) => {
-  canvas = document.getElementById(id);
+const initializeCanvas = (data) => {
+  data.canvas = document.getElementById(data.canvas_id);
 
   // Get the CSS size of the canvas
-  const cssWidth = canvas.clientWidth;
-  const cssHeight = canvas.clientHeight;
+  const cssWidth = data.canvas.clientWidth;
+  const cssHeight = data.canvas.clientHeight;
 
   // Set the pixel size of the canvas to match its CSS size
-  canvas.width = cssWidth;
-  canvas.height = cssHeight;
+  data.canvas.width = cssWidth;
+  data.canvas.height = cssHeight;
 
-  const cols = Math.floor(cssWidth / config.cell_size);
-  const rows = Math.floor(cssHeight / config.cell_size);
+  const cols = Math.floor(cssWidth / data.cell_size);
+  const rows = Math.floor(cssHeight / data.cell_size);
 
-  ctx = canvas.getContext('2d');
-  if (!canvas) {
-    throw new Error('Failed to get canvas element');
+  // Calculate the remaining space
+  const remainingWidth = cssWidth - cols * data.cell_size;
+  const remainingHeight = cssHeight - rows * data.cell_size;
+
+  // Calculate the offset to center the grid
+  data.offsetX = remainingWidth / 2;
+  data.offsetY = remainingHeight / 2;
+
+  data.ctx = data.canvas.getContext("2d");
+  if (!data.canvas) {
+    throw new Error("Failed to get canvas element");
   }
   return [rows, cols];
-}
+};
 
-const setClickHandler = (config, callback) => {
-  canvas.addEventListener('click', (event) => {
-    const x = Math.floor(event.offsetX / config.cell_size);
-    const y = Math.floor(event.offsetY / config.cell_size);
-    callback(x, y);
+const setClickHandler = (data, callback) => {
+  canvas.addEventListener("click", (event) => {
+    const rect = canvas.getBoundingClientRect();
+    const x = event.clientX - rect.left - data.offsetX;
+    const y = event.clientY - rect.top - data.offsetY;
+    const col = Math.floor(x / cellSize);
+    const row = Math.floor(y / cellSize);
+    callback(col, row);
   });
+};
+
+function clearCanvas(data) {
+  data.ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function clearCanvas() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
-
-const drawGrid = (grid, config) => {
+const drawGrid = (grid, data) => {
   const cols = grid[0].length;
   const rows = grid.length;
 
-  ctx.strokeStyle = config.grid_color;
-  ctx.beginPath();
+  data.ctx.strokeStyle = data.grid_color;
+  data.ctx.beginPath();
 
   // draw vertical lines
-  for (let i = 0; i < cols; i++) {
-    ctx.moveTo(i * config.cell_size, 0);
-    ctx.lineTo(i * config.cell_size, canvas.height);
+  for (let i = 0; i <= cols; i++) {
+    data.ctx.moveTo(i * data.cell_size + data.offsetX, 0);
+    data.ctx.lineTo(i * data.cell_size + data.offsetX, canvas.height);
   }
 
   // draw horizontal lines
-  for (let i = 0; i < rows; i++) {
-    ctx.moveTo(0, i * config.cell_size);
-    ctx.lineTo(canvas.width, i * config.cell_size);
+  for (let i = 0; i <= rows; i++) {
+    data.ctx.moveTo(0, i * data.cell_size + data.offsetY);
+    data.ctx.lineTo(canvas.width, i * data.cell_size + data.offsetY);
   }
-  ctx.stroke();
-}
+  data.ctx.stroke();
+};
 
-const drawCells = (grid, config) => {
+const drawCells = (grid, data) => {
   const cols = grid[0].length;
   const rows = grid.length;
-  const borderSize = config.border_size;
-  const cellWithBorder = config.cell_size - borderSize * 2;
-  const cell_color = config.cell_color;
+  const borderSize = data.border_size;
+  const cellWithBorder = data.cell_size - borderSize * 2;
+  const cell_color = data.cell_color;
 
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
       if (grid[i][j] === 1) {
-        ctx.fillStyle = cell_color
-        ctx.fillRect(j * config.cell_size + borderSize, i * config.cell_size + borderSize, cellWithBorder, cellWithBorder);
+        data.ctx.fillStyle = cell_color;
+        data.ctx.fillRect(
+          j * data.cell_size + borderSize + data.offsetX,
+          i * data.cell_size + borderSize + data.offsetY,
+          cellWithBorder,
+          cellWithBorder
+        );
       }
     }
   }
-}
+};
 
-export { 
-  drawGrid, 
+export {
+  drawGrid,
   drawCells,
   initializeCanvas,
   clearCanvas,
   setClickHandler,
-  default_config
-}
+  GridData,
+};
