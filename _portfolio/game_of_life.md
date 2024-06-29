@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Conway's Game of Life
+img: "assets/img/portfolio/goes-look-angles.png"
 date: June 2024
 tags: [fun]
 ---

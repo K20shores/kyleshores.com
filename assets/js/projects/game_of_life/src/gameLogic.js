@@ -53,5 +53,6 @@ const updateGrid = (grid) => {
 
 export {
   createGrid,
-  updateGrid
+  updateGrid,
+  countNeighbors
 }
