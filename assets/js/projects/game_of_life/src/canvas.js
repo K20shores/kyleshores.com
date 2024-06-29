@@ -14,6 +14,10 @@ const initializeCanvas = (cols, rows) => {
   return canvas;
 }
 
+function clearCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
 const drawGrid = (grid) => {
   const cols = grid[0].length;
   const rows = grid.length;
@@ -54,5 +58,6 @@ const drawCells = (grid) => {
 export { 
   drawGrid, 
   drawCells,
-  initializeCanvas
+  initializeCanvas,
+  clearCanvas
 }

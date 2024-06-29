@@ -1,20 +1,23 @@
 import { createGrid, updateGrid } from './src/gameLogic.js';
-import { drawGrid, drawCells, initializeCanvas } from './src/canvas.js';
+import { drawGrid, drawCells, initializeCanvas, clearCanvas } from './src/canvas.js';
 import { handleUserInput } from './src/userInput.js';
 
 // Initialize the game
 const cols = 50;
 const rows = 50;
-const grid = createGrid(rows, cols);
 initializeCanvas(cols, rows);
-
-handleUserInput(grid);
+let grid = createGrid(rows, cols);
 
 // Game loop
 function gameLoop() {
-  updateGrid(grid);
+  let dt = 1000;
+
+  grid = updateGrid(grid);
+  clearCanvas();
   drawGrid(grid);
   drawCells(grid);
+
+  setTimeout(gameLoop, dt);
 }
 
 gameLoop();
