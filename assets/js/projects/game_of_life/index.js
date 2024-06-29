@@ -1,23 +1,35 @@
 import { createGrid, updateGrid } from './src/gameLogic.js';
-import { drawGrid, drawCells, initializeCanvas, clearCanvas } from './src/canvas.js';
-import { handleUserInput } from './src/userInput.js';
+import * as canvas from './src/canvas.js';
+import { drawGrid, drawCells, clearCanvas, setClickHandler } from './src/canvas.js';
+
+let config = canvas.default_config;
 
 // Initialize the game
-const cols = 50;
-const rows = 50;
-initializeCanvas(cols, rows);
+let [rows, cols] = canvas.initializeCanvas('canvas', config);
 let grid = createGrid(rows, cols);
+drawGrid(grid, config);
+drawCells(grid, config);
 
-// Game loop
+let lastUpdate = Date.now();
+
+setClickHandler(config, (x, y) => {
+  console.log(x, y)
+});
+
 function gameLoop() {
-  let dt = 1000;
+  const now = Date.now();
+  const delta = now - lastUpdate;
 
-  grid = updateGrid(grid);
-  clearCanvas();
-  drawGrid(grid);
-  drawCells(grid);
+  if (delta > 500) { 
+    grid = updateGrid(grid);
+    clearCanvas();
+    drawGrid(grid, config);
+    drawCells(grid, config);
 
-  setTimeout(gameLoop, dt);
+    lastUpdate = now;
+  }
+
+  requestAnimationFrame(gameLoop);
 }
 
-gameLoop();
+requestAnimationFrame(gameLoop);
