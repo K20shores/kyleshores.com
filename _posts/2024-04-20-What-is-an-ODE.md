@@ -190,7 +190,7 @@ methods if it's an ODE problem. Hopefully you'll enjoy coming along to learn mor
 [^1]: {% include citation.html key="hairer1993" %}
 [^2]: {% include citation.html key="hairer1996" %}
 
-<script src="{{ '/js/posts/what_is_an_ode.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/posts/what_is_an_ode.js' | relative_url }}"></script>
 
 <style>
 

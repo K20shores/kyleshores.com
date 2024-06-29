@@ -16,9 +16,10 @@
 .site-header {
   padding: 2% 2% 1% 2%;
   background: var(--background);
-  display: inline-block;
   float: left;
   width: 100%;
+  /* add a slight shadow below */
+  box-shadow: 0 2px 2px var(--md-sys-color-secondary-container);
 
   .separator {
     user-select: none;
