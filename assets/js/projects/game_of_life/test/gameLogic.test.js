@@ -118,7 +118,7 @@ describe("updateGrid", () => {
   });
 });
 
-describe("updateGrid:sill-lifes", () => {
+describe("updateGrid:still-life", () => {
   it("should update blocks", () => {
     const grid = [
       [0, 0, 0, 0],
