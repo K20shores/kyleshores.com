@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Research
-img: "assets/img/portfolio/goes-look-angles.png"
+img: "assets/img/portfolio/research/goes-look-angles.png"
 date: December 2023
 tags: [research]
 ---
@@ -12,7 +12,7 @@ tags: [research]
 
 ## Model Comparison
 
-{% include aligner.html images="portfolio/densities-with-test-set-scores.png" column=1 %}
+{% include aligner.html images="portfolio/research/densities-with-test-set-scores.png" column=1 %}
 
 I focus on the use of machine learning to estimate a harmful component
 of air quality: particulate matter smaller than 2.5 micrometers, or PM

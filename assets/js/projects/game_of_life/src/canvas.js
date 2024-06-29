@@ -55,7 +55,7 @@ const setClickHandler = (data, callback) => {
 };
 
 function clearCanvas(data) {
-  data.ctx.clearRect(0, 0, canvas.width, canvas.height);
+  data.ctx.clearRect(0, 0, data.canvas.width, data.canvas.height);
 }
 
 const drawGrid = (grid, data) => {
@@ -68,13 +68,13 @@ const drawGrid = (grid, data) => {
   // draw vertical lines
   for (let i = 0; i <= cols; i++) {
     data.ctx.moveTo(i * data.cell_size + data.offsetX, 0);
-    data.ctx.lineTo(i * data.cell_size + data.offsetX, canvas.height);
+    data.ctx.lineTo(i * data.cell_size + data.offsetX, data.canvas.height);
   }
 
   // draw horizontal lines
   for (let i = 0; i <= rows; i++) {
     data.ctx.moveTo(0, i * data.cell_size + data.offsetY);
-    data.ctx.lineTo(canvas.width, i * data.cell_size + data.offsetY);
+    data.ctx.lineTo(data.canvas.width, i * data.cell_size + data.offsetY);
   }
   data.ctx.stroke();
 };

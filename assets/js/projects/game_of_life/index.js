@@ -3,6 +3,11 @@ import * as canvas from './src/canvas.js';
 
 let data = canvas.GridData();
 
+console.log(window.gameOfLifeCanvasId)
+if (window.gameOfLifeCanvasId !== undefined) {
+  data.canvas_id = window.gameOfLifeCanvasId;
+}
+
 // Initialize the game
 let [rows, cols] = canvas.initializeCanvas(data);
 let grid = createGrid(rows, cols);

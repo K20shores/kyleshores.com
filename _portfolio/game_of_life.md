@@ -1,12 +1,9 @@
 ---
 layout: post
 title: Conway's Game of Life
-img: "assets/img/portfolio/goes-look-angles.png"
 date: June 2024
 tags: [fun]
 ---
-
-![image]({{ page.img | relative_url }})
 
 # Determined Unpredictability
 
@@ -27,7 +24,6 @@ future, we have to let the cells play their interminable, fully determined game.
 <div id="conway-container">
   <canvas id="canvas"></canvas>
 </div>
-<link rel="stylesheet" type="text/css" href="{{ '/assets/css/theme/light.css' | relative_url }}">
 <link rel="stylesheet" type="text/css" href="{{ '/assets/css/projects/conway.css' | relative_url }}">
 
 <script type="module" src="{{ '/assets/js/projects/game_of_life/index.js' | relative_url }}"></script>
