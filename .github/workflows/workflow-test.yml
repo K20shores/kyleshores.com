@@ -28,4 +28,6 @@ jobs:
           npm install
 
       - name: Run tests
-        run: npm test
+        run: 
+          cd assets/js/projects/game_of_life
+          npm test
