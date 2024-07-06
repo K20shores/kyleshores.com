@@ -93,7 +93,7 @@ software tools that aid in the numerical solving of chemistry for air quality an
 thing in the world since it allows me to use both of my degrees. It's therefore just a _little_ frustrating to have only
 a rudimentary understanding of the math that allows me to support the scientists I work with.
 
-To better understand the math behind my job I am goint to read two books and try to relay what I learn from them, here [^1] [^2].
+To better understand the math behind my job I am goint to read two books and try to relay what I learn from them, here [^1]<sup>,</sup> [^2].
 The authors created many software implementations of the solving algorithms described in the book which can be
 found [here](https://www.unige.ch/~hairer/software.html). It seems that the implementation of many solvers used today
 originate from these implementations. They are all written in Fortran. Throughout this series, I'm going to attempt to

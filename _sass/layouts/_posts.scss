@@ -5,12 +5,22 @@
   width: 100%;
 }
 
+.post-title {
+  padding: $title-padding;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+}
+
 article {
   @extend .comments;
+  @extend %padding-post;
+  padding-top: 0;
 
   header {
     margin-bottom: 6%;
     text-align: center;
+    position: relative;
   }
 
   a:hover {
@@ -55,17 +65,20 @@ header {
 
 /* --- Post info --- */
 .post-info {
-  /* For border in author
-  border: 1px solid var(--border);
-  padding-left: 0.5em;
-  */
   border-radius: 1em;
   padding-right: 0.5em;
   display: inline-flex;
 
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 30%);
+  z-index: 3;
+
   a {
     display: flex;
     align-items: center;
+    flex-direction: column;
 
     img {
       height: auto;
@@ -76,40 +89,38 @@ header {
     }
   }
 
+  --gradient-1: linear-gradient(to right, var(--md-sys-color-base), var(--md-sys-color-primary), var(--md-sys-color-error), var(--md-sys-color-tertiary-fixed));
   img {
-    border-radius: 1em;
+    border-radius: 100%;
     padding: 0;
-    width: 1.5em;
+    width: 5.5em;
     height: 100%;
-    margin-right: 0.5em;
+    border: solid 2px transparent;
+    background: 
+      linear-gradient(var(--md-sys-color-secondary), var(--md-sys-color-tertiary)) padding-box, 
+      var(--gradient-1) border-box;
   }
 }
 
 /* --- Feature image --- */
 .feature-image {
-  padding: 0;
 
   .post-link {
     color: var(--header-text);
   }
 
-  h1.title, .post-info {
-    @extend .txt-shadow;
-  }
-
   header {
-    color: var(--header-text);
+    color: var(--md-sys-color-on-primary-container);
     margin-bottom: 0;
     padding: 3.6% $padding-large;
 
     .meta {
-      color: var(--header-text);
+      color: var(--md-sys-color-on-primary-container);
       filter: opacity(0.7);
     }
   }
 
   .post-content {
-    @extend %padding-post;
     padding-bottom: 0;
   }
 

@@ -1,10 +1,10 @@
-import { styles } from "./styles.js";
+import { load_styles } from "./styles.js";
 
 const GridData = () => {
   return {
-    cell_size: 15,
-    grid_color: styles["primary"],
-    cell_color: styles["tertiary"],
+    cell_size: 20,
+    get grid_color() { return load_styles()["primary"]; },
+    get cell_color() { return load_styles()["tertiary"]; },
     border_size: 1,
     canvas_id: "canvas",
     canvas: null,

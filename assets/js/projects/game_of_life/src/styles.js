@@ -13,8 +13,7 @@ const load_styles = () => {
   return styles;;
 }
 
-const styles = load_styles();
 
 export {
-  styles
+  load_styles
 }
