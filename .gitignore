@@ -36,3 +36,4 @@ test/*
 /type-on-strap*/*
 
 node_modules
+.next

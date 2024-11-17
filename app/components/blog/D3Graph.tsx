@@ -7,7 +7,6 @@ interface D3GraphProps {
 }
 
 export default function D3Graph({ data }: D3GraphProps) {
-  // Specify the type of the ref as React.MutableRefObject<SVGSVGElement | null>
   const ref = React.useRef<SVGSVGElement | null>(null);
 
   React.useEffect(() => {

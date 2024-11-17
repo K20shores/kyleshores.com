@@ -5,6 +5,11 @@ tags: [ODE-series]
 image: "assets/img/pexels/math.jpg"
 ---
 
+import EstimatePi from '../../components/blog/WhatIsAnODE/EstimatePi'
+import AFunction from '../../components/blog/WhatIsAnODE/AFunction'
+import TheFunction from '../../components/blog/WhatIsAnODE/TheFunction'
+import Formalism from '../../components/blog/WhatIsAnODE/Formalism'
+
 # Communication
 
 The most successful technology humans have ever invented is language. Across human history humans have found many ways to
@@ -59,22 +64,8 @@ result, I **will** miss a detail. Probably starting with what happens when
 video gets it wrong, hardware interrupts for the enter key are glossed
 over).
 
-<div id="inputs">
-  <div>
-    <label for="duration">Duration (seconds):</label>
-    <input type="range" id="duration" name="duration" min="1" max="20" value="2" onchange="displayDuration()" oninput="onSlideChange()" />
-    <span id="durationValue"></span>
-  </div>
-
-  <div>
-    <label for="num-points">Number of Points:</label>
-    <input type="range" id="num-points" name="num-points" min="100" max="10000" value="1000" step="100" onchange="displayNumPoints()" oninput="onSlideChange()" />
-    <span id="numPointsValue"></span>
-  </div>
-</div>
-
 <figure>
-  <div id="estimate-pi"></div>
+  <EstimatePi />
   <figcaption>Monte carlo estimation of pi</figcaption>
 </figure>
 
@@ -113,7 +104,7 @@ What's happening here is that the authors are establishing a baseline of mathema
 can supposedly understand the textbook.
 
 <figure>
-  <div id="formalism-example"></div>
+  <Formalism />
   <figcaption>What is this?</figcaption>
 </figure>
 
@@ -146,7 +137,7 @@ So let's look at what that means.
 Let's make a function
 
 <figure>
-  <div id="a-function"></div>
+  <AFunction />
   <figcaption>$$f(x, y) = x$$</figcaption>
 </figure>
 
@@ -175,7 +166,7 @@ y(x)=\frac{x^2}{2}-7.5
 $$
 
 <figure>
-  <div id="the-function"></div>
+  <TheFunction />
   <figcaption>$$y(x)=\frac{x^2}{2}-7.5$$</figcaption>
 </figure>
 
