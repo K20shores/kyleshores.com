@@ -1,10 +1,29 @@
 ---
 layout: default
 ---
+
+{% assign author = site.data.authors[page.author] %}
+{% assign date = page.date | default: "today" | date: "%B %-d, %Y" %}
+
 <article {% if page.feature-img or page.color %}class="feature-image" {% endif %}>
     <header id="main" style="background-image: url('{{ page.feature-img | relative_url }}')">
         <div class="feature-image-padding"></div>
-        {% include blog/post_info.liquid author=page.author date=page.date %}
+
+        {%- if author.url -%}
+        <a href="{{ author.url | relative_url }}" target="_blank" rel="noopener">
+        {%- endif -%}
+            {% if author.avatar  %}
+            <img alt="Author's avatar" src="{{ author.avatar | relative_url }}" loading="lazy">
+            {% endif %}
+        {%- if author.url -%}
+        </a>
+        {%- endif -%}
+        
+        <p class="meta">
+        {% assign x = date | date: "%m" | minus: 1 %}
+        {{ site.data.language.str_months[x] | default: date | date: "%B" }} {{ date | date: "%d, %Y" }}
+        </p>
+
     </header>
     <div class="post-title">
         {% unless page.hide_title %}
