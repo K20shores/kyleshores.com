@@ -2,8 +2,6 @@ import Citation from '../../components/Citation';
 import Script from 'next/script';
 
 
-[^1]: <Citation key="hairer1993" />
-[^2]: <Citation key="hairer1996" />
 
 <Script src="/blog/js/posts/what_is_an_ode.js" strategy="lazyOnload" />
 
