@@ -92,8 +92,28 @@ function createHeading(level) {
   return Heading
 }
 
-function Footnote({ id }) {
-  return <Citation id={id} />;
+function FootnoteReference({ id }) {
+  return (
+    <sup id={`ref-${id}`}>
+      <a href={`#note-${id}`}>[{id}]</a>
+    </sup>
+  );
+}
+
+function Footnotes({ citations }) {
+  return (
+    <section>
+      <h2>References</h2>
+      <ol>
+        {citations.map((citation, index) => (
+          <li key={index} id={`note-${citation.id}`}>
+            <Citation id={citation.id} />
+            <a href={`#ref-${citation.id}`}> ↩</a>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
 }
 
 let components = {
@@ -111,7 +131,8 @@ let components = {
     console.log('Rendering Citation with props:', props);
     return <Citation {...props} />;
   },
-  Footnote,
+  FootnoteReference,
+  Footnotes,
   ...BlogComponents,
 }
 
