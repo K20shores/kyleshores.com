@@ -9,6 +9,8 @@ import EstimatePi from '../../components/blog/WhatIsAnODE/EstimatePi'
 import AFunction from '../../components/blog/WhatIsAnODE/AFunction'
 import TheFunction from '../../components/blog/WhatIsAnODE/TheFunction'
 import Formalism from '../../components/blog/WhatIsAnODE/Formalism'
+import Citation from '../../components/citation';
+import Footnote, { CitationsList } from '../../components/mdx';
 
 # Communication
 
@@ -81,7 +83,7 @@ software tools that aid in the numerical solving of chemistry for air quality an
 thing in the world since it allows me to use both of my degrees. It's therefore just a _little_ frustrating to have only
 a rudimentary understanding of the math that allows me to support the scientists I work with.
 
-To better understand the math behind my job I am going to read two books and try to relay what I learn from them, here [^1]<sup>,</sup> [^2].
+To better understand the math behind my job I am going to read two books and try to relay what I learn from them, here <Footnote id="hairer1993" />, <Footnote id="hairer1996" />.
 The authors created many software implementations of the solving algorithms described in the book which can be
 found [here](https://www.unige.ch/~hairer/software.html). It seems that the implementation of many solvers used today
 originate from these implementations. They are all written in Fortran. Throughout this series, I'm going to attempt to
@@ -145,10 +147,12 @@ Now we want to find some function that will make $$y'(x)=\frac{dy}{dx}=f(x,y)=x$
 $$\frac{dy}{dx}=x$$.
 
 $$
+\begin{aligned}
 \frac{dy}{dx}=x \\
 dy=x\cdot dx \\
 \int dy = \int x \, dx \\
 y = \frac{x^2}{2} + C
+\end{aligned}
 $$
 
 Neat. We found a function. But the last missing piece that would constrain this problem would be the initial value, meaining
@@ -158,11 +162,13 @@ equation of the first order. Some initial value, some integrals, and some algebr
 $$y(x_0)=5$$, then our full solution is
 
 $$
+\begin{aligned}
 y(1)=5=\frac{5^2}{2}+C \\
 5-\frac{25}{2}=C \\
 C = -7.5 \\
 \therefore \\
 y(x)=\frac{x^2}{2}-7.5
+\end{aligned}
 $$
 
 <figure>
@@ -175,5 +181,5 @@ simple equation that had an exact solution, but most problems that are useful in
 We have to answers these problems with emapthy and hard work if it's a human problem, or the vast field of numerical
 methods if it's an ODE problem. Hopefully you'll enjoy coming along to learn more about these.
 
-[^1]: <Citation key="hairer1993" />
-[^2]: <Citation key="hairer1996" />
+[^1]: <Citation id="hairer1993" />
+[^2]: <Citation id="hairer1996" />

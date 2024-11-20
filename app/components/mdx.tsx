@@ -7,9 +7,8 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
 
-import D3Graph from './blog/D3Graph'
-
-import * as WhatIsAnODEComponents from './blog/WhatIsAnODE'
+import Citation from './citation'
+import * as BlogComponents from './blog'
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -93,6 +92,10 @@ function createHeading(level) {
   return Heading
 }
 
+function Footnote({ id }) {
+  return <Citation id={id} />;
+}
+
 let components = {
   h1: createHeading(1),
   h2: createHeading(2),
@@ -104,8 +107,12 @@ let components = {
   a: CustomLink,
   code: Code,
   Table,
-  D3Graph,
-  ...WhatIsAnODEComponents,
+  Citation: (props) => {
+    console.log('Rendering Citation with props:', props);
+    return <Citation {...props} />;
+  },
+  Footnote,
+  ...BlogComponents,
 }
 
 export function CustomMDX(props) {

@@ -1,4 +1,3 @@
-
 export { default as EstimatePi } from './EstimatePi';
 export { default as AFunction } from './AFunction';
 export { default as TheFunction } from './TheFunction';
