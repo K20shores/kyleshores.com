@@ -15,14 +15,20 @@ interface CitationProps {
 }
 
 export default function Citation({ id, style = 'apa' }: CitationProps) {
-  // Find the citation by ID
-  const citation = cite.format('bibliography', {
-    entry: id,
-    format: 'html',
-    template: style,
-  });
-  console.log(`Formatted citation for id ${id}:`, citation);
+  console.log(`Formatting citation for id ${id} with style ${style}`);
+  try {
+    // Find the citation by ID
+    const citation = cite.format('bibliography', {
+      entry: id,
+      format: 'html',
+      template: style,
+    });
+    console.log(`Formatted citation for id ${id}:`, citation);
 
-  // Render the citation as HTML
-  return <span dangerouslySetInnerHTML={{ __html: citation }} />;
+    // Render the citation as HTML
+    return <span dangerouslySetInnerHTML={{ __html: citation }} />;
+  } catch (error) {
+    console.error(`Error formatting citation for id ${id}:`, error);
+    return <span>Error formatting citation</span>;
+  }
 }

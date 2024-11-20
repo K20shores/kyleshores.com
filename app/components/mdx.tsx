@@ -128,8 +128,13 @@ let components = {
   code: Code,
   Table,
   Citation: (props) => {
-    console.log('Rendering Citation with props:', props);
-    return <Citation {...props} />;
+    try {
+      console.log('Rendering Citation with props:', props);
+      return <Citation {...props} />;
+    } catch (error) {
+      console.error('Error rendering citation:', error);
+      return <span>Error rendering citation</span>;
+    }
   },
   FootnoteReference,
   Footnotes,
