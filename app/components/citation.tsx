@@ -1,23 +1,21 @@
 // components/Citation.tsx
-import fs from 'fs';
-import path from 'path';
 import Cite from 'citation-js';
-
-const bibPath = path.resolve(process.cwd(), 'app', 'blog', 'bibliography.bib');
-const bibliography = fs.readFileSync(bibPath, 'utf-8');
-
-// Parse the bibliography
-const cite = new Cite(bibliography);
 
 interface CitationProps {
   id: string;
   style?: string;
+  bibliography: string;
 }
 
-export default function Citation({ id, style = 'apa' }: CitationProps) {
+export default function Citation({ id, style = 'apa', bibliography }: CitationProps) {
   console.log(`Formatting citation for id ${id} with style ${style}`);
   try {
+    // Parse the bibliography
+    const cite = new Cite(bibliography);
+
     // Find the citation by ID
+    const citationData = cite.data.find(entry => entry.id === id);
+
     const citation = cite.format('bibliography', {
       entry: id,
       format: 'html',

@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import { formatDate, getBlogPosts, getBibliography } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
 
 export async function generateStaticParams() {
@@ -53,6 +53,7 @@ export function generateMetadata({ params }) {
 
 export default function Blog({ params }) {
   let post = getBlogPosts().find((post) => post.slug === params.slug)
+  let bibliography = getBibliography()
 
   if (!post) {
     notFound()
@@ -91,7 +92,7 @@ export default function Blog({ params }) {
         </p>
       </div>
       <article className="prose">
-        <CustomMDX source={post.content} />
+        <CustomMDX source={post.content} bibliography={bibliography} />
       </article>
     </section>
   )

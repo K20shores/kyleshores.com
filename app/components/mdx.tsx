@@ -100,14 +100,14 @@ function FootnoteReference({ id }) {
   );
 }
 
-function Footnotes({ citations }) {
+function Footnotes({ citations, bibliography }) {
   return (
     <section>
       <h2>References</h2>
       <ol>
         {citations.map((citation, index) => (
           <li key={index} id={`note-${citation.id}`}>
-            <Citation id={citation.id} />
+            <Citation id={citation.id} bibliography={bibliography} />
             <a href={`#ref-${citation.id}`}> ↩</a>
           </li>
         ))}
@@ -127,25 +127,23 @@ let components = {
   a: CustomLink,
   code: Code,
   Table,
-  Citation: (props) => {
-    try {
-      console.log('Rendering Citation with props:', props);
-      return <Citation {...props} />;
-    } catch (error) {
-      console.error('Error rendering citation:', error);
-      return <span>Error rendering citation</span>;
-    }
-  },
   FootnoteReference,
-  Footnotes,
   ...BlogComponents,
 }
 
 export function CustomMDX(props) {
+  const { bibliography, ...restProps } = props;
+
   return (
     <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
+      {...restProps}
+      components={{
+        ...components,
+        ...(props.components || {}),
+        Footnotes: (footnoteProps) => (
+          <Footnotes {...footnoteProps} bibliography={bibliography} />
+        ),
+      }}
       options={{
         mdxOptions: {
           remarkPlugins: [remarkMath],
@@ -153,5 +151,5 @@ export function CustomMDX(props) {
         },
       }}
     />
-  )
+  );
 }
