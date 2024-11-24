@@ -6,8 +6,10 @@ import React from 'react'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
+import { FootnoteProvider } from 'app/context/footnoteContext'
+import { Footnotes } from 'app/components/footnotes'
+import { FootnoteReference } from './footnoteReference'
 
-import Citation from './citation'
 import * as BlogComponents from './blog'
 
 function Table({ data }) {
@@ -92,30 +94,6 @@ function createHeading(level) {
   return Heading
 }
 
-function FootnoteReference({ id }) {
-  return (
-    <sup id={`ref-${id}`}>
-      <a href={`#note-${id}`}>[{id}]</a>
-    </sup>
-  );
-}
-
-function Footnotes({ citations, bibliography }) {
-  return (
-    <section>
-      <h2>References</h2>
-      <ol>
-        {citations.map((citation, index) => (
-          <li key={index} id={`note-${citation.id}`}>
-            <Citation id={citation.id} bibliography={bibliography} />
-            <a href={`#ref-${citation.id}`}> ↩</a>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-}
-
 let components = {
   h1: createHeading(1),
   h2: createHeading(2),
@@ -135,21 +113,23 @@ export function CustomMDX(props) {
   const { bibliography, ...restProps } = props;
 
   return (
-    <MDXRemote
-      {...restProps}
-      components={{
-        ...components,
-        ...(props.components || {}),
-        Footnotes: (footnoteProps) => (
-          <Footnotes {...footnoteProps} bibliography={bibliography} />
-        ),
-      }}
-      options={{
-        mdxOptions: {
-          remarkPlugins: [remarkMath],
-          rehypePlugins: [rehypeKatex],
-        },
-      }}
-    />
+    <FootnoteProvider>
+      <MDXRemote
+        {...restProps}
+        components={{
+          ...components,
+          ...(props.components || {}),
+          Footnotes: () => (
+            <Footnotes bibliography={bibliography} />
+          ),
+        }}
+        options={{
+          mdxOptions: {
+            remarkPlugins: [remarkMath],
+            rehypePlugins: [rehypeKatex],
+          },
+        }}
+      />
+    </FootnoteProvider>
   );
 }
