@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react"
-import { useFootnoteContext } from "../context/footnoteContext"
+import { useFootnoteContext } from "app/context/footnoteContext"
 
 interface FootnoteProps {
   id: string

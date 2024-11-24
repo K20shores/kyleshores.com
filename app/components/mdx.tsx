@@ -7,32 +7,10 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
 import { FootnoteProvider } from 'app/context/footnoteContext'
-import { Footnotes } from 'app/components/footnotes'
-import { FootnoteReference } from './footnoteReference'
+import { Footnotes } from 'app/components/blog/footnotes'
+import { FootnoteReference } from 'app/components/blog/footnoteReference'
 
 import * as BlogComponents from './blog'
-
-function Table({ data }) {
-  let headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ))
-  let rows = data.rows.map((row, index) => (
-    <tr key={index}>
-      {row.map((cell, cellIndex) => (
-        <td key={cellIndex}>{cell}</td>
-      ))}
-    </tr>
-  ))
-
-  return (
-    <table>
-      <thead>
-        <tr>{headers}</tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
-  )
-}
 
 function CustomLink(props) {
   let href = props.href
@@ -104,7 +82,6 @@ let components = {
   Image: RoundedImage,
   a: CustomLink,
   code: Code,
-  Table,
   FootnoteReference,
   ...BlogComponents,
 }
