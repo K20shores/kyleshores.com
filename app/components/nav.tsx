@@ -7,9 +7,6 @@ const navItems = {
   '/blog': {
     name: 'blog',
   },
-  'https://github.com/K20shores': {
-    name: 'github',
-  },
 }
 
 export function Navbar() {

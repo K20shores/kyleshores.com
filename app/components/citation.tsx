@@ -8,20 +8,18 @@ interface CitationProps {
 }
 
 export default function Citation({ id, style = 'apa', bibliography }: CitationProps) {
-  console.log(`Formatting citation for id ${id} with style ${style}`);
   try {
     // Parse the bibliography
     const cite = new Cite(bibliography);
 
-    // Find the citation by ID
-    const citationData = cite.data.find(entry => entry.id === id);
-
-    const citation = cite.format('bibliography', {
+    let citation = cite.format('bibliography', {
       entry: id,
       format: 'html',
       template: style,
     });
-    console.log(`Formatted citation for id ${id}:`, citation);
+
+    // Wrap URLs in anchor tags
+    citation = citation.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
 
     // Render the citation as HTML
     return <span dangerouslySetInnerHTML={{ __html: citation }} />;

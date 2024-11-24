@@ -1,6 +1,8 @@
 "use client";
 import React, { createContext, useContext, useState, ReactNode } from "react"
 
+// thanks to this blog post: https://tn1ck.com/blog/footnotes-in-react
+
 interface FootnoteContextType {
   addCitation: (citation: string) => Promise<string>
   citations: string[]
