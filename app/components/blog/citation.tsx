@@ -1,6 +1,7 @@
 import React from "react";
 import Cite from "citation-js";
 import { FaArrowUp } from "react-icons/fa";
+import { KeyboardReturn } from "@mui/icons-material";
 
 interface CitationProps {
   id: string;
@@ -26,7 +27,7 @@ export default function Citation({ id, bibliography }: CitationProps) {
     return (
       <span>
         {authors}. ({year}). <i>{title}</i>. {publisher}. {url ? <a href={url} target="_blank" rel="noopener noreferrer">{url}</a> : null}  
-        <a style={{display: "inline-flex", alignItems: "baseline"}} href={`#ref-${id}`}>&nbsp;<FaArrowUp /></a>
+        <a style={{alignItems: "center"}} href={`#ref-${id}`}>&nbsp;<KeyboardReturn fontSize="small" color="primary" /></a>
       </span>
     );
   } catch (error) {

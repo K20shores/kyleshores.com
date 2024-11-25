@@ -36,14 +36,14 @@ export function Navbar() {
           <div
             className={`${
               isOpen ? "block" : "hidden"
-            } fixed top-0 left-0 w-full h-screen bg-black bg-opacity-75 z-50 flex flex-col items-center justify-center lg:hidden`}
+            } fixed top-0 left-0 w-full h-screen bg-white bg-opacity-75 z-50 flex flex-col items-center justify-center lg:hidden`}
           >
             {Object.entries(navItems).map(([path, { name }]) => (
               <Link
                 key={path}
                 href={path}
                 onClick={() => setIsOpen(false)} // Close menu on link click
-                className="text-white text-8xl py-2 px-4 hover:underline"
+                className="text-black text-8xl py-2 px-4 hover:underline"
               >
                 {name}
               </Link>

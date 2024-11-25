@@ -1,4 +1,5 @@
 import { FaGithub } from 'react-icons/fa'
+import { NorthEast } from '@mui/icons-material'
 
 function ArrowIcon() {
   return (
@@ -28,7 +29,7 @@ export default function Footer() {
             target="_blank"
             href="/rss"
           >
-            <ArrowIcon />
+            <NorthEast fontSize="small" color="action" />
             <p className="ml-2 h-7">rss</p>
           </a>
         </li>
