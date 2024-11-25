@@ -21,9 +21,6 @@ export default function Citation({ id, bibliography }: CitationProps) {
     const publisher = citationData.publisher;
     const url = citationData.URL;
 
-    const formatted = `${authors}. (${year}). ${title}. ${publisher}. ${url}`;
-    console.log(formatted);
-
     return (
       <span>
         {authors}. ({year}). <i>{title}</i>. {publisher}. {url ? <a href={url} target="_blank" rel="noopener noreferrer">{url}</a> : null}  
