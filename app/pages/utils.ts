@@ -48,3 +48,7 @@ function getMDXData(dir) {
 export function getPages() {
   return getMDXData(path.join(process.cwd(), 'app', 'pages'))
 }
+
+export function getProjects() {
+  return getMDXData(path.join(process.cwd(), 'app', 'projects'))
+}
