@@ -44,12 +44,12 @@ const initializeCanvas = (data) => {
 };
 
 const setClickHandler = (data, callback) => {
-  canvas.addEventListener("click", (event) => {
-    const rect = canvas.getBoundingClientRect();
+  data.canvas.addEventListener("click", (event) => {
+    const rect = data.canvas.getBoundingClientRect();
     const x = event.clientX - rect.left - data.offsetX;
     const y = event.clientY - rect.top - data.offsetY;
-    const col = Math.floor(x / cellSize);
-    const row = Math.floor(y / cellSize);
+    const col = Math.floor(x / data.cell_size);
+    const row = Math.floor(y / data.cell_size);
     callback(col, row);
   });
 };
