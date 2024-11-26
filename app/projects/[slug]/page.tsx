@@ -56,6 +56,7 @@ export default function Page({ params }) {
 
   if (!page) {
     notFound();
+    return null;
   }
 
   return (

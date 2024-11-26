@@ -9,6 +9,7 @@ import 'katex/dist/katex.min.css'
 import { FootnoteProvider } from 'app/context/footnoteContext'
 import { Footnotes } from 'app/components/blog/footnotes'
 import { FootnoteReference } from 'app/components/blog/footnoteReference'
+import Script from 'next/script';
 
 import * as BlogComponents from './blog'
 
@@ -82,6 +83,7 @@ let components = {
   Image: RoundedImage,
   a: CustomLink,
   code: Code,
+  Script,
   FootnoteReference,
   ...BlogComponents,
 }

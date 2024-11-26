@@ -16,6 +16,7 @@ const GridData = () => {
 
 const initializeCanvas = (data) => {
   data.canvas = document.getElementById(data.canvas_id);
+  console.log(data.canvas.clientWidth, data.canvas.clientHeight);
 
   // Get the CSS size of the canvas
   const cssWidth = data.canvas.clientWidth;

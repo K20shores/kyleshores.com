@@ -5,6 +5,8 @@ date: June 2024
 tags: [fun]
 ---
 
+import Script from 'next/script';
+
 # Determined Unpredictability
 
 [Conway's game of life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) encodes the rules for cell life
@@ -20,13 +22,19 @@ Given a starting state, predicting the future 2, 5, 10, 100 steps away is not po
 where it lives, its density, cannot be predicted using any analytical tool. To find where life thrives in the
 future, we have to let the cells play their interminable, fully determined game.
 
-
 <div style={{  
-  width: '552px',
   height: '352px',
-  margin: 'auto'}}
+  margin: 'auto',
+  display: 'flex',
+  justifyContent: 'center'}}
   >
-  <canvas id="canvas"></canvas>
+  <canvas  
+    style={{  
+    height: '300px',
+    width: '300px',
+    margin: 'auto'}}
+    id="canvas">
+  </canvas>
 </div>
 
-<script type="module" src="../../projects/game_of_life/index.js"></script>
+<Script type="module" src="../../projects/game_of_life/index.js"></Script>
